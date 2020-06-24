@@ -1,22 +1,13 @@
 export default {
-    template:`
-    <section class="">
-
-    </section>
+  props: ["info"],
+  template: `
+        <section class="note-txt-item" :info="info"> 
+             {{info.txt}}
+        </section>
     `,
-    data(){
-
-    },
-    created(){
-
-    },
-    computed:{
-
-    },
-    methods:{
-
-    },
-    components:{
-        
-    }
-}
+  //   data() {},
+  //   created() {},
+  computed: {},
+  methods: {},
+  components: {},
+};
