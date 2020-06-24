@@ -1,8 +1,8 @@
 import { eventBus } from "../services/event-bus.service.js";
 import editBar from "./note-editbar.cmp.js";
 import noteText from "./note-txt.cmp.js";
-import noteImage from "./note-img.cmp.js"
-import noteVideo from "./note-video.cmp.js"
+import noteImage from "./note-img.cmp.js";
+import noteVideo from "./note-video.cmp.js";
 
 export default {
   props: ["note"],
@@ -36,7 +36,8 @@ export default {
   },
   methods: {
     saveChanges() {
-      eventBus.$emit('update',this.note)
+      this.note.info.isOnEdit = false;
+      eventBus.$emit("update", this.note);
     },
   },
   components: {

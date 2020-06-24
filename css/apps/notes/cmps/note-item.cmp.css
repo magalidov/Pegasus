@@ -1,5 +1,5 @@
 .note-item {
-    width: 250px;
+    width: max-content;
     height: max-content;
     font-size: 1rem;
     margin: 20px;
@@ -15,7 +15,9 @@
     border: 5px solid #d4caca;
 }
 
+/* TEXT-EDIT */
 .note-item textarea {
+    cursor: pointer;
     outline: none;
     border: none;
     margin: 10px;
