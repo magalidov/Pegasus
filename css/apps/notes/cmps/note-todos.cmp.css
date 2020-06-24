@@ -1,0 +1,14 @@
+.todos-area ul li {
+    width: 100%;
+    max-height: max-content;
+    padding: 5px 5px 5px 0;
+    margin: 5px 5px 5px 0;
+}
+
+.todos-area label {
+    cursor: pointer;
+}
+
+.isDone {
+    text-decoration: line-through;
+}

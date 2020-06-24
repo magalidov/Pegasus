@@ -1,7 +1,7 @@
 .image-area img{
     display: block;
-    height: 200px;
-    width: 250px;
+    max-height: 200px;
+    max-width: 250px;
 }
 .image-area textarea {
     max-height:200px ;

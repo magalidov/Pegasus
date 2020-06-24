@@ -15,31 +15,49 @@ function _createNotes() {
     let defaultNotes = [
       {
         id: Utils.getRandomId(),
-        type: "noteText",
-        isPinned: true,
+        type: "noteTodo",
+        isPinned: false,
         info: {
-          txt: "First Note",
+          todos: [
+            { txt: "Learn Routes in Vue",isDone:false, doneAt: null },
+            { txt: "Learn Javascript", isDone:false ,doneAt: null },
+            { txt: "Learn Python", isDone:false,doneAt: null },
+          ],
           createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange" 
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        isPinned: true,
+        isPinned: false,
+        info: {
+          txt: "First Note",
+          createdAt: "25/6/2020,20:00",
+          editedAt: "",
+          isOnEdit: false,
+        },
+        style: {
+          backgroundColor: "orange",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: false,
         info: {
           txt: "Second Note",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange" 
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
       {
         id: Utils.getRandomId(),
@@ -47,13 +65,13 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Yesssss",
-          createdAt:"25/6/2020,20:00",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange"  
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
       {
         id: Utils.getRandomId(),
@@ -63,25 +81,26 @@ function _createNotes() {
           txt: "Asaf and Idov!!!!",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange"  
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
       {
         id: Utils.getRandomId(),
         type: "noteImage",
         isPinned: true,
         info: {
-          url: "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
+          url:
+            "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange"  
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
       {
         id: Utils.getRandomId(),
@@ -91,13 +110,12 @@ function _createNotes() {
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
-          isOnEdit:false,
+          isOnEdit: false,
         },
-        style: { 
-          backgroundColor: "orange"  
-        }
+        style: {
+          backgroundColor: "orange",
+        },
       },
-     
     ];
     return defaultNotes;
   } else return notes;
@@ -112,15 +130,15 @@ function addNewNote(type, txt) {
     id: Utils.getRandomId(),
     type,
     isPinned: false,
-    isOnEdit:false,
+    isOnEdit: false,
     info: {
       txt,
       createdAt: new Date().toLocaleString(),
       editedAt: "",
     },
-    style: { 
-      backgroundColor: "#ffcc13" 
-    }
+    style: {
+      backgroundColor: "#ffcc13",
+    },
   };
   gNotes.unshift(newNote);
   Utils.storeToStorage("gNotes", gNotes);
@@ -134,9 +152,8 @@ function updateNote(updatedNote) {
   console.log("saved...");
 }
 
-function deleteNote(noteId){
+function deleteNote(noteId) {
   const noteIdx = gNotes.findIndex((note) => note.id === noteId);
-  gNotes.splice(noteIdx, 1)
+  gNotes.splice(noteIdx, 1);
   Utils.storeToStorage("gNotes", gNotes);
 }
-
