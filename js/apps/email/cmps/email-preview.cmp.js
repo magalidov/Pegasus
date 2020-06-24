@@ -1,12 +1,13 @@
 // import longText from '../../../cmp/long-text.cmp.js'
+import {eventBus} from '../../../services/event-bus.service'
 
 export default {
     props:['email'],
     template:`
     <div class="email-preview">
-        <input v-model="checked" type="checkbox">
-        <i :class="starType" @click="toggle('isStared')"></i>
-        <i :class="envelopeType" @click="toggle('isRead')"></i>
+        <input v-model="checked" @change.stop="toggleInCheckedList(email.id)" type="checkbox">
+        <i :class="starType" @click.stop="toggle('isStared')"></i>
+        <i :class="envelopeType" @click.stop="toggle('isRead')"></i>
         <span class="from" :title="email.from">{{fromName}}</span>
         <span class="subject" :title="email.subject">{{subject}}</span>
         <span class="body">{{body}}</span>
@@ -48,6 +49,13 @@ export default {
     methods:{
         toggle(tag){
             this.tags[tag] = !this.tags[tag]
+        },
+        toggleInCheckedList(emailId){
+            if (this.checked) this.$emit('checkBox','add',emailId)
+            else this.$emit('checkBox','remove',emailId)
+        },
+        updateTags(){
+
         }
     },
     components:{
