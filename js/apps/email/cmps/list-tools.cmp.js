@@ -8,7 +8,7 @@ export default {
     <input v-model="checkAll" @change.stop="toggleInCheckedList(email.id)" type="checkbox">
         <i class="fas fa-trash" v-if="showTools" @click="deleteCheckedEmails"></i>
         <i class="fas fa-tag" v-if="showTools"></i>
-        <i :class="envelopeType" v-if="showTools" @click.stop="toggleTag('isRead')"></i>
+        <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')"></i>
     </section>
     `,
     data(){
@@ -33,10 +33,10 @@ export default {
         clearChecked(){
             this.$emit('clear')
         },
-        toggleTag(tag){
-            this.tags[tag] = !this.tags[tag]
-            this.updateEmail()
-        },
+        // toggleAllTags(tag){
+        //     const state = (this.checkedEmails.every(email => email.tags.isRead))? false: true
+        //     emailService.updateEmails(tag,state,this.checkedEmails)
+        // },
     },
     watch:{
         checkedEmails(newChecked){
