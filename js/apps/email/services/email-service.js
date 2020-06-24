@@ -13,6 +13,7 @@ export const emailService = {
     loadEmails,
     updateEmail,
     deleteEmails,
+    updateEmails,
 	// getById: getById,
 	// saveReview: saveReview,
 	// removeReview: removeReview
@@ -50,6 +51,12 @@ function updateEmail(updatedMail){
     const idx = gEmails.findIndex(email=> email.id === updatedMail.id)
     gEmails.splice(idx,1,updatedMail)
     Utils.storeToStorage(STORE_KEY,gEmails)
+}
+function updateEmails(tag,state,checkedEmails){
+    checkedEmails.forEach(checkedMail=>{
+        const idx = gEmails.findIndex(email=> email.id === checkedMail.id)
+        gEmails[idx].tags[tag] = state
+    })
 }
 
 function deleteEmails(checkedEmails){
