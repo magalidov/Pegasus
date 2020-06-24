@@ -3,9 +3,12 @@
 @import '../cmps/note-img.cmp.css';
 @import '../cmps/note-editbar.cmp.css';
 @import '../cmps/note-todos.cmp.css';
+@import '../cmps/note-filter.cmp.css';
+
+
+
 .notes-app .cmp-container {
     max-width: 1100px;
-    height: max-content;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, auto));

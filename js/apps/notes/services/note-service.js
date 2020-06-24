@@ -149,7 +149,6 @@ function updateNote(updatedNote) {
   const noteIdx = gNotes.findIndex((note) => note.id === updatedNote.id);
   gNotes.splice(noteIdx, 1, updatedNote);
   Utils.storeToStorage("gNotes", gNotes);
-  console.log("saved...");
 }
 
 function deleteNote(noteId) {

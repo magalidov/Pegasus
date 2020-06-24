@@ -1,23 +1,33 @@
 export default {
     template:`
-    <section class="note-filter">
-        <input type="text" placeholder="Search your notes"/>
-        <select class="filter-opt">
+    <section class="note-filter flex justify-center">
+        <input type="text" placeholder="Search your notes" v-model="filterBy.txt" @input="onFilter"/>
+        <select class="filter-opt" v-model="filterBy.type" @change="onFilter">
             <option value="all">All</option>
             <option value="date">Date</option>
-            <option value="text">Text</option>
-            <option value="imgae">Image</option>
-            <option value="todo">Todo</option>
-            <option value="video">Video</option>
-            <option value="audio">Audio</option>
+            <option value="noteText">Text</option>
+            <option value="noteImage">Image</option>
+            <option value="noteTodo">Todo</option>
+            <option value="noteVideo">Video</option>
+            <option value="noteAudio">Audio</option>
         </select>   
     </section>
     `,
+    data(){
+        return {
+            filterBy:{
+                txt:'',
+                type:'all'
+            }
+        };
+    },
     computed:{
 
     },
     methods:{
-
+        onFilter(){
+            this.$emit('filter',this.filterBy)
+        }
     },
     components:{
         

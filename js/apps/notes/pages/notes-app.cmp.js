@@ -7,27 +7,49 @@ import noteAdd from "../cmps/note-add.cmp.js";
 export default {
   template: `
         <div class="notes-app">
-            <note-filter/>
-            <note-add/>
-            <section class="cmp-container">
-                <note-item v-for="(note, idx) in notes" :note="note" ></note-item>
-            </section>
+          <main>
+              <note-filter @filter="setFilter"/>
+              <note-add/>
+              <section class="cmp-container">
+                  <note-item v-for="(note, idx) in notesToShow" :note="note" ></note-item>
+              </section>
+          </main>
         </div>
 
     `,
   data() {
     return {
       notes: null,
+      filterBy: null,
     };
   },
   created() {
     noteService.getNotes().then((notes) => (this.notes = notes));
-    eventBus.$on('delete',(noteId)=> noteService.deleteNote(noteId));
+    eventBus.$on("delete", (noteId) => noteService.deleteNote(noteId));
     // eventBus.$on('add',(noteId)=> noteService.addNewNote());
-    eventBus.$on('update',(note)=> noteService.updateNote(note));
+    eventBus.$on("update", (note) => noteService.updateNote(note));
   },
-  computed: {},
-  methods: {},
+  computed: {
+    notesToShow() {
+      const filterBy = this.filterBy;
+      if (!filterBy) return this.notes;
+      let filteredNotes = this.notes.filter((note) => {
+        if (filterBy.type === "all") return true;
+        else return note.type === filterBy.type;
+      });
+      filteredNotes = filteredNotes.filter((note) => {
+        if (filterBy.txt === "") return true;
+        if (note.type !== "noteText") return false;
+        return note.info.txt.toLowerCase().includes(filterBy.txt.toLowerCase());
+      });
+      return filteredNotes;
+    },
+  },
+  methods: {
+    setFilter(filterBy) {
+      this.filterBy = filterBy;
+    },
+  },
   components: {
     noteItem,
     noteFilter,
