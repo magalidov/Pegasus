@@ -1,4 +1,4 @@
-import { noteService } from "../services/note-service.js";
+import { eventBus } from "../services/event-bus.service.js";
 
 export default {
   props: ["note"],
@@ -10,6 +10,7 @@ export default {
                     <!-- <color-pick> -->
                 </i>
                 </label>
+                <i class="fas fa-edit" @click="onEdit"></i>
                 <i class="fas fa-envelope"></i>
         </section>
     `,
@@ -21,13 +22,15 @@ export default {
   methods: {
     onUpdateNote() {
       this.note.style.backgroundColor = this.noteColor;
-      noteService.updateNote(this.note);
+      eventBus.$emit("update", this.note);
     },
     onDeleteNote() {
-      noteService.deleteNote(this.note);
+      eventBus.$emit("delete", this.note.id);
+    },
+    onEdit() {
+      if (this.note.type === "noteText") eventBus.$emit(`edit-${this.note.id}`);
+      let editMode = this.note.info.isOnEdit;
+      this.note.info.isOnEdit = !editMode;
     },
   },
-  created(){
-      console.log(this.note)
-  }
 };

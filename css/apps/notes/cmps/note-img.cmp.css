@@ -1,0 +1,18 @@
+.image-area img{
+    display: block;
+    height: 130px;
+    width: 240px;
+    margin:5px auto;
+}
+.image-area textarea {
+    height: 80px;
+    width: 240px;
+    margin:5px auto;
+    outline: none;
+    border: none;
+    margin: 10px;
+    resize: none;
+    background-color: white;
+    font-family: 'Pangolin', cursive;
+    font-size: 1rem;
+}

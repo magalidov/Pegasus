@@ -1,22 +1,26 @@
+import { eventBus } from "../services/event-bus.service.js";
+
 export default {
-    template:`
-    <section class="">
-
-    </section>
-    `,
+    props: ["info","id"],
+    template: `
+         <section class="image-area align-self-center">
+             <img :src="info.url"/>
+             <textarea v-model="info.url" v-if="info.isOnEdit" @blur="onEdit"></textarea>
+          </section>
+              
+      `,
     data(){
-
+        return {
+            isOnEdit:false,
+        }
     },
-    created(){
-
+    methods: {
+      saveChanges() {
+        this.$emit("save");
+      },
+      onEdit(){
+        this.$emit('edit')
+      }
     },
-    computed:{
-
-    },
-    methods:{
-
-    },
-    components:{
-        
-    }
-}
+  };
+  

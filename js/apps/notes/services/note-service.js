@@ -19,8 +19,9 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "First Note",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange" 
@@ -32,8 +33,9 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Second Note",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange" 
@@ -45,8 +47,9 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Yesssss",
-          createdAt: "Default",
+          createdAt:"25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
@@ -58,13 +61,43 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Asaf and Idov!!!!",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
         }
       },
+      {
+        id: Utils.getRandomId(),
+        type: "noteImage",
+        isPinned: true,
+        info: {
+          url: "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
+          createdAt: "25/6/2020,20:00",
+          editedAt: "",
+          isOnEdit:false,
+        },
+        style: { 
+          backgroundColor: "orange"  
+        }
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteVideo",
+        isPinned: true,
+        info: {
+          url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+          createdAt: "25/6/2020,20:00",
+          editedAt: "",
+          isOnEdit:false,
+        },
+        style: { 
+          backgroundColor: "orange"  
+        }
+      },
+     
     ];
     return defaultNotes;
   } else return notes;
@@ -78,7 +111,8 @@ function addNewNote(type, txt) {
   var newNote = {
     id: Utils.getRandomId(),
     type,
-    isPinnes: false,
+    isPinned: false,
+    isOnEdit:false,
     info: {
       txt,
       createdAt: new Date().toLocaleString(),
