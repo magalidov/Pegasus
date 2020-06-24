@@ -1,5 +1,5 @@
 // import longText from '../../../cmp/long-text.cmp.js'
-import {eventBus} from '../../../services/event-bus.service'
+import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
     props:['email'],

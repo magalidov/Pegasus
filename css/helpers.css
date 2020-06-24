@@ -24,6 +24,9 @@
     align-self: flex-end;
     margin-inline-end: 10px;
 }
+.align-self-center{
+    align-self: center;
+}
 
 .col {
     flex-direction: column;

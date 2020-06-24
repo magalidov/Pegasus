@@ -19,7 +19,7 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "First Note",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
         },
         style: { 
@@ -32,7 +32,7 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Second Note",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
         },
         style: { 
@@ -45,7 +45,7 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Yesssss",
-          createdAt: "Default",
+          createdAt:"25/6/2020,20:00",
           editedAt: "",
         },
         style: { 
@@ -58,13 +58,40 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Asaf and Idov!!!!",
-          createdAt: "Default",
+          createdAt: "25/6/2020,20:00",
           editedAt: "",
         },
         style: { 
           backgroundColor: "orange"  
         }
       },
+      {
+        id: Utils.getRandomId(),
+        type: "noteImage",
+        isPinned: true,
+        info: {
+          url: "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
+          createdAt: "25/6/2020,20:00",
+          editedAt: "",
+        },
+        style: { 
+          backgroundColor: "orange"  
+        }
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteVideo",
+        isPinned: true,
+        info: {
+          url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+          createdAt: "25/6/2020,20:00",
+          editedAt: "",
+        },
+        style: { 
+          backgroundColor: "orange"  
+        }
+      },
+     
     ];
     return defaultNotes;
   } else return notes;

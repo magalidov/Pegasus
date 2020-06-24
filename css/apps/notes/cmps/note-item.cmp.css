@@ -1,4 +1,4 @@
-.note-txt-item {
+.note-item {
     width: 250px;
     height: 200px;
     font-size: 1rem;
@@ -9,12 +9,12 @@
     transition: all .3s;
 }
 
-.note-txt-item:hover{
+.note-item:hover{
     cursor: pointer;
     border: 5px solid #d4caca;
 }
 
-.note-txt-item textarea {
+.note-item textarea {
     outline: none;
     border: none;
     margin: 10px;
@@ -24,7 +24,7 @@
     font-size: 1rem;
 }
 
-.note-txt-item i {
+.note-item i {
     cursor: pointer;
 }
 
@@ -32,6 +32,8 @@
     align-self: flex-end;
     font-size: 0.7rem;
 }
+
+
 
 
 

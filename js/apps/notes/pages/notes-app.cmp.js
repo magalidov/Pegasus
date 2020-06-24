@@ -1,5 +1,5 @@
 import { noteService } from "../services/note-service.js";
-import noteText from "../cmps/note-txt.cmp.js";
+import noteItem from "../cmps/note-item.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
 import noteAdd from "../cmps/note-add.cmp.js";
 
@@ -9,7 +9,7 @@ export default {
             <note-filter/>
             <note-add/>
             <section class="cmp-container">
-                <component v-for="(note, idx) in notes" :is="note.type" :note="note" ></component>
+                <note-item v-for="(note, idx) in notes"  :note="note" ></note-item>
             </section>
         </div>
 
@@ -25,7 +25,7 @@ export default {
   computed: {},
   methods: {},
   components: {
-    noteText,
+    noteItem,
     noteFilter,
     noteAdd,
   },
