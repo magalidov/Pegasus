@@ -1,3 +1,4 @@
-.edit-bar{
+.edit-bar>*{
+    margin-inline-start: 10px;
     
 }

@@ -1,8 +1,5 @@
 // import longText from '../../../cmp/long-text.cmp.js'
-<<<<<<< HEAD
-=======
 import { emailService } from '../services/email-service.js';
->>>>>>> 4257b44a1b383898b1f6dda9d75b10a30875efb6
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {

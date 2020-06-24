@@ -1,12 +1,13 @@
 .note-item {
     width: 250px;
-    height: 200px;
+    height: max-content;
     font-size: 1rem;
     margin: 20px;
     box-shadow: 6px 4px #d4caca;
     border: 2px solid #d4caca;
     font-family: 'Pangolin', cursive;
     transition: all .3s;
+    padding: 5px;
 }
 
 .note-item:hover{

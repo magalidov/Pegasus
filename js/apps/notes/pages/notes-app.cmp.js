@@ -1,4 +1,5 @@
 import { noteService } from "../services/note-service.js";
+import { eventBus } from "../services/event-bus.service.js";
 import noteItem from "../cmps/note-item.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
 import noteAdd from "../cmps/note-add.cmp.js";
@@ -9,7 +10,7 @@ export default {
             <note-filter/>
             <note-add/>
             <section class="cmp-container">
-                <note-item v-for="(note, idx) in notes"  :note="note" ></note-item>
+                <note-item v-for="(note, idx) in notes" :note="note" ></note-item>
             </section>
         </div>
 
@@ -21,6 +22,9 @@ export default {
   },
   created() {
     noteService.getNotes().then((notes) => (this.notes = notes));
+    eventBus.$on('delete',(noteId)=> noteService.deleteNote(noteId));
+    // eventBus.$on('add',(noteId)=> noteService.addNewNote());
+    eventBus.$on('update',(note)=> noteService.updateNote(note));
   },
   computed: {},
   methods: {},

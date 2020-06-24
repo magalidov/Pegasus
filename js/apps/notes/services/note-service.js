@@ -21,6 +21,7 @@ function _createNotes() {
           txt: "First Note",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange" 
@@ -34,6 +35,7 @@ function _createNotes() {
           txt: "Second Note",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange" 
@@ -47,6 +49,7 @@ function _createNotes() {
           txt: "Yesssss",
           createdAt:"25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
@@ -60,6 +63,7 @@ function _createNotes() {
           txt: "Asaf and Idov!!!!",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
@@ -73,6 +77,7 @@ function _createNotes() {
           url: "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
@@ -86,6 +91,7 @@ function _createNotes() {
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
           createdAt: "25/6/2020,20:00",
           editedAt: "",
+          isOnEdit:false,
         },
         style: { 
           backgroundColor: "orange"  
@@ -105,7 +111,8 @@ function addNewNote(type, txt) {
   var newNote = {
     id: Utils.getRandomId(),
     type,
-    isPinnes: false,
+    isPinned: false,
+    isOnEdit:false,
     info: {
       txt,
       createdAt: new Date().toLocaleString(),

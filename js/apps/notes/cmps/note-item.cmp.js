@@ -1,4 +1,4 @@
-import { noteService } from "../services/note-service.js";
+import { eventBus } from "../services/event-bus.service.js";
 import editBar from "./note-editbar.cmp.js";
 import noteText from "./note-txt.cmp.js";
 import noteImage from "./note-img.cmp.js"
@@ -9,7 +9,7 @@ export default {
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
             <i class="fas fa-thumbtack align-self-end"></i>
-             <component :is="note.type" @save="onSaveNote" :info="note.info"/></component>
+             <component :is="note.type" :info="note.info" :id="note.id" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
              </section>
@@ -27,16 +27,16 @@ export default {
   computed: {
     getNoteChangedTime() {
       let info = this.note.info;
-      if (!info.editedAt) return "Created:" + info.createdAt;
-      else return "Edited:" + info.editedAt;
+      if (!info.editedAt) return "Created: " + info.createdAt;
+      else return "Edited: " + info.editedAt;
     },
     getStyle() {
       return this.note.style;
     },
   },
   methods: {
-    onSaveNote() {
-      noteService.updateNote(this.note);
+    saveChanges() {
+      eventBus.$emit('update',this.note)
     },
   },
   components: {
