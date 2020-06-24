@@ -6,7 +6,8 @@ export default {
     <section class="">
         <h1>Email</h1>
         <!-- <email-filter/> -->
-        <router-view/>
+		
+        <email-list v-if="emailsToShow" :emails="emailsToShow"/>
         <!-- <email-tags/> -->
     </section>
     `,

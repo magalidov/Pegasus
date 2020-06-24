@@ -4,6 +4,7 @@ export const noteService = {
   getNotes,
   addNewNote,
   updateNote,
+  deleteNote,
 };
 
 var gNotes = _createNotes();
@@ -22,7 +23,7 @@ function _createNotes() {
           editedAt: "",
         },
         style: { 
-          backgroundColor: "#ffcc13" 
+          backgroundColor: "orange" 
         }
       },
       {
@@ -35,7 +36,33 @@ function _createNotes() {
           editedAt: "",
         },
         style: { 
-          backgroundColor: "#ffcc13" 
+          backgroundColor: "orange" 
+        }
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: true,
+        info: {
+          txt: "Yesssss",
+          createdAt: "Default",
+          editedAt: "",
+        },
+        style: { 
+          backgroundColor: "orange"  
+        }
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: true,
+        info: {
+          txt: "Asaf and Idov!!!!",
+          createdAt: "Default",
+          editedAt: "",
+        },
+        style: { 
+          backgroundColor: "orange"  
         }
       },
     ];
@@ -65,12 +92,17 @@ function addNewNote(type, txt) {
   Utils.storeToStorage("gNotes", gNotes);
 }
 
-function updateNote(noteId, updatedNote) {
+function updateNote(updatedNote) {
   updatedNote.info.editedAt = new Date().toLocaleString();
-  const noteIdx = gNotes.findIndex((note) => note.id === noteId);
+  const noteIdx = gNotes.findIndex((note) => note.id === updatedNote.id);
   gNotes.splice(noteIdx, 1, updatedNote);
   Utils.storeToStorage("gNotes", gNotes);
   console.log("saved...");
 }
 
+function deleteNote(noteId){
+  const noteIdx = gNotes.findIndex((note) => note.id === noteId);
+  gNotes.splice(noteIdx, 1)
+  Utils.storeToStorage("gNotes", gNotes);
+}
 
