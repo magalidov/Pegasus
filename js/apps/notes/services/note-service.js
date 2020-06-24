@@ -21,6 +21,9 @@ function _createNotes() {
           createdAt: "Default",
           editedAt: "",
         },
+        style: { 
+          backgroundColor: "#ffcc13" 
+        }
       },
       {
         id: Utils.getRandomId(),
@@ -31,6 +34,9 @@ function _createNotes() {
           createdAt: "Default",
           editedAt: "",
         },
+        style: { 
+          backgroundColor: "#ffcc13" 
+        }
       },
     ];
     return defaultNotes;
@@ -51,6 +57,9 @@ function addNewNote(type, txt) {
       createdAt: new Date().toLocaleString(),
       editedAt: "",
     },
+    style: { 
+      backgroundColor: "#ffcc13" 
+    }
   };
   gNotes.unshift(newNote);
   Utils.storeToStorage("gNotes", gNotes);

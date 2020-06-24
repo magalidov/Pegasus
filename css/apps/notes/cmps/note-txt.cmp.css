@@ -1,7 +1,6 @@
 .note-txt-item {
     width: 200px;
     height: 200px;
-    background-color: antiquewhite;
     font-size: 1rem;
     margin: 20px;
 }
@@ -11,9 +10,32 @@
     border: none;
     margin: 10px;
     resize: none;
-    background-color: antiquewhite;
 }
 
 .note-txt-item i {
     cursor: pointer;
+}
+
+/* .note-txt-item .edit-bar input[type="color"] {
+    -webkit-appearance: none;
+    outline: none;
+} */
+
+input[type="color"] {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    width: 0em;
+    height: 0em;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
 }
