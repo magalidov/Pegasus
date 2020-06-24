@@ -1,7 +1,8 @@
 @import '../cmps/note-txt.cmp.css';
 
 .notes-app .cmp-container{
-    width: 980px;
+    max-width: 980px;
+    margin:0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(150px,200px));
     grid-template-rows: 200px;
