@@ -1,8 +1,17 @@
 .note-txt-item {
-    width: 200px;
+    width: 250px;
     height: 200px;
     font-size: 1rem;
     margin: 20px;
+    box-shadow: 6px 4px #d4caca;
+    border: 2px solid #d4caca;
+    font-family: 'Pangolin', cursive;
+    transition: all .3s;
+}
+
+.note-txt-item:hover{
+    cursor: pointer;
+    border: 5px solid #d4caca;
 }
 
 .note-txt-item textarea {
@@ -10,32 +19,19 @@
     border: none;
     margin: 10px;
     resize: none;
+    background-color: transparent;
+    font-family: 'Pangolin', cursive;
+    font-size: 1rem;
 }
 
 .note-txt-item i {
     cursor: pointer;
 }
 
-/* .note-txt-item .edit-bar input[type="color"] {
-    -webkit-appearance: none;
-    outline: none;
-} */
-
-input[type="color"] {
-    -webkit-appearance: none;
-    outline: none;
-    border: none;
-    width: 0em;
-    height: 0em;
-    cursor: pointer;
-    background-color: transparent;
+.note-txt-item .edited{
+    align-self: flex-end;
+    font-size: 0.7rem;
 }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
 
-input[type="color"]::-webkit-color-swatch {
-    border: none;
-    border-radius: 50%;
-}
+
