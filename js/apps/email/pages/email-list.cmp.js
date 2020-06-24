@@ -1,28 +1,24 @@
-import { emailService } from '../services/email-service.js';
 import emailPreview from '../cmps/email-preview.cmp.js'
 import listTools from '../cmps/list-tools.cmp.js'
 import { eventBus } from '../../../services/event-bus.service.js';
 
 
 export default {
+    props: ['emailsToShow'],
     template:`
     <section class="email-list" v-if="emailsToShow">
         <h1>Inbox</h1>
-        <list-tools @clear="clearChecks" :checkedEmails="checkedEmails"/>
+        <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emails="emailsToShow.length"/>
+        <h1 v-if="emailsToShow.length===0">No Emails</h1>
         <email-preview v-for="email in emailsToShow" :email="email" @checkBox="emailInCheckedList" :key="email.id"/>
     </section>
     `,
     data() {
         return{
-            emailsToShow: null,
             checkedEmails: [],
         }
 	},
-	created() {
-		emailService.loadEmails().then((loadedMails) => (this.emailsToShow = loadedMails));
-	},
     computed:{
-
     },
     methods:{
         emailInCheckedList(act,email){

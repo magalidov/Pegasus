@@ -1,18 +1,21 @@
 // import longText from '../../../cmp/long-text.cmp.js'
-import { emailService } from '../services/email-service.js';
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
     props:['email'],
     template:`
-    <div class="email-preview">
-        <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox">
-        <i :class="starType" @click.stop="toggleTag('isStared')"></i>
-        <i :class="envelopeType" @click.stop="toggleTag('isRead')"></i>
-        <span class="from" :title="email.from">{{fromName}}</span>
-        <span class="subject" :title="email.subject">{{subject}}</span>
-        <span class="body">{{body}}</span>
-        <span class="date" :title="fullDate">{{date}}</span>
+    <div class="email-preview flex space-between">
+        <div class="preview-display inline-clock">
+            <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox">
+            <i :class="starType" @click.stop="toggleTag('isStared')"></i>
+            <i :class="envelopeType" @click.stop="toggleTag('isRead')"></i>
+        </div>
+        <div class="preview-display inline-clock grow">
+            <span class="from" :title="email.from">{{fromName}}</span>
+            <span class="subject" :title="email.subject">{{subject}}</span>
+            <span class="body">{{body}}</span>
+        </div>
+            <span class="date" :title="fullDate">{{date}}</span>
     </div>
     `,
     data(){
@@ -23,6 +26,11 @@ export default {
     },
     created(){
         eventBus.$on('clearChecks',()=> this.checked=false)
+        eventBus.$on('checkAll',(action)=>{
+            if (action) this.checked =true
+            else this.checked=false
+            this.toggleInCheckedList(this.email)
+        } )
     },
     computed:{
         fromName(){
@@ -60,7 +68,7 @@ export default {
             else this.$emit('checkBox','remove',email)
         },
         updateEmail(){
-            emailService.updateEmail(this.email)
+            eventBus.$emit('update',this.email)
         }
     },
     components:{
