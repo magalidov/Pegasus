@@ -1,7 +1,7 @@
 import homePage from './pages/pegasus-home.cmp.js';
-// import bookApp from './pages/book-app.cmp.js';
-// import bookDetails from './pages/book-details.cmp.js';
-// import bookEdit from './pages/book-edit.cmp.js';
+import emailApp from './apps/email/pages/email-app.cmp.js';
+import notesApp from './apps/notes/pages/notes-app.cmp.js';
+import about from './pages/about-page.cmp.js';
 
 
 const myRoutes = [
@@ -9,18 +9,18 @@ const myRoutes = [
 		path: '/',
 		component: homePage,
 	},
-	// {
-	// 	path: '/book',
-	// 	component: bookApp,
-	// },
-	// {
-	// 	path: '/book/:bookId',
-	// 	component: bookDetails,
-	// },
-	// {
-	// 	path: '/about',
-	// 	component: aboutUs,
-	// },
+	{
+		path: '/email',
+		component: emailApp,
+	},
+	{
+		path: '/notes',
+		component: notesApp,
+	},
+	{
+		path: '/about',
+		component: about,
+	},
 ];
 
 export const myRouter = new VueRouter({ routes: myRoutes });
