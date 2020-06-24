@@ -1,9 +1,8 @@
 export default {
-    props:['email'],
     template:`
-    <div class="email-preview">
-    
-    </div>
+    <section class="">
+
+    </section>
     `,
     computed:{
 
