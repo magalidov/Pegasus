@@ -2,6 +2,9 @@ import { Utils } from '../../../services/utils.service.js';
 
 const STORE_KEY ='pegasusMails'
 const gFakeEmails = [
+    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
+    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
+    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
     {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
 ]
 let gEmails= null
@@ -14,6 +17,7 @@ export const emailService = {
 };
 
 function loadEmails() {
+    localStorage.clear()
 	gEmails = Utils.loadFromStorage(STORE_KEY)
 	gEmails = (!gEmails) ? addIdTo(gFakeEmails.slice()) : gEmails
 	Utils.storeToStorage(STORE_KEY,gEmails)
