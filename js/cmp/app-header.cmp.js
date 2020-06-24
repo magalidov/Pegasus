@@ -1,13 +1,19 @@
 export default {
     template:`
-    <section class="app-header">
-        <h1>Header</h1>
-        <nav>
-              <router-link to="/">Home</router-link>  
-              <router-link to="/email/list" >Email</router-link>  
-              <router-link to="/notes">Notes</router-link>  
-              <router-link to="/about">About</router-link>  
+    <header class="app-header">
+        <nav class="flex space-between clean-list">
+            <section class="logo flex space-between">
+                <i class="far fa-pegasus fa-2x align-self-center"></i>
+                <h1>Pegasus</h1>
+            </section>
+            <section class="routes flex">
+                <router-link tag="li" to="/">Home</router-link>  
+                <router-link tag="li" to="/email/list" >Email</router-link>  
+                <router-link tag="li" to="/notes">Notes</router-link>  
+                <router-link tag="li" to="/about">About</router-link>  
+            </section>
         </nav>
-    </section>
+    </header>
     `
 }
+

@@ -22,9 +22,6 @@ export default {
       noteColor: this.note.style.backgroundColor,
     };
   },
-  created() {
-    console.log("YAY New Text note !!");
-  },
   computed: {
     getNoteChangedTime() {
       let info = this.note.info;

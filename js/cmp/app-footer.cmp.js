@@ -1,7 +1,10 @@
 export default {
     template:`
-    <section class="app-footer">
-        <h1>Footer</h1>
-    </section>
+    <footer class="app-footer col-layout">
+        <h1>Created By Asaf & Idov</h1>
+        <section class="flex">
+
+        </section>
+    </footer>
     `
 }

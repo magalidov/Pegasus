@@ -1,8 +1,17 @@
 @import  './helpers.css';
-@import  './main-nav.css';
+@import  './app-header.cmp.css';
+@import  './app-footer.cmp.css';
 @import  './apps/notes/pages/notes-app.cmp.css';
 
 
 *{
     box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding: 0;
+}
+
+.button,input,select{
+    cursor: pointer;
 }

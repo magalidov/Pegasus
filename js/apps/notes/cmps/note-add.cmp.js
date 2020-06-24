@@ -2,9 +2,9 @@ import { noteService } from "../services/note-service.js";
 
 export default {
   template: `
-    <section class="note-add">
+    <section class="note-add flex justify-center">
         <input type="text" placeholder="Take a note..." v-model="noteText"/>
-        <button @click="onAddNote">add</button>
+        <button @click="onAddNote">Add</button>
     </section>
     `,
   data() {
