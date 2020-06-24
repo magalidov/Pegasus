@@ -1,7 +1,19 @@
-.note-txt-item{
+.note-txt-item {
     width: 200px;
     height: 200px;
     background-color: antiquewhite;
     font-size: 1rem;
-    margin:20px;
+    margin: 20px;
+}
+
+.note-txt-item textarea {
+    outline: none;
+    border: none;
+    margin: 10px;
+    resize: none;
+    background-color: antiquewhite;
+}
+
+.note-txt-item i {
+    cursor: pointer;
 }
