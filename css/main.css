@@ -1,1 +1,2 @@
-@import  './apps/notes/pages/notes-app.cmp.css'
+@import  './helpers.css';
+@import  './apps/notes/pages/notes-app.cmp.css';

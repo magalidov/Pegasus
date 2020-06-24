@@ -9,7 +9,7 @@ export default {
             <note-filter/>
             <note-add/>
             <section class="cmp-container">
-                <component v-for="(cmp, idx) in notes" :is="cmp.type" :info="cmp.info" ></component>
+                <component v-for="(note, idx) in notes" :is="note.type" :note="note" ></component>
             </section>
         </div>
 
