@@ -1,13 +1,14 @@
 // import longText from '../../../cmp/long-text.cmp.js'
-import {eventBus} from '../../../services/event-bus.service'
+import { emailService } from '../services/email-service.js';
+import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
     props:['email'],
     template:`
     <div class="email-preview">
-        <input v-model="checked" @change.stop="toggleInCheckedList(email.id)" type="checkbox">
-        <i :class="starType" @click.stop="toggle('isStared')"></i>
-        <i :class="envelopeType" @click.stop="toggle('isRead')"></i>
+        <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox">
+        <i :class="starType" @click.stop="toggleTag('isStared')"></i>
+        <i :class="envelopeType" @click.stop="toggleTag('isRead')"></i>
         <span class="from" :title="email.from">{{fromName}}</span>
         <span class="subject" :title="email.subject">{{subject}}</span>
         <span class="body">{{body}}</span>
@@ -19,6 +20,9 @@ export default {
             checked:false,
             tags: this.email.tags
         }
+    },
+    created(){
+        eventBus.$on('clearChecks',()=> this.checked=false)
     },
     computed:{
         fromName(){
@@ -47,15 +51,16 @@ export default {
 
     },
     methods:{
-        toggle(tag){
+        toggleTag(tag){
             this.tags[tag] = !this.tags[tag]
+            this.updateEmail()
         },
-        toggleInCheckedList(emailId){
-            if (this.checked) this.$emit('checkBox','add',emailId)
-            else this.$emit('checkBox','remove',emailId)
+        toggleInCheckedList(email){
+            if (this.checked) this.$emit('checkBox','add',email)
+            else this.$emit('checkBox','remove',email)
         },
-        updateTags(){
-
+        updateEmail(){
+            emailService.updateEmail(this.email)
         }
     },
     components:{

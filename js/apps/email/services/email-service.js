@@ -10,14 +10,15 @@ const gFakeEmails = [
 let gEmails= null
 
 export const emailService = {
-	loadEmails,
+    loadEmails,
+    updateEmail,
+    deleteEmails,
 	// getById: getById,
 	// saveReview: saveReview,
 	// removeReview: removeReview
 };
 
 function loadEmails() {
-    localStorage.clear()
 	gEmails = Utils.loadFromStorage(STORE_KEY)
 	gEmails = (!gEmails) ? addIdTo(gFakeEmails.slice()) : gEmails
 	Utils.storeToStorage(STORE_KEY,gEmails)
@@ -45,3 +46,16 @@ function addIdTo(fakeMails){
         return  mailWithId })
 }
 
+function updateEmail(updatedMail){
+    const idx = gEmails.findIndex(email=> email.id === updatedMail.id)
+    gEmails.splice(idx,1,updatedMail)
+    Utils.storeToStorage(STORE_KEY,gEmails)
+}
+
+function deleteEmails(checkedEmails){
+    checkedEmails.forEach(checkedMail=>{
+        const idx = gEmails.findIndex(email=> email.id === checkedMail.id)
+        gEmails.splice(idx,1)
+    })
+    Utils.storeToStorage(STORE_KEY,gEmails)
+}
