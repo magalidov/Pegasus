@@ -17,15 +17,9 @@ export default {
             }
         };
     },
-    computed:{
-
-    },
     methods:{
         onFilter(){
             this.$emit('filter',this.filterBy)
         }
     },
-    components:{
-        
-    }
 }

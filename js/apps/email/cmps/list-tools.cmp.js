@@ -1,13 +1,13 @@
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
-    props: ['checkedEmails','emails'],
+    props: ['checkedEmails','emailsAmount'],
     template:`
     <section class="list-tools">
-    <input v-model="checkAll" v-show="emails>0" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
-        <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails"></i>
+        <input v-model="checkAll" v-show="emailsAmount>0" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
+        <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
+        <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')" :title="envelopeTitle"></i>
         <i class="fas fa-tag" v-if="showTools"></i>
-        <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')"></i>
     </section>
     `,
     data(){
@@ -20,6 +20,9 @@ export default {
     computed:{
         envelopeType(){
             return (this.checkedEmails.every(email => email.tags.isRead))? 'fas fa-envelope':'fas fa-envelope-open-text'
+        },
+        envelopeTitle(){
+            return (this.checkedEmails.every(email => email.tags.isRead))? 'Mark as Unred':'Mark as Read'
         },
         checkAll(){
                 return (this.checkedEmails.length>0)? true: false
