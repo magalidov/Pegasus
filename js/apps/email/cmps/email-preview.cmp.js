@@ -67,7 +67,6 @@ export default {
         date(){
             return new Date(this.email.sentAt).toLocaleDateString()
         },
-
     },
     methods:{
         toggleTag(tag){
@@ -84,7 +83,5 @@ export default {
         showEmailDetails(){
             this.$router.push('/email/details/' + this.email.id)
         },
-        
     },
-
 }

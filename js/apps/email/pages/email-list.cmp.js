@@ -8,7 +8,7 @@ export default {
 	template: `
     <section class="email-list" v-if="emailsToShow">
         <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emailsAmount="emailsToShow.length"/>
-        <email-preview v-for="email in emailsToShow" :email="email" @checkBox="emailInCheckedList" :key="email.id"/>
+        <email-preview v-for="(email,idx) in emailsToShow" :email="email" :idx="idx" @checkBox="emailInCheckedList" :key="idx"/>
         <h1 v-if="emailsToShow.length===0">No Emails</h1>
     </section>
     `,
@@ -16,6 +16,11 @@ export default {
 		return {
 			checkedEmails: [],
 		};
+	},
+	created(){
+		eventBus.$on('getCurrList',()=>{
+			eventBus.$emit('currListSent',this.emailsToShow)
+		})
 	},
 	methods: {
 		emailInCheckedList(action, email) {

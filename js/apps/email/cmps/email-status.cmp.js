@@ -4,7 +4,7 @@ export default {
     template:`
     <section class="email-status" v-if="allEmails">
         <span class="block">{{emailsCount}} Emails</span>
-        <span class="block">{{unreadCount}} Unread emails</span>
+        <span class="block">{{unreadCount}} Unread</span>
     </section>
     `,
     computed:{
