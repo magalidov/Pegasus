@@ -1,9 +1,13 @@
-.edit-bar>*{
-    margin-inline-start: 10px;
-    
+.edit-bar {
+    margin-top: 5px;
+    padding: 5px;
 }
 
-.edit-bar input{
+.edit-bar>* {
+    margin-inline-start: 10px;
+}
+
+.edit-bar input {
     -webkit-appearance: none;
     outline: none;
     border: none;

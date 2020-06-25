@@ -48,6 +48,7 @@ export default {
         doneAt: null,
       };
       this.note.info.todos.push(newTodo);
+      this.newTodo=''
       this.$emit("edit");
     },
     removeTodo(idx) {

@@ -24,14 +24,12 @@ export default {
       this.$emit("save");
     },
     setEmbedVid() {
-
-      var vidUrl = this.note.info.url;
-      let url = new URL(vidUrl);
-      if (vidUrl.includes("embed")) this.$emit("edit");;
+      if (this.url.includes("embed"))return
+      let url = new URL(this.note.info.url);
       let params = new URLSearchParams(url.search);
       const videoId = params.get("v");
       let embedUrl = `https://www.youtube.com/embed/${videoId}`;
-      this.note.info.url = embedUrl;
+      this.url = embedUrl;
       this.$emit("edit");
     },
   },

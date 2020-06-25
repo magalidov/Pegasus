@@ -2,18 +2,18 @@
     min-width: max-content;
     height: max-content;
     font-size: 1rem;
-    margin: 20px;
+    margin: 0 10px 10px 0;
     padding: 5px;
     box-shadow: 6px 4px #d4caca;
     border: 2px solid #d4caca;
     font-family: 'Pangolin', cursive;
     transition: all .3s;
+    break-inside: avoid-column;
 }
 
 .note-item:hover{
     cursor: pointer;
-    outline: 4px solid black;
-    transform: scale(1.03);
+    outline: 3px solid black;
     /* border: 4px solid #d4caca; */
 }
 

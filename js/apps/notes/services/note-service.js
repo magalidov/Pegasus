@@ -17,7 +17,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteTodo",
         isPinned: false,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -35,7 +35,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteAudio",
         isPinned: false,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -49,7 +49,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: false,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -63,7 +63,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: false,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -77,7 +77,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: true,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -91,7 +91,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: true,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -105,7 +105,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteImage",
         isPinned: true,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -120,7 +120,7 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteVideo",
         isPinned: true,
-        createdAt: "25/6/2020,20:00",
+        createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
@@ -144,7 +144,7 @@ function addNewNote(type, info) {
     id: Utils.getRandomId(),
     type,
     isPinned: false,
-    createdAt: "25/6/2020,20:00",
+    createdAt: new Date().toLocaleString(),
     editedAt: "",
     isOnEdit: false,
     info,
