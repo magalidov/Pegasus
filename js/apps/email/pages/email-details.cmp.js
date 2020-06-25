@@ -6,13 +6,14 @@ export default {
     props: ['emailsToShow'],
     template:`
     <section v-if="emailToShow" class="email-details">
-        <div>
+        <div class="details-tools">
             <i class="fas fa-arrow-left" @click="backTolist"></i>
             <i class="fas fa-trash" @click="deleteEmail" title="Delete"></i>
             <i class="fas fa-tag"></i>
             <i :class="starType" @click="toggleTag('isStared')" :title="starTitle"></i>
             <i :class="envelopeIcon" @click="toggleTag('isRead')" @mouseover="closedEnvelope" @mouseout="openEnvelope" title="Mark as Unred"></i>
         </div>
+        <hr>
         <div class="email-subject">{{emailToShow.subject}}</div>
         <div class="sent-from-details flex space-between">
             <div>
@@ -21,8 +22,7 @@ export default {
             <span>{{fullDate}}</span>
         </div>
         <hr>
-        <div class="email-body">
-            {{emailToShow.body}}
+        <div class="email-body" v-html="emailToShow.body">
         </div>
     </section>
     `,
