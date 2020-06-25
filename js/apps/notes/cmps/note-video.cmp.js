@@ -1,24 +1,35 @@
-import { noteService } from "../services/note-service.js";
-import editBar from "./note-editbar.cmp.js";
-
 export default {
-  props: ["info", "id"],
+  props: ["note"],
   template: `
         <section class="video-area"> 
-            <iframe :src="info.url"></iframe>
-            <textarea ref="textarea" v-model="info.url" v-if="info.isOnEdit" @blur="setEmbedVid"></textarea>
+            <iframe :src="getUrl"></iframe>
+            <textarea ref="textarea" v-model="getUrl" v-if="isOnEdit" @blur="setEmbedVid"></textarea>
         </section>
     `,
+  created() {
+    this.setEmbedVid();
+  },
+  computed: {
+    isOnEdit() {
+      return this.note.isOnEdit;
+    },
+    getUrl() {
+      return this.note.info.url;
+    },
+  },
   methods: {
     saveChanges() {
       this.$emit("save");
     },
     setEmbedVid() {
-      let url = new URL(this.info.url);
+
+      var vidUrl = this.note.info.url;
+      let url = new URL(vidUrl);
+      if (vidUrl.includes("embed")) this.$emit("edit");;
       let params = new URLSearchParams(url.search);
       const videoId = params.get("v");
       let embedUrl = `https://www.youtube.com/embed/${videoId}`;
-      this.info.url = embedUrl;
+      this.note.info.url = embedUrl;
       this.$emit("edit");
     },
   },

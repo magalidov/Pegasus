@@ -26,7 +26,7 @@ export default {
   created() {
     noteService.getNotes().then((notes) => (this.notes = notes));
     eventBus.$on("delete", (noteId) => noteService.deleteNote(noteId));
-    // eventBus.$on('add',(noteId)=> noteService.addNewNote());
+    eventBus.$on("add", (type, info) => noteService.addNewNote(type, info));
     eventBus.$on("update", (note) => noteService.updateNote(note));
   },
   computed: {

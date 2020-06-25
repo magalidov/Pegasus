@@ -7,7 +7,9 @@ export default {
                 <i class="fas fa-trash-alt" @click="onDeleteNote"></i>
                 <label for="colorInput" @change="onUpdateNote">
                 <i class="fas fa-palette">
-                    <!-- <color-pick> -->
+                  <label for="bg-color" @blur="onUpdateNote">
+                    <input id="bg-color" type="color" v-model="noteColor" >
+                  </label>
                 </i>
                 </label>
                 <i class="fas fa-edit" @click="onEdit"></i>
@@ -29,8 +31,8 @@ export default {
     },
     onEdit() {
       if (this.note.type === "noteText") eventBus.$emit(`edit-${this.note.id}`);
-      let editMode = this.note.info.isOnEdit;
-      this.note.info.isOnEdit = !editMode;
+      let editMode = this.note.isOnEdit;
+      this.note.isOnEdit = !editMode;
     },
   },
 };

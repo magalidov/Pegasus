@@ -17,15 +17,29 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteTodo",
         isPinned: false,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           todos: [
-            { txt: "Learn Routes in Vue",isDone:false, doneAt: null },
-            { txt: "Learn Javascript", isDone:false ,doneAt: null },
-            { txt: "Learn Python", isDone:false,doneAt: null },
+            { txt: "Learn Routes in Vue", isDone: false, doneAt: null },
+            { txt: "Learn Javascript", isDone: false, doneAt: null },
+            { txt: "Learn Python", isDone: false, doneAt: null },
           ],
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
+        },
+        style: {
+          backgroundColor: "orange",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteAudio",
+        isPinned: false,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          url: "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
         },
         style: {
           backgroundColor: "orange",
@@ -35,11 +49,11 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: false,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           txt: "First Note",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -49,11 +63,11 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: false,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           txt: "Second Note",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -63,11 +77,11 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: true,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           txt: "Yesssss",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -77,11 +91,11 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteText",
         isPinned: true,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           txt: "Asaf and Idov!!!!",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -91,12 +105,12 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteImage",
         isPinned: true,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           url:
             "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -106,11 +120,11 @@ function _createNotes() {
         id: Utils.getRandomId(),
         type: "noteVideo",
         isPinned: true,
+        createdAt: "25/6/2020,20:00",
+        editedAt: "",
+        isOnEdit: false,
         info: {
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
-          createdAt: "25/6/2020,20:00",
-          editedAt: "",
-          isOnEdit: false,
         },
         style: {
           backgroundColor: "orange",
@@ -125,17 +139,15 @@ function getNotes() {
   return Promise.resolve(gNotes);
 }
 
-function addNewNote(type, txt) {
+function addNewNote(type, info) {
   var newNote = {
     id: Utils.getRandomId(),
     type,
     isPinned: false,
+    createdAt: "25/6/2020,20:00",
+    editedAt: "",
     isOnEdit: false,
-    info: {
-      txt,
-      createdAt: new Date().toLocaleString(),
-      editedAt: "",
-    },
+    info,
     style: {
       backgroundColor: "#ffcc13",
     },
@@ -145,7 +157,7 @@ function addNewNote(type, txt) {
 }
 
 function updateNote(updatedNote) {
-  updatedNote.info.editedAt = new Date().toLocaleString();
+  updatedNote.editedAt = new Date().toLocaleString();
   const noteIdx = gNotes.findIndex((note) => note.id === updatedNote.id);
   gNotes.splice(noteIdx, 1, updatedNote);
   Utils.storeToStorage("gNotes", gNotes);

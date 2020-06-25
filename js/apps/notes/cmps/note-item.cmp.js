@@ -3,14 +3,15 @@ import editBar from "./note-editbar.cmp.js";
 import noteText from "./note-txt.cmp.js";
 import noteImage from "./note-img.cmp.js";
 import noteVideo from "./note-video.cmp.js";
-import noteTodo from "./note-todos.cmp.js"
+import noteTodo from "./note-todos.cmp.js";
+import noteAudio from "./note-audio.cmp.js";
 
 export default {
   props: ["note"],
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
             <i class="pinned fas fa-thumbtack align-self-end" ></i>
-             <component :is="note.type" :info="note.info" :id="note.id" @edit="saveChanges"/></component>
+             <component :is="note.type" :note="note" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
              </section>
@@ -24,9 +25,8 @@ export default {
   },
   computed: {
     getNoteChangedTime() {
-      let info = this.note.info;
-      if (!info.editedAt) return "Created: " + info.createdAt;
-      else return "Edited: " + info.editedAt;
+      if (!this.note.editedAt) return "Created: " + this.note.createdAt;
+      else return "Edited: " + this.note.editedAt;
     },
     getStyle() {
       return this.note.style;
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     saveChanges() {
-      this.note.info.isOnEdit = false;
+      this.note.isOnEdit = false;
       eventBus.$emit("update", this.note);
     },
   },
@@ -44,5 +44,6 @@ export default {
     noteImage,
     noteVideo,
     noteTodo,
+    noteAudio,
   },
 };

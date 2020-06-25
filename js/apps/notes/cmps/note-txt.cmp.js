@@ -1,15 +1,15 @@
 import { eventBus } from "../services/event-bus.service.js";
 
 export default {
-  props: ["info","id"],
+  props: ["note"],
   template: `
        <section class="text-area">
-             <textarea ref="textarea" v-model="info.txt" @blur="onEdit" @click="onFocus"></textarea>
+             <textarea ref="textarea" v-model="note.info.txt" @blur="onEdit" @click="onFocus"></textarea>
         </section>
             
     `,
   created() {
-    eventBus.$on(`edit-${this.id}`, () => this.onFocus());
+    eventBus.$on(`edit-${this.note.id}`, () => this.onFocus());
   },
   methods: {
     onEdit() {

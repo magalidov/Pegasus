@@ -2,3 +2,22 @@
     margin-inline-start: 10px;
     
 }
+
+.edit-bar input{
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    width: 0em;
+    height: 0em;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.edit-bar input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.edit-bar input::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
