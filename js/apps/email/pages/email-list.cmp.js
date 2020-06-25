@@ -17,7 +17,7 @@ export default {
             list: 'inbox',
             checkedEmails: [],
         }
-	},
+    },
     computed:{
     },
     methods:{

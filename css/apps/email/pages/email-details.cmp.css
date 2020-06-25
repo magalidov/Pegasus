@@ -10,3 +10,6 @@
 .from-name{
     font-weight: bold;
 }
+.details-tools >*{
+        margin: 0 5px;
+}

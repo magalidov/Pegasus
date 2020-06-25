@@ -4,5 +4,6 @@
     border-top: 1px solid rgb(180, 180, 180);
 }
 .list-tools >*{
+    cursor: pointer;
     margin: 0 5px;
 }

@@ -16,7 +16,7 @@ const gFakeEmails = [
 		from: 'lotto@gmail.com',
 		body: 'YOU\'VE JUST HIT IT BIG...REAL BIG Now What?',
 		tags: { isRead: false, isStared: false },
-		sentAt: 1551133930594,
+		sentAt: 1551133000094,
 		id: null,
 	},
 	{
@@ -92,6 +92,7 @@ export const emailService = {
 	deleteEmails,
 	updateEmails,
 	getById,
+	sendEmail,
 	// saveReview: saveReview,
 	// removeReview: removeReview
 };
@@ -113,16 +114,18 @@ function getById(emailId) {
 	const email = gEmails.find(email => email.id === emailId)
 	return Promise.resolve(email)
 }
-// function saveReview(reviewInput,emailId){
-// 	let email = gEmails.find(email => email.id === emailId)
-// 	email.reviews = (email.reviews)? email.reviews : []
-// 	email.reviews.push(reviewInput)
-// 	Utils.storeToStorage(STORE_KEY,gEmails)
-// }
-// function removeReview(idx,emailId){
-// 	let email = gEmails.find(email => email.id === emailId)
-// 	email.reviews.splice(idx,1)
-// }
+
+function sendEmail(to,email){
+	if (to==='To: me@myself.com'){
+		getEmails()
+		email.id = Utils.getRandomId()
+		email.sentAt = Date.now()
+		gEmails.unshift(email)
+		Utils.storeToStorage(STORE_KEY, gEmails);
+	}
+	return Promise.resolve('sent')
+}
+
 function findIndexById(id){
 return gEmails.findIndex((email) => email.id === id)
 }
