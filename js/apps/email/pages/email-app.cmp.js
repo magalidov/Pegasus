@@ -5,6 +5,7 @@ import emailFilter from '../cmps/email-filter.cmp.js';
 
 
 export default {
+	name:'email-app',
 	template: `
     <section class="email-app">
         <email-filter @filter="setFilter" @refreshList="refreshList"/>

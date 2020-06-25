@@ -136,7 +136,6 @@ function updateEmail(updatedEmail) {
 	Utils.storeToStorage(STORE_KEY, gEmails);
 }
 
-// Multiple
 function updateEmails(tag, state, checkedEmails) {
 	checkedEmails.forEach((checkedMail) => {
 		const idx = findIndexById(checkedMail.id)

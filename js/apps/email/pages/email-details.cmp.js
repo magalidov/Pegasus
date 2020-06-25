@@ -77,13 +77,4 @@ export default {
         }
 
     },
-    components:{
-        
-    },
-    watch: {
-        '$route.params'(currMail) {
-            console.log('currMail:', currMail)
-            // this.loadMail();
-        }
-    }
 }

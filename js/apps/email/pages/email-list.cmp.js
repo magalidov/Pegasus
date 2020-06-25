@@ -3,6 +3,7 @@ import listTools from '../cmps/list-tools.cmp.js';
 import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
+	name:'email-list',
 	props: ['emailsToShow'],
 	template: `
     <section class="email-list" v-if="emailsToShow">

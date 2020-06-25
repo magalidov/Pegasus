@@ -1,6 +1,7 @@
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
+    name:'email-preview',
     props:['email'],
     template:`
     <div class="email-preview">

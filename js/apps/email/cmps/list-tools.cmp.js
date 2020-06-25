@@ -1,6 +1,7 @@
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
+    name:'list-tools',
     props: ['checkedEmails','emailsAmount'],
     template:`
     <section class="list-tools">
