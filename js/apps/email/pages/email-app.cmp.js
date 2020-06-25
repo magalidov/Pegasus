@@ -1,64 +1,63 @@
-import emailFilter from '../cmps/email-filter.cmp.js';
-import emailSidebar from '../cmps/email-sidebar.cmp.js';
 import { emailService } from '../services/email-service.js';
 import { eventBus } from '../../../services/event-bus.service.js';
+import emailSidebar from '../cmps/email-sidebar.cmp.js';
+import emailFilter from '../cmps/email-filter.cmp.js';
+
 
 export default {
+	name:'email-app',
 	template: `
     <section class="email-app">
-        <email-filter @filter="setFilter"/>
-        <email-sidebar class="email-sidebar" :emailsToShow="emailsToShow" @changeList="changeList"/>
-		<router-view class="email-main" :emailsToShow="emailsToShow" @changeList="changeList"/>
+        <email-filter @filter="setFilter" @refreshList="refreshList"/>
+        <email-sidebar :allEmails="allEmails"/>
+		<router-view class="email-main" :emailsToShow="emailsToShow" @refreshList="refreshList"/>
     </section>
     `,
 	data() {
 		return {
-			emailsToShow: null,
+			filterBy: {
+                txt:'',
+                type:'all'
+			},
+			allEmails: null,
 		};
 	},
 	created() {
-		this.loadEmails();
-		eventBus.$on('changeTags', (tag, state, checkedEmails) =>
-			emailService.updateEmails(tag, state, checkedEmails)
-		);
+		this.loadEmails()
+		eventBus.$on('changeTags', (tag, state, checkedEmails) =>emailService.updateEmails(tag, state, checkedEmails));
 		eventBus.$on('update', (email) => emailService.updateEmail(email));
-		eventBus.$on('delete', (checkedEmails) =>
-			emailService.deleteEmails(checkedEmails)
-		);
-		eventBus.$on('sent', () =>
-			emailService
-				.getEmails()
-				.then((loadedMails) => (this.emailsToShow = loadedMails))
-		);
+		eventBus.$on('delete', (checkedEmails) => emailService.deleteEmails(checkedEmails));
+		eventBus.$on('sent', () => this.loadEmails());
 	},
-	computed: {},
-	methods: {
-		changeList(listType) {
-			if (listType === 'inbox') {
-				this.loadEmails();
-				return;
-			} else if (listType === 'isSent' || listType === 'isStared') {
-				emailService.getEmails().then((loadedMails) => {
-					let emails = loadedMails;
-					emails = emails.filter((email) => email.tags[listType] === true);
-					this.emailsToShow = emails;
-				});
-			} else {
-				return;
-			}
+	computed: {
+		list(){
+			let params = this.$route.params.list
+			return (!params)? 'inbox': (params=== 'sent')? 'isSent' : (params==='stared')? 'isStared' : params
 		},
+		emailsToShow(){
+			if (this.list === 'inbox'){
+				return this.allEmails
+			} else if (this.list === 'isSent' || this.list === 'isStared') {
+				return this.allEmails.filter((email) => email.tags[this.list] === true);				
+			} else {
+				return null
+			}
+		}
+	},
+	methods: {
 		loadEmails() {
-			emailService
-				.getEmails()
-				.then((loadedMails) => (this.emailsToShow = loadedMails));
+			emailService.getEmails().then((loadedMails) => (this.allEmails = loadedMails))
+		},
+		refreshList(){
+			this.loadEmails()
 		},
 		setFilter(filterBy) {
-			// this.filterBy = filterBy;
+			this.filterBy = filterBy;
 		},
 	},
 	watch: {
-		// '$route.params'(newParam){
-		// }
+		'$route.params.list'(newParam) {
+		},
 	},
 	components: {
 		emailFilter,

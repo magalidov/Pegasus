@@ -3,10 +3,11 @@ import listTools from '../cmps/list-tools.cmp.js';
 import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
+	name:'email-list',
 	props: ['emailsToShow'],
 	template: `
     <section class="email-list" v-if="emailsToShow">
-        <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emails="emailsToShow.length"/>
+        <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emailsAmount="emailsToShow.length"/>
         <email-preview v-for="email in emailsToShow" :email="email" @checkBox="emailInCheckedList" :key="email.id"/>
         <h1 v-if="emailsToShow.length===0">No Emails</h1>
     </section>
@@ -16,31 +17,18 @@ export default {
 			checkedEmails: [],
 		};
 	},
-	computed: {},
 	methods: {
-		emailInCheckedList(act, email) {
+		emailInCheckedList(action, email) {
 			const checkedEmails = this.checkedEmails;
-			if (act === 'add') checkedEmails.push(email);
-			else if (act === 'remove') {
-				const id = checkedEmails.findIndex(
-					(emailIn) => emailIn.id === email.id
-				);
+			if (action === 'add') checkedEmails.push(email);
+			else if (action === 'remove') {
+				const id = checkedEmails.findIndex((emailIn) => emailIn.id === email.id);
 				checkedEmails.splice(id, 1);
 			}
 		},
 		clearChecks() {
 			this.checkedEmails = [];
 			eventBus.$emit('clearChecks');
-		},
-		listSwitch(list) {
-			this.$emit('changeList', list);
-		},
-	},
-	watch: {
-		'$route.params.list'(newParam) {
-            let list = newParam;
-            list = (!list)? 'inbox': (list=== 'sent')? 'isSent' : (list==='stared')? 'isStared' : list
-			this.listSwitch(list);
 		},
 	},
 	components: {

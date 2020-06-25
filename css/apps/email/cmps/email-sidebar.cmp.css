@@ -1,4 +1,12 @@
+.side-bar{
+    font-size: 1.5rem;
+}
 .side-link{
+    padding: 5px 0;
     display:grid;
+    grid-gap: 0.5rem;
     grid-template-columns: 2rem 1fr
+}
+.link-icon{
+    text-align: center;
 }

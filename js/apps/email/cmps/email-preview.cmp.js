@@ -1,7 +1,7 @@
-// import longText from '../../../cmp/long-text.cmp.js'
 import {eventBus} from '../../../services/event-bus.service.js'
 
 export default {
+    name:'email-preview',
     props:['email'],
     template:`
     <div class="email-preview">
@@ -21,7 +21,6 @@ export default {
     `,
     data(){
         return{
-            // expanded: false,
             checked:false,
             tags: this.email.tags
         }
@@ -32,7 +31,7 @@ export default {
             if (action) this.checked =true
             else this.checked=false
             this.toggleInCheckedList(this.email)
-        } )
+        })
     },
     computed:{
         fromName(){
@@ -87,8 +86,5 @@ export default {
         },
         
     },
-    components:{
-        // longText,
-        
-    }
+
 }

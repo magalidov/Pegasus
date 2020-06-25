@@ -85,6 +85,8 @@ const gFakeEmails = [
 	},
 ];
 let gEmails = null;
+let gDraftsEmails= null;
+let gDeletedEmails= null;
 
 export const emailService = {
     getEmails,
@@ -93,12 +95,11 @@ export const emailService = {
 	updateEmails,
 	getById,
 	sendEmail,
-	// saveReview: saveReview,
-	// removeReview: removeReview
 };
+
 function getEmails() {
 	gEmails = Utils.loadFromStorage(STORE_KEY);
-	gEmails = !gEmails ? addIdTo(gFakeEmails.slice()) : gEmails;
+	gEmails = (!gEmails) ? addIdTo(gFakeEmails.slice()) : gEmails;
 	Utils.storeToStorage(STORE_KEY, gEmails);
 	return Promise.resolve(gEmails);
 }
@@ -135,7 +136,6 @@ function updateEmail(updatedEmail) {
 	Utils.storeToStorage(STORE_KEY, gEmails);
 }
 
-// Multiple
 function updateEmails(tag, state, checkedEmails) {
 	checkedEmails.forEach((checkedMail) => {
 		const idx = findIndexById(checkedMail.id)

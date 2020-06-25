@@ -1,4 +1,5 @@
 export default {
+    name:'email-filter',
     template:`
     <section class="email-filter flex justify-center">
         <input type="text" placeholder="Search your emails" v-model="filterBy.txt" @input="onFilter"/>
@@ -17,15 +18,9 @@ export default {
             }
         };
     },
-    computed:{
-
-    },
     methods:{
         onFilter(){
             this.$emit('filter',this.filterBy)
         }
     },
-    components:{
-        
-    }
 }

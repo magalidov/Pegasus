@@ -1,24 +1,17 @@
 export default {
+    name:'email-status',
+    props:['allEmails'],
     template:`
-    <section class="email-status">
-        <span></span>
+    <section class="email-status" v-if="allEmails">
+        <span>You have {{unreadCount}} unread emails out of {{emailsCount}}</span>
     </section>
     `,
-    data(){
-        return{
-
+    computed:{
+        emailsCount(){
+            return this.allEmails.length
+        },
+        unreadCount(){
+            return this.allEmails.filter(email=> email.tags.isRead===false).length
         }
     },
-    created(){
-
-    },
-    computed:{
-        
-    },
-    methods:{
-
-    },
-    components:{
-        
-    }
 }
