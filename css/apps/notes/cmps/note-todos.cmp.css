@@ -18,7 +18,7 @@
 }
 
 .todos-area .add-task input {
-    width: 200px;
+    width: 100%;
     height: 30px;
     margin: 5px 0;
     font-family: 'Pangolin', cursive;
@@ -27,4 +27,8 @@
     border-bottom: 2px solid black;
     background: transparent;
     outline: none;
+}
+
+.fas.fa-plus-circle{
+    font-size: 1.5rem;
 }

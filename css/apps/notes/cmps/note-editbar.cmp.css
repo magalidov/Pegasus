@@ -25,3 +25,12 @@
     border: none;
     border-radius: 50%;
 }
+
+.edit-bar i {
+    transition: all .3s;
+}
+
+.edit-bar i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

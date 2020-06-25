@@ -1,0 +1,6 @@
+.audio-area audio{
+    width: 325px;
+    object-fit: fill;
+    margin: 10px auto;
+    display: block;
+}

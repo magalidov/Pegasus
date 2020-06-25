@@ -5,6 +5,7 @@ export const noteService = {
   addNewNote,
   updateNote,
   deleteNote,
+  updateNoteStatus,
 };
 
 var gNotes = _createNotes();
@@ -22,9 +23,24 @@ function _createNotes() {
         isOnEdit: false,
         info: {
           todos: [
-            { id:Utils.getRandomId(),txt: "Learn Routes in Vue", isDone: false, doneAt: null },
-            { id:Utils.getRandomId(),txt: "Learn Javascript", isDone: false, doneAt: null },
-            { id:Utils.getRandomId(),txt: "Learn Python", isDone: false, doneAt: null },
+            {
+              id: Utils.getRandomId(),
+              txt: "Learn Routes in Vue",
+              isDone: false,
+              doneAt: null,
+            },
+            {
+              id: Utils.getRandomId(),
+              txt: "Learn Javascript",
+              isDone: false,
+              doneAt: null,
+            },
+            {
+              id: Utils.getRandomId(),
+              txt: "Learn Python",
+              isDone: false,
+              doneAt: null,
+            },
           ],
         },
         style: {
@@ -34,12 +50,13 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteAudio",
-        isPinned: false,
+        isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
-          url: "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
+          url:
+            "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
         },
         style: {
           backgroundColor: "orange",
@@ -62,7 +79,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        isPinned: false,
+        isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
@@ -110,7 +127,7 @@ function _createNotes() {
         isOnEdit: false,
         info: {
           url:
-            "https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612",
+            "https://media.tenor.com/images/6afb17492c5b0a711b51afe70e24d3c4/tenor.gif",
         },
         style: {
           backgroundColor: "orange",
@@ -133,6 +150,9 @@ function _createNotes() {
     ];
     return defaultNotes;
   } else return notes;
+}
+function _getNoteIdx(noteId) {
+  return gNotes.findIndex((note) => note.id === noteId);
 }
 
 function getNotes() {
@@ -158,13 +178,18 @@ function addNewNote(type, info) {
 
 function updateNote(updatedNote) {
   updatedNote.editedAt = new Date().toLocaleString();
-  const noteIdx = gNotes.findIndex((note) => note.id === updatedNote.id);
+  const noteIdx = _getNoteIdx(updatedNote.id);
   gNotes.splice(noteIdx, 1, updatedNote);
   Utils.storeToStorage("gNotes", gNotes);
 }
 
 function deleteNote(noteId) {
-  const noteIdx = gNotes.findIndex((note) => note.id === noteId);
+  const noteIdx = _getNoteIdx(noteId);
   gNotes.splice(noteIdx, 1);
   Utils.storeToStorage("gNotes", gNotes);
+}
+
+function updateNoteStatus(noteId) {
+  const noteIdx = _getNoteIdx(noteId);
+  gNotes[noteIdx].isPinned = !gNotes[noteIdx].isPinned;
 }

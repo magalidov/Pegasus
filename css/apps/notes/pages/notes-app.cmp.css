@@ -6,6 +6,7 @@
 @import '../cmps/note-filter.cmp.css';
 @import '../cmps/note-add.cmp.css';
 @import '../cmps/note-colorpicker.cmp.css';
+@import '../cmps/note-audio.cmp.css';
 
 
 .notes-app{
@@ -13,11 +14,24 @@
     padding: 10px;
     
 }
-.notes-app .cmp-container {
+.notes-app .cmp-container .notes {
     max-width: 1200px;
     margin: 20px auto;
     column-count: 3;
     column-width: 260px;
-    padding:0 50px 50px 50px;
+    padding:10px 0 10px 0;
+    border:1px solid black;
+    border-radius: 10px;
+   
+}
+
+.notes-app .cmp-container .pinned-notes {
+    max-width: 1200px;
+    margin: 20px auto;
+    column-count: 3;
+    column-width: 260px;
+    padding:10px 5px 10px 5px;
+    border:1px solid black;
+    border-radius: 10px;
    
 }
