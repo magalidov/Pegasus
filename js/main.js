@@ -8,9 +8,9 @@ new Vue({
     el: '#App',
     router: myRouter,
     template: `
-        <main>
+        <main class="">
             <app-header/> 
-            <router-view/>
+            <router-view class=""/>
             <app-footer/>
         </main>
     `,

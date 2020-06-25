@@ -20,7 +20,7 @@ const myRoutes = [
                 component: emailList
             },
             {
-                path: '/email/details',
+                path: '/email/:list?/:id?',
                 component: emailDetails
             },
 		]

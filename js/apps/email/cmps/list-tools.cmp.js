@@ -4,7 +4,7 @@ export default {
     props: ['checkedEmails','emails'],
     template:`
     <section class="list-tools">
-    <input v-model="checkAll" v-show="emails>0" @change.stop="toggleCheckAll" type="checkbox">
+    <input v-model="checkAll" v-show="emails>0" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
         <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails"></i>
         <i class="fas fa-tag" v-if="showTools"></i>
         <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')"></i>

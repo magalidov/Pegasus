@@ -1,25 +1,35 @@
 .preview-opt{
 }
 .email-preview{
+    cursor: pointer;
+    border-top: 1px solid grey;
+    padding: 5px 0;
+    font-size: 1.1rem;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: auto auto auto 1fr auto;
-    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr 5fr auto;
+    grid-auto-rows: 1fr;
     grid-template-areas:
     "opt from subj body body date"
+}
+.preview-link{
+    text-decoration: none;
+    color: inherit;
 }
 .preview-opt{
     grid-area: opt;
 }
 .from-prev{
     grid-area: from;
+    font-weight: bold;
 }
 .subject-prev{
     grid-area: subj;
+    font-weight: bold;
 }
 .body-prev{
     grid-area: body;
-
+    color: rgb(54, 54, 54);
 }
 .date-prev{
     grid-area: date;

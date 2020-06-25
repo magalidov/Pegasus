@@ -3,34 +3,82 @@ import { Utils } from '../../../services/utils.service.js';
 const STORE_KEY = 'pegasusMails';
 const gFakeEmails = [
 	{
-		subject: 'Wassap?',
-		from: 'magalidov@gmail.com',
+		subject: 'Thank You',
+		from: 'Yael@gmail.com',
 		body:
-			'Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!',
+			'There’s an art to writing a thank-you letter. It goes beyond saying, “Thanks for _____. I really appreciate it.” We’ll show you some thank-you letter examples and templates that will help you express your gratitude in style.',
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,
 	},
 	{
-		subject: 'Wassap?',
-		from: 'magalidov@gmail.com',
-		body: 'Pick up!',
+		subject: 'A Winner',
+		from: 'lotto@gmail.com',
+		body: 'YOU\'VE JUST HIT IT BIG...REAL BIG Now What?',
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,
 	},
 	{
-		subject: 'Wassap?',
-		from: 'magalidov@gmail.com',
-		body: 'Pick up!',
+		subject: 'Your Reservation',
+		from: 'MoonRestaurant@gmail.com',
+		body: 'At most full service restaurants, your customers usually have two options: make a reservation to secure a spot in advance or show up in hopes they’ll snag an open table. For restaurant owners and managers, managing the mix between reservations and walk-ins can be challenging. ',
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,
 	},
 	{
-		subject: 'Wassap?',
-		from: 'magalidov@gmail.com',
-		body: 'Pick up!',
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'How Are You',
+		from: 'SecretLover@gmail.com',
+		body: 'Hello love ,I loved you even before I met you in person. Once I laid eyes on you, that love grew by infinite measure.',
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,
@@ -42,8 +90,8 @@ export const emailService = {
     getEmails,
 	updateEmail,
 	deleteEmails,
-    updateEmails,
-	// getById: getById,
+	updateEmails,
+	getById,
 	// saveReview: saveReview,
 	// removeReview: removeReview
 };
@@ -60,11 +108,11 @@ function addIdTo(fakeMails) {
 		return mailWithId;
 	});
 }
-// function getById(emailId) {
-// 	if (!gEmails) getEmails()
-// 	const email = gEmails.find(email => email.id === emailId)
-// 	return Promise.resolve(email)
-// }
+function getById(emailId) {
+	if (!gEmails) getEmails()
+	const email = gEmails.find(email => email.id === emailId)
+	return Promise.resolve(email)
+}
 // function saveReview(reviewInput,emailId){
 // 	let email = gEmails.find(email => email.id === emailId)
 // 	email.reviews = (email.reviews)? email.reviews : []

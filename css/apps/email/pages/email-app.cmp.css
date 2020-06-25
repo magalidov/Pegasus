@@ -1,6 +1,6 @@
 .email-app{
     display: grid;
-    /* height: 100vh; */
+    margin: 0 20px;
     grid-template-columns: 150px;
     grid-template-rows: 1fr;
     grid-template-areas:
@@ -12,7 +12,13 @@
 }
 .email-sidebar{
     grid-area: sd;
+    font-size: 1.3rem;
 }
 .email-main{
     grid-area: main;
+}
+.side-link{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
