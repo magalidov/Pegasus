@@ -75,8 +75,6 @@ export default {
         todos = todos.map((todo) => {
           return {id:Utils.getRandomId(),txt: todo, isDone: false, doneAt: null};
         });
-        debugger
-        console.log(todos)
         return todos;
       }
       this.$refs["newNoteInput"].value=''

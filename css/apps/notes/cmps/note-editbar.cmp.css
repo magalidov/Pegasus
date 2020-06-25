@@ -1,9 +1,13 @@
-.edit-bar>*{
-    margin-inline-start: 10px;
-    
+.edit-bar {
+    margin-top: 5px;
+    padding: 5px;
 }
 
-.edit-bar input{
+.edit-bar>* {
+    margin-inline-start: 10px;
+}
+
+.edit-bar input {
     -webkit-appearance: none;
     outline: none;
     border: none;
@@ -20,4 +24,13 @@
 .edit-bar input::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
+}
+
+.edit-bar i {
+    transition: all .3s;
+}
+
+.edit-bar i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }

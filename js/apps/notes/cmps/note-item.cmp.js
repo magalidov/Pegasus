@@ -10,7 +10,7 @@ export default {
   props: ["note"],
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
-            <i class="pinned fas fa-thumbtack align-self-end" ></i>
+            <i class="fas fa-thumbtack align-self-end" @click="changeNoteStatus" :class="pinnedClass"></i>
              <component :is="note.type" :note="note" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
@@ -24,6 +24,10 @@ export default {
     };
   },
   computed: {
+    pinnedClass(){
+        if(this.note.isPinned) return 'pinned'
+        else return 'pin-icon' 
+    },
     getNoteChangedTime() {
       if (!this.note.editedAt) return "Created: " + this.note.createdAt;
       else return "Edited: " + this.note.editedAt;
@@ -36,6 +40,9 @@ export default {
     saveChanges() {
       this.note.isOnEdit = false;
       eventBus.$emit("update", this.note);
+    },
+    changeNoteStatus() {
+      eventBus.$emit("pinStat", this.note.id);
     },
   },
   components: {
