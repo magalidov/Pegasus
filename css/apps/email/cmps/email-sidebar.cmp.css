@@ -1,7 +1,8 @@
 .side-bar{
-    font-size: 1.5rem;
+    
 }
 .side-link{
+    font-size: 1.3rem;
     padding: 5px 0;
     display:grid;
     grid-gap: 0.5rem;

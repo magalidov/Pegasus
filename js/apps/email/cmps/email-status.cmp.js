@@ -3,7 +3,8 @@ export default {
     props:['allEmails'],
     template:`
     <section class="email-status" v-if="allEmails">
-        <span>You have {{unreadCount}} unread emails out of {{emailsCount}}</span>
+        <span class="block">{{emailsCount}} Emails</span>
+        <span class="block">{{unreadCount}} Unread emails</span>
     </section>
     `,
     computed:{
