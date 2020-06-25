@@ -23,7 +23,7 @@ export default {
 				subject: '',
 				from: '',
 				body: ``,
-				tags: { isRead: false, isStared: false },
+				tags: { isRead: false, isStared: false, isSent: true},
 				sentAt: '',
 				id: null,
 			},
