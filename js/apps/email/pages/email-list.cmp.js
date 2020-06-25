@@ -7,14 +7,14 @@ export default {
     props: ['emailsToShow'],
     template:`
     <section class="email-list" v-if="emailsToShow">
-        <h1>Inbox</h1>
         <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emails="emailsToShow.length"/>
-        <h1 v-if="emailsToShow.length===0">No Emails</h1>
         <email-preview v-for="email in emailsToShow" :email="email" @checkBox="emailInCheckedList" :key="email.id"/>
+        <h1 v-if="emailsToShow.length===0">No Emails</h1>
     </section>
     `,
     data() {
         return{
+            list: 'inbox',
             checkedEmails: [],
         }
 	},

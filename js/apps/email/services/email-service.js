@@ -1,29 +1,64 @@
 import { Utils } from '../../../services/utils.service.js';
 
-const STORE_KEY ='pegasusMails'
+const STORE_KEY = 'pegasusMails';
 const gFakeEmails = [
-    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
-    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
-    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
-    {subject: 'Wassap?',from: 'magalidov@gmail.com', body: 'Pick up!', tags:{isRead: false, isStared:false}, sentAt : 1551133930594, id:null},
-]
-let gEmails= null
+	{
+		subject: 'Wassap?',
+		from: 'magalidov@gmail.com',
+		body:
+			'Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!Pick up!',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'Wassap?',
+		from: 'magalidov@gmail.com',
+		body: 'Pick up!',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'Wassap?',
+		from: 'magalidov@gmail.com',
+		body: 'Pick up!',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+	{
+		subject: 'Wassap?',
+		from: 'magalidov@gmail.com',
+		body: 'Pick up!',
+		tags: { isRead: false, isStared: false },
+		sentAt: 1551133930594,
+		id: null,
+	},
+];
+let gEmails = null;
 
 export const emailService = {
-    loadEmails,
-    updateEmail,
-    deleteEmails,
+    getEmails,
+	updateEmail,
+	deleteEmails,
     updateEmails,
 	// getById: getById,
 	// saveReview: saveReview,
 	// removeReview: removeReview
 };
-
-function loadEmails() {
-	gEmails = Utils.loadFromStorage(STORE_KEY)
-	gEmails = (!gEmails) ? addIdTo(gFakeEmails.slice()) : gEmails
-	Utils.storeToStorage(STORE_KEY,gEmails)
+function getEmails() {
+	gEmails = Utils.loadFromStorage(STORE_KEY);
+	gEmails = !gEmails ? addIdTo(gFakeEmails.slice()) : gEmails;
+	Utils.storeToStorage(STORE_KEY, gEmails);
 	return Promise.resolve(gEmails);
+}
+function addIdTo(fakeMails) {
+	return fakeMails.map((mail) => {
+		let mailWithId = { ...mail };
+		mailWithId.id = Utils.getRandomId();
+		return mailWithId;
+	});
 }
 // function getById(emailId) {
 // 	if (!gEmails) getEmails()
@@ -40,29 +75,27 @@ function loadEmails() {
 // 	let email = gEmails.find(email => email.id === emailId)
 // 	email.reviews.splice(idx,1)
 // }
-function addIdTo(fakeMails){
-    return fakeMails.map(mail=> {
-        let mailWithId = {...mail}
-        mailWithId.id = Utils.getRandomId()
-        return  mailWithId })
+function findIndexById(id){
+return gEmails.findIndex((email) => email.id === id)
+}
+function updateEmail(updatedEmail) {
+	const idx = findIndexById(updatedEmail.id);
+	gEmails.splice(idx, 1, updatedEmail);
+	Utils.storeToStorage(STORE_KEY, gEmails);
 }
 
-function updateEmail(updatedMail){
-    const idx = gEmails.findIndex(email=> email.id === updatedMail.id)
-    gEmails.splice(idx,1,updatedMail)
-    Utils.storeToStorage(STORE_KEY,gEmails)
+// Multiple
+function updateEmails(tag, state, checkedEmails) {
+	checkedEmails.forEach((checkedMail) => {
+		const idx = findIndexById(checkedMail.id)
+		gEmails[idx].tags[tag] = state;
+	});
 }
-function updateEmails(tag,state,checkedEmails){
-    checkedEmails.forEach(checkedMail=>{
-        const idx = gEmails.findIndex(email=> email.id === checkedMail.id)
-        gEmails[idx].tags[tag] = state
-    })
+function deleteEmails(checkedEmails) {
+	checkedEmails.forEach((checkedMail) => {
+		const idx = findIndexById(checkedMail.id)
+		gEmails.splice(idx, 1);
+	});
+	Utils.storeToStorage(STORE_KEY, gEmails);
 }
 
-function deleteEmails(checkedEmails){
-    checkedEmails.forEach(checkedMail=>{
-        const idx = gEmails.findIndex(email=> email.id === checkedMail.id)
-        gEmails.splice(idx,1)
-    })
-    Utils.storeToStorage(STORE_KEY,gEmails)
-}

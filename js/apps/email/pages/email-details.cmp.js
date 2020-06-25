@@ -4,12 +4,6 @@ export default {
 
     </section>
     `,
-    data(){
-
-    },
-    created(){
-
-    },
     computed:{
 
     },

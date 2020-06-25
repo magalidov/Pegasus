@@ -1,0 +1,18 @@
+.email-app{
+    display: grid;
+    /* height: 100vh; */
+    grid-template-columns: 150px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "fl fl fl fl "
+    "sd  main main main ";
+}
+.email-filter{
+    grid-area: fl;
+}
+.email-sidebar{
+    grid-area: sd;
+}
+.email-main{
+    grid-area: main;
+}

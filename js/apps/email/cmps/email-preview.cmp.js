@@ -4,22 +4,39 @@ import {eventBus} from '../../../services/event-bus.service.js'
 export default {
     props:['email'],
     template:`
-    <div class="email-preview flex space-between">
-        <div class="preview-display inline-clock">
+    <section >
+    
+    <div class="email-preview" @click="">
+        <!-- <router-link :to="'/email/details/' + email.id"> -->
+        <div class="preview-opt">
             <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox">
             <i :class="starType" @click.stop="toggleTag('isStared')"></i>
             <i :class="envelopeType" @click.stop="toggleTag('isRead')"></i>
         </div>
-        <div class="preview-display inline-clock grow">
-            <span class="from" :title="email.from">{{fromName}}</span>
-            <span class="subject" :title="email.subject">{{subject}}</span>
-            <span class="body">{{body}}</span>
-        </div>
-            <span class="date" :title="fullDate">{{date}}</span>
+        <span class="from-prev" :title="email.from">{{fromName}}</span>
+        <span class="subject-prev" :title="email.subject">{{subject}}</span>
+        <span class="body-prev">{{body}}</span>
+        <span class="date-prev" :title="fullDate">{{date}}</span>
+        <!-- </router-link> -->
     </div>
+        <!-- <div class="space-right inline-block" v-if="expanded" @click="toggleExpand">
+            <div class="space-right inline-block">
+                <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox">
+                <i :class="starType" @click.stop="toggleTag('isStared')"></i>
+                <i :class="envelopeType" @click.stop="toggleTag('isRead')"></i>
+            </div>
+            <div class="space-right inline-block grow">
+                <span class="from">{{email.from}}</span>
+                <span class="subject">{{email.subject}}</span>
+            </div>
+            <span class="date" :title="fullDate">{{date}}</span>
+            <span class="body block">{{email.body}}</span>
+        </div> -->
+    </section>
     `,
     data(){
         return{
+            // expanded: false,
             checked:false,
             tags: this.email.tags
         }
@@ -38,7 +55,7 @@ export default {
         },
         subject(){
             const subject = this.email.subject
-            return (subject.length>3)? subject.substring(0,10)+'...': subject
+            return (subject.length>15)? subject.substring(0,15)+'...': subject
         },
         body(){
             const body = this.email.body
@@ -69,7 +86,10 @@ export default {
         },
         updateEmail(){
             eventBus.$emit('update',this.email)
-        }
+        },
+        // toggleExpand(){
+        //     this.expanded = !this.expanded
+        // }
     },
     components:{
         // longText,
