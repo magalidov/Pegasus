@@ -1,0 +1,26 @@
+.todos-area ul li {
+    width: 100%;
+    max-height: max-content;
+    padding: 5px 5px 5px 0;
+    margin: 5px 5px 5px 0;
+}
+
+.todos-area label {
+    cursor: pointer;
+}
+
+.isDone {
+    text-decoration: line-through;
+}
+
+.todos-area .add-task .fas {
+    margin: auto auto;
+}
+
+.todos-area .add-task input {
+    width: 200px;
+    height: 30px;
+    margin: 5px 0;
+    font-family: 'Pangolin', cursive;
+    font-size: 1rem;
+}

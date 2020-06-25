@@ -1,0 +1,10 @@
+.app-footer {
+    background-color: #0a0a0a;
+    color: white;
+    width: 100%;
+}
+
+.app-footer h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1rem;
+}

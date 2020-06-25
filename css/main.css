@@ -1,4 +1,6 @@
 @import  './helpers.css';
+@import  './app-header.cmp.css';
+@import  './app-footer.cmp.css';
 @import  './apps/notes/pages/notes-app.cmp.css';
 @import './apps/email/cmps/email-preview.cmp.css';
 @import './apps/email/pages/email-list.cmp.css';

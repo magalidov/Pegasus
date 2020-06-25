@@ -19,10 +19,11 @@
 .space-between {
     justify-content: space-between;
 }
-
+.justify-self-end{
+    justify-self: flex-end;
+}
 .align-self-end{
     align-self: flex-end;
-    margin-inline-end: 10px;
 }
 .align-self-center{
     align-self: center;

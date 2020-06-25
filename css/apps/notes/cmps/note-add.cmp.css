@@ -1,0 +1,25 @@
+.note-add{
+    max-width: 980px;
+    margin:10px auto;
+}
+
+.note-add input{
+    width: 450px;
+    min-width: 380px;
+    height: 40px;
+    border-radius: 5px;
+    margin-inline-end: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    border:2px solid black;
+}
+
+.note-add button{
+    width: 80px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    border:2px solid black;
+}
