@@ -7,8 +7,8 @@ export default {
     <div class="email-preview">
         <div class="preview-opt">
             <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox" title="Tick">
-            <i :class="starType" @click.stop="toggleTag('isStared')" :title="starTitle"></i>
             <i :class="envelopeType" @click.stop="toggleTag('isRead')" :title="envelopeTitle"></i>
+            <i :class="starType" @click.stop="toggleTag('isStared')" :title="starTitle"></i>
         </div>
             <span class="from-prev" :class="textBold" :title="email.from" @click="showEmailDetails">{{fromName}}</span>
             <div class="subject-body-preview" :class="textBold" @click="showEmailDetails">
@@ -49,6 +49,9 @@ export default {
         starType(){
             return (this.email.tags.isStared)? 'fas fa-star': 'far fa-star'
         },
+        starTitle(){
+            return (this.starType==='far fa-star')? 'Add To Stared' : 'Remove From Stared'
+        },
         envelopeType(){
             return (this.email.tags.isRead)? 'fas fa-envelope-open-text': 'fas fa-envelope'
         },
@@ -57,9 +60,6 @@ export default {
         },
         textBold(){
             return (this.email.tags.isRead)? '': 'bold'
-        },
-        starTitle(){
-            return (this.starType==='far fa-star')? 'Add To Stared' : 'Remove From Stared'
         },
         fullDate(){
             return new Date(this.email.sentAt).toLocaleString()
