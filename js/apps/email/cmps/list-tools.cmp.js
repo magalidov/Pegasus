@@ -4,16 +4,20 @@ export default {
     name:'list-tools',
     props: ['checkedEmails','emailsAmount'],
     template:`
-    <section class="list-tools">
-        <input v-model="checkAll" v-show="emailsAmount>0" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
-        <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
-        <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')" :title="envelopeTitle"></i>
-        <i :class="starType" v-if="showTools" @click.stop="toggleAllTags('isStared')" :title="starTitle"></i>
-        <i class="fas fa-tag" v-if="showTools"></i>
+    <section class="list-tools flex space-between">
+        <div>
+            <input v-model="checkAll" v-show="emailsAmount>0" ref="checkBox" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
+            <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
+            <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')" :title="envelopeTitle"></i>
+            <i :class="starType" v-if="showTools" @click.stop="toggleAllTags('isStared')" :title="starTitle"></i>
+            <i class="fas fa-tag" v-if="showTools"></i>
+        </div>
+        <span>{{emailsAmount}} in this list</span>
     </section>
     `,
     data(){
         return{
+            checkAll: false,
             showTools:false
         }
     },
@@ -26,9 +30,6 @@ export default {
         envelopeTitle(){
             return (this.checkedEmails.every(email => email.tags.isRead))? 'Mark as Unred':'Mark as Read'
         },
-        checkAll(){
-                return (this.checkedEmails.length>0)? true: false
-        },
         starType(){
             return (this.checkedEmails.every(email => email.tags.isStared))? 'far fa-star': 'fas fa-star'
         },
@@ -37,9 +38,9 @@ export default {
         },
     },
     methods:{
-        deleteCheckedEmails(){
-            eventBus.$emit('delete', this.checkedEmails)
-            this.clearChecked()
+        toggleCheckAll(){
+            const set = (this.checkedEmails.length===0)? true: false
+            eventBus.$emit('checkAll',set)
         },
         clearChecked(){
             this.$emit('clear')
@@ -48,17 +49,18 @@ export default {
             const state = (this.checkedEmails.every(email => email.tags[tag]))? false: true
             eventBus.$emit('changeTags',tag,state,this.checkedEmails)
         },
-        toggleCheckAll(){
-            const set = (this.checkedEmails.length===0)? true: false
-            eventBus.$emit('checkAll',set)
-        }
+        deleteCheckedEmails(){
+            eventBus.$emit('delete', this.checkedEmails)
+            this.clearChecked()
+        },
     },
     watch:{
         checkedEmails(newChecked){
+            this.checkAll = (newChecked.length>0)? true: false
             this.showTools = (newChecked.length>0)? true : false
-        }
+        },
+        '$route.params'(){
+            this.clearChecked()
+        }, 
     },
-    components:{
-        
-    }
 }
