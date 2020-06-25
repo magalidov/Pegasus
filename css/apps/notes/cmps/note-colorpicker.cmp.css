@@ -1,0 +1,21 @@
+.color-picker{
+    position: relative;
+}
+.color-picker .color{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    transition: all .3s;
+}
+
+.color-picker .color:hover{
+    transform: scale(1.1);
+}
+
+.color-picker .colors-list{
+    position: absolute;
+    z-index: 5;
+    top: 30px;
+    left: -53px;
+}

@@ -22,9 +22,9 @@ function _createNotes() {
         isOnEdit: false,
         info: {
           todos: [
-            { txt: "Learn Routes in Vue", isDone: false, doneAt: null },
-            { txt: "Learn Javascript", isDone: false, doneAt: null },
-            { txt: "Learn Python", isDone: false, doneAt: null },
+            { id:Utils.getRandomId(),txt: "Learn Routes in Vue", isDone: false, doneAt: null },
+            { id:Utils.getRandomId(),txt: "Learn Javascript", isDone: false, doneAt: null },
+            { id:Utils.getRandomId(),txt: "Learn Python", isDone: false, doneAt: null },
           ],
         },
         style: {

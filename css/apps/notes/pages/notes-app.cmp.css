@@ -5,11 +5,13 @@
 @import '../cmps/note-todos.cmp.css';
 @import '../cmps/note-filter.cmp.css';
 @import '../cmps/note-add.cmp.css';
+@import '../cmps/note-colorpicker.cmp.css';
 
 
 .notes-app{
     background-color: whitesmoke;
     padding: 10px;
+    
 }
 .notes-app .cmp-container {
     max-width: 1100px;

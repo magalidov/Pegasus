@@ -1,4 +1,6 @@
 import { eventBus } from "../services/event-bus.service.js";
+import { Utils } from "../../../services/utils.service.js";
+
 
 export default {
   template: `
@@ -71,8 +73,10 @@ export default {
       function getTodos(todos) {
         todos = todos.split(",");
         todos = todos.map((todo) => {
-          return { txt: todo, isDone: false, doneAt: null };
+          return {id:Utils.getRandomId(),txt: todo, isDone: false, doneAt: null};
         });
+        debugger
+        console.log(todos)
         return todos;
       }
       this.$refs["newNoteInput"].value=''

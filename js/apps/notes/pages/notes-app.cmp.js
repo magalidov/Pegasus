@@ -39,8 +39,11 @@ export default {
       });
       filteredNotes = filteredNotes.filter((note) => {
         if (filterBy.txt === "") return true;
+        if (note.type === "noteTodo") {
+          return note.info.todos.some(todo=>todo.txt.toLowerCase().includes(filterBy.txt))
+        }
         if (note.type !== "noteText") return false;
-        return note.info.txt.toLowerCase().includes(filterBy.txt.toLowerCase());
+        else return note.info.txt.toLowerCase().includes(filterBy.txt);
       });
       return filteredNotes;
     },
