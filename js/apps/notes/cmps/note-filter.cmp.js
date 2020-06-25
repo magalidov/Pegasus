@@ -1,5 +1,5 @@
 export default {
-    template:`
+  template: `
     <section class="note-filter flex justify-center">
         <input type="text" placeholder="Search your notes" v-model="filterBy.txt" @input="onFilter"/>
         <select class="filter-opt" v-model="filterBy.type" @change="onFilter">
@@ -13,23 +13,20 @@ export default {
         </select>   
     </section>
     `,
-    data(){
-        return {
-            filterBy:{
-                txt:'',
-                type:'all'
-            }
-        };
+  data() {
+    return {
+      filterBy: {
+        txt: "",
+        type: "all",
+      },
+    };
+  },
+  computed: {},
+  methods: {
+    onFilter() {
+      this.filterBy.txt = this.filterBy.txt.toLowerCase();
+      this.$emit("filter", this.filterBy);
     },
-    computed:{
-
-    },
-    methods:{
-        onFilter(){
-            this.$emit('filter',this.filterBy)
-        }
-    },
-    components:{
-        
-    }
-}
+  },
+  components: {},
+};

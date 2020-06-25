@@ -2,19 +2,21 @@ export default {
   props: ["note"],
   template: `
         <section class="video-area"> 
-            <iframe :src="getUrl"></iframe>
-            <textarea ref="textarea" v-model="getUrl" v-if="isOnEdit" @blur="setEmbedVid"></textarea>
+            <iframe :src="url"></iframe>
+            <textarea ref="textarea" v-model="url" v-if="isOnEdit" @blur="setEmbedVid"></textarea>
         </section>
     `,
+  data() {
+    return {
+      url:this.note.info.url
+    };
+  },
   created() {
     this.setEmbedVid();
   },
   computed: {
     isOnEdit() {
       return this.note.isOnEdit;
-    },
-    getUrl() {
-      return this.note.info.url;
     },
   },
   methods: {

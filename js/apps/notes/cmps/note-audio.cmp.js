@@ -2,22 +2,21 @@ export default {
   props: ["note"],
   template: `
         <section class="audio-area"> 
-        <audio controls :src="getUrl">
+        <audio controls :src="url">
             Your browser does not support the
             <code>audio</code> element.
          </audio>
-         <textarea ref="textarea" v-model="getUrl" v-if="note.isOnEdit" @blur="setEmbedVid"></textarea>
+         <textarea ref="textarea" v-model="url" v-if="note.isOnEdit" @blur="setEmbedVid"></textarea>
         </section>
     `,
-  computed:{
-    getUrl(){
-      return this.note.info.url
-    }
+  data() {
+    return {
+      url: this.note.info.url,
+    };
   },
   methods: {
     saveChanges() {
       this.$emit("save");
     },
-   
   },
 };

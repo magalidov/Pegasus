@@ -9,12 +9,12 @@ export default {
                 Add New Task
                 </label>
                 <section class="add-task flex space-between" v-if="isAddClicked">
-                  <input ref="todoInput" v-model="newTodo" type="text" placeholder="Enter New Task.." autofocus >
+                  <input ref="todoInput" v-model="newTodo" type="text" placeholder="Enter New Task..">
                   <i class="fas fa-plus-circle" @click="addTodo"></i>
                 </section>
-                <li v-for="(todo,idx) in note.info.todos" class="felx space-between" >
-                  <label :for="idx" :class="{ isDone: todo.doneAt}" >
-                      <input v-model="todo.isDone" type="checkbox" :id="idx" @click="changeTodoStatus(idx)" >
+                <li v-for="(todo,idx) in note.info.todos" class="flex space-between" >
+                  <label :for="todo.id" :class="{ isDone: todo.doneAt}" >
+                      <input  type="checkbox" v-model="todo.isDone" :id="todo.id" @click="changeTodoStatus(idx)"  >
                       {{todo.txt}}
                   </label>
                   <i class="fas fa-trash-alt justify-self-end" @click="removeTodo(idx)" ></i>
