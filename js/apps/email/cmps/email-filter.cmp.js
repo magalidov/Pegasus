@@ -1,20 +1,29 @@
 export default {
     template:`
-    <section class="">
-
+    <section class="email-filter flex justify-center">
+        <input type="text" placeholder="Search your emails" v-model="filterBy.txt" @input="onFilter"/>
+        <select class="filter-opt" v-model="filterBy.type" @change="onFilter">
+            <option value="all">All</option>
+            <option value="read">Read</option>
+            <option value="unread">Unread</option>
+        </select>   
     </section>
     `,
     data(){
-
-    },
-    created(){
-
+        return {
+            filterBy:{
+                txt:'',
+                type:'all'
+            }
+        };
     },
     computed:{
 
     },
     methods:{
-
+        onFilter(){
+            this.$emit('filter',this.filterBy)
+        }
     },
     components:{
         

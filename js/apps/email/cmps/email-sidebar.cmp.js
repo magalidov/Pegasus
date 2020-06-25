@@ -1,4 +1,7 @@
+import emailStatus from './email-status.cmp.js'
+
 export default {
+    props: ['emailsToShow'],
     template:`
     <section class="side-bar flex col space-between">
         <div class="sidebar-links">
@@ -9,7 +12,7 @@ export default {
             <router-link class="side-link" to="/email/drafts"><i class="fab fa-firstdraft"></i>Drafts</router-link>
             <router-link class="side-link" to="/email/deleted"><i class="fas fa-trash"></i>Deleted</router-link>
         </div>
-        <p>indicator</p>
+        <email-status :emailsToShow="emailsToShow"/>
         
     </section>
     `,
@@ -17,9 +20,9 @@ export default {
 
     },
     methods:{
-
+        
     },
     components:{
-        
+        emailStatus,
     }
 }

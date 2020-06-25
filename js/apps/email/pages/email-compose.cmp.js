@@ -22,7 +22,7 @@ export default {
 			newEmail: {
 				subject: '',
 				from: '',
-				body: ``,
+				body: '',
 				tags: { isRead: false, isStared: false, isSent: true},
 				sentAt: '',
 				id: null,
