@@ -1,10 +1,12 @@
 .email-details{
     font-size: 1.1rem;
 }
+.details-tools >*{
+    cursor: pointer;
+}
 .email-subject{
     font-size: 2rem;
 }
-
 .from-name{
     font-weight: bold;
 }

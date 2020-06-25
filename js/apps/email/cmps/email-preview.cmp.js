@@ -10,8 +10,8 @@ export default {
             <i :class="starType" @click.stop="toggleTag('isStared')" :title="starTitle"></i>
             <i :class="envelopeType" @click.stop="toggleTag('isRead')" :title="envelopeTitle"></i>
         </div>
-            <span class="from-prev" :title="email.from" @click="showEmailDetails">{{fromName}}</span>
-            <div class="subject-body-preview" @click="showEmailDetails">
+            <span class="from-prev" :class="textBold" :title="email.from" @click="showEmailDetails">{{fromName}}</span>
+            <div class="subject-body-preview" :class="textBold" @click="showEmailDetails">
                 <span class="subject-prev" :title="email.subject">{{subject}}</span>
                 <span class="body-prev">{{body}}</span>
             </div>
@@ -55,6 +55,9 @@ export default {
         },
         envelopeTitle(){
             return (this.envelopeType==='fas fa-envelope')? 'Mark as Read' : 'Mark as Unred'
+        },
+        textBold(){
+            return (this.email.tags.isRead)? '': 'bold'
         },
         starTitle(){
             return (this.starType==='far fa-star')? 'Add To Stared' : 'Remove From Stared'

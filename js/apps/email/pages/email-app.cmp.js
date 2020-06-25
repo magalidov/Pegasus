@@ -8,7 +8,7 @@ export default {
 	template: `
     <section class="email-app">
         <!-- <email-filter/> -->
-        <h1 class="email-filter">filter</h1>
+        <h1 class="email-filter" contenteditable="true">filter</h1>
         <email-sidebar class="email-sidebar"/>
 		<router-view class="email-main" :emailsToShow="emailsToShow"/>
     </section>

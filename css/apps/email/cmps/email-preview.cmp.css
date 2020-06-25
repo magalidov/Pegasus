@@ -2,7 +2,7 @@
 }
 .email-preview{
     cursor: pointer;
-    border-top: 1px solid grey;
+    border-top: 1px solid rgb(180, 180, 180);
     padding: 5px 0;
     font-size: 1.1rem;
     display: grid;
@@ -21,11 +21,9 @@
 }
 .from-prev{
     grid-area: from;
-    font-weight: bold;
 }
 .subject-prev{
     grid-area: subj;
-    font-weight: bold;
 }
 .body-prev{
     grid-area: body;
@@ -33,5 +31,7 @@
 }
 .date-prev{
     grid-area: date;
-
+}
+.bold{
+    font-weight: bold;
 }

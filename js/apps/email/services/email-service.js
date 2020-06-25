@@ -6,7 +6,7 @@ const gFakeEmails = [
 		subject: 'Thank You',
 		from: 'Yael@gmail.com',
 		body:
-			'There’s an art to writing a thank-you letter. It goes beyond saying, “Thanks for _____. I really appreciate it.” We’ll show you some thank-you letter examples and templates that will help you express your gratitude in style.',
+			`There’s an art to writing a thank-you letter. It goes beyond saying, “Thanks for _____. I really appreciate it.” We’ll show you some thank-you letter examples and templates that will help you express your gratitude in style.<br><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.winwood-outdoor.co.uk%2Facatalog%2Fduck_small.jpg&f=1&nofb=1"/>`,
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,
@@ -22,7 +22,7 @@ const gFakeEmails = [
 	{
 		subject: 'Your Reservation',
 		from: 'MoonRestaurant@gmail.com',
-		body: 'At most full service restaurants, your customers usually have two options: make a reservation to secure a spot in advance or show up in hopes they’ll snag an open table. For restaurant owners and managers, managing the mix between reservations and walk-ins can be challenging. ',
+		body: `At most full service restaurants, your customers usually have two options: make a reservation to secure a spot in advance or show up in hopes they’ll snag an open table. For restaurant owners and managers, managing the mix between reservations and walk-ins can be challenging. `,
 		tags: { isRead: false, isStared: false },
 		sentAt: 1551133930594,
 		id: null,

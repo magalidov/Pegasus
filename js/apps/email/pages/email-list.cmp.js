@@ -35,6 +35,10 @@ export default {
         }
 
     },
+    watch:{
+        '$route.params'(newParam){
+        }
+    },
     components:{
         emailPreview,
         listTools,
