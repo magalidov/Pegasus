@@ -9,3 +9,9 @@ body{
 .button,input,select{
     cursor: pointer;
 }
+
+#app{
+   display: flex;
+   flex-direction: column;
+   justify-items: space-between;
+}

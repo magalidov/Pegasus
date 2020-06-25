@@ -1,11 +1,13 @@
 .email-app{
     display: grid;
     margin: 0 20px;
-    grid-template-columns: 150px;
-    grid-template-rows: 1fr;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 10% 90%;
     grid-template-areas:
     "fl fl fl fl "
     "sd  main main main ";
+    height: 90vh;
+    justify-content: flex-start;
 }
 .email-filter{
     grid-area: fl;

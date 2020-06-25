@@ -8,7 +8,7 @@ new Vue({
     el: '#App',
     router: myRouter,
     template: `
-        <main class="flex col space-between">
+        <main>
             <app-header/> 
             <router-view class="grow"/>
             <app-footer/>
