@@ -1,7 +1,7 @@
 .app-header {
     background-color: #1d1d1d;
     opacity: 0.9;
-    
+    /* min-width: 480px; */
 }
 
 .app-header nav {
@@ -9,24 +9,28 @@
     border: 2px solid black;
     font-family: 'Passion One', cursive;
     box-shadow: inset 0 -6px 0 #1e1e1e;
-    color:white;
-
+    color: white;
+   
 }
+
 .app-header nav .routes>* {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    min-width: 30px;
     border-left: 2px solid black;
     cursor: pointer;
     text-transform: capitalize;
     font-size: 2rem;
+    width: 200px;
     transition: all .3s;
 }
-.app-header nav .routes .router-link-exact-active{
+
+.app-header nav .routes .router-link-exact-active {
     background-color: #fa9c00;
 }
-.app-header nav .routes .router-link-exact-active:hover{
+
+.app-header nav .routes .router-link-exact-active:hover {
     box-shadow: none;
 }
 
@@ -42,7 +46,8 @@
     font-size: 1.8rem;
 }
 
-.app-header .logo i{
+.app-header .logo i {
     font-size: 3.5rem;
     margin-inline-start: 10px;
-    margin-inline-end: 20px;}
+    margin-inline-end: 20px;
+}

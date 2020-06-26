@@ -1,6 +1,6 @@
 export default {
   template: `
-    <section class="app-home">
+    <section class="app-home ">
             <h1>Welcome To Pegasus</h1>
             <h3>Where Design and Productivity Combined</h3>
             <div class="apps flex space-around wrap">

@@ -3,12 +3,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 85vh;
-    flex-grow: 1;
+    /* height: 85vh; */
+    height:max-content;
+    
 }
 
 .app-home .apps {
     padding-top: 3.125rem;
+    margin-bottom:135px;
+    flex-grow: 1;
 }
 
 .app-home h1 {
