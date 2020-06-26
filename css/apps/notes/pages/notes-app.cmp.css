@@ -58,7 +58,7 @@
 }
 
 
-@media (max-width:400px){
+@media (max-width:480px){
     .notes-app .cmp-container .notes{
         column-width: 200px;
     } 
