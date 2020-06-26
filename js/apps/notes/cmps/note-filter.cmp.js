@@ -4,7 +4,6 @@ export default {
         <input type="text" placeholder="Search your notes" v-model="filterBy.txt" @input="onFilter"/>
         <select class="filter-opt" v-model="filterBy.type" @change="onFilter">
             <option value="all">All</option>
-            <option value="date">Date</option>
             <option value="noteText">Text</option>
             <option value="noteImage">Image</option>
             <option value="noteTodo">Todo</option>
