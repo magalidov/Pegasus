@@ -3,7 +3,7 @@
     margin: 0 20px;
     grid-template-columns: 0.1fr 0.9fr;
     grid-template-rows: 0.1fr 0.9fr;
-    grid-template-areas: "fl fl fl fl " "sd  main main main ";
+    grid-template-areas: "fl fl fl fl fl" "sd sd  main main main ";
     justify-content: flex-start;
     height: 85vh;
     
