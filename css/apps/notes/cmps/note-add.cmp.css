@@ -7,7 +7,7 @@
 
 .note-add input {
     width: 450px;
-    min-width: 380px;
+    max-width: 300px;
     height: 40px;
     border-radius: 5px;
     margin-inline-end: 5px;

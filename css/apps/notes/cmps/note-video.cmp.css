@@ -1,5 +1,5 @@
 .video-area iframe{
-    width: 325px;
+    max-width: 325px;
     height: 250px;
     object-fit: fill;
     margin: 5px auto;

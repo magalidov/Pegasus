@@ -29,6 +29,7 @@
     font-size: 1.5rem;
 }
 
+
 .app-home .apps .product {
     width: 300px;
     height: 300px;
@@ -67,4 +68,21 @@
 
 .app-home .fas, .app-home .far {
     margin-top: 15px;
+}
+
+
+@media (max-width:400px){
+    .app-home h1{
+        text-align: center;
+        font-size: 3rem;
+    }
+    .app-home h3 {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 0;
+        padding-bottom:0;
+    }
+    .app-home .apps .product{
+        margin-bottom:20px;
+    }
 }

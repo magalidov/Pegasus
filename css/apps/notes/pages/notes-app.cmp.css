@@ -39,7 +39,7 @@
     max-width: 1200px;
     margin: 10px auto;
     column-count: 3;
-    column-width: 260px;
+    column-width: 250px;
     padding: 10px;
     border: 2px solid #352828;
     border-radius: 10px;
@@ -55,4 +55,14 @@
     border: 2px solid #352828;
     border-radius: 10px;
     position: relative;
+}
+
+
+@media (max-width:400px){
+    .notes-app .cmp-container .notes{
+        column-width: 200px;
+    } 
+    .notes-app .cmp-container .pinned-notes{
+        column-width: 200px;
+    } 
 }
