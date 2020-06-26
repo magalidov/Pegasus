@@ -1,8 +1,8 @@
-import { eventBus } from '../service/event-bus-service.js'
+import {eventBus} from '../services/event-bus.service.js'
 
 export default {
     template: `
-    <div class="alert-message" :class="msgClass" v-show="message">
+    <div class="app-message" :class="msgClass" v-show="message">
         <h3>{{message}}</h3>
     </div>
     `,

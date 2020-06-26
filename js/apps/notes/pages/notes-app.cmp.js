@@ -1,5 +1,5 @@
 import { noteService } from "../services/note-service.js";
-import { eventBus } from "../services/event-bus.service.js";
+import {eventBus} from '../../../services/event-bus.service.js';
 import noteItem from "../cmps/note-item.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
 import noteAdd from "../cmps/note-add.cmp.js";
@@ -16,7 +16,7 @@ export default {
                   <note-item v-for="note in pinnedNotes" :note="note" ></note-item>
                   <h2 v-if="checkPinned">No Pinned Notes</h2>
                   </section>
-                  <section class="notes">
+                  <section ref="notes" class="notes">
                     <h1>OTHERS:</h1>
                     <note-item v-for="note in notesToShow" :note="note" ></note-item>
                   </section>
@@ -38,10 +38,13 @@ export default {
     eventBus.$on("delete", (noteId) => {
       noteService.deleteNote(noteId);
       this.getNotes();
+      eventBus.$emit('message','Note Deleted.','bad-msg')
     });
     eventBus.$on("add", (type, info) => {
       noteService.addNewNote(type, info);
       this.getNotes();
+      eventBus.$emit('message','Success, Note added !','good-msg')
+      this.$refs['notes'].scrollIntoView()
     });
     eventBus.$on("update", (note) => {
       noteService.updateNote(note);
@@ -51,6 +54,7 @@ export default {
       noteService.updateNoteStatus(noteId);
       this.getNotes();
     });
+    
   },
   computed: {
     notesToShow() {

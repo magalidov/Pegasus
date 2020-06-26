@@ -192,4 +192,5 @@ function deleteNote(noteId) {
 function updateNoteStatus(noteId) {
   const noteIdx = _getNoteIdx(noteId);
   gNotes[noteIdx].isPinned = !gNotes[noteIdx].isPinned;
+  Utils.storeToStorage("gNotes", gNotes);
 }

@@ -1,4 +1,4 @@
-import { eventBus } from "../services/event-bus.service.js";
+import {eventBus} from '../../../services/event-bus.service.js'
 import { Utils } from "../../../services/utils.service.js";
 
 
@@ -27,19 +27,19 @@ export default {
         },
         {
           type: "noteImage",
-          inputText: "Upload an image ",
+          inputText: "Paste an Image Url... ",
         },
         {
           type: "noteVideo",
-          inputText: "Save your favoraite videos...",
+          inputText: "Paste a YOUTUBE link",
         },
         {
           type: "noteTodo",
-          inputText: "Make a list so you won't forget",
+          inputText: "Make a list so you won't forget (Syntax='todo,todo,todo...)",
         },
         {
           type: "noteAudio",
-          inputText: "Upload an audio file..",
+          inputText: "Paste an audio Url...",
         },
       ],
       selNote: { type: "noteText" },

@@ -8,6 +8,7 @@
 @import '../cmps/note-add.cmp.css';
 @import '../cmps/note-colorpicker.cmp.css';
 @import '../cmps/note-audio.cmp.css';
+
 .notes-app {
     background-color: antiquewhite;
     padding: 10px;
