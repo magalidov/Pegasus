@@ -8,7 +8,7 @@ export default {
             </section>
             <section class="routes flex">
                 <router-link tag="li" to="/">Home</router-link>  
-                <router-link tag="li" to="/email/list" >Email</router-link>  
+                <router-link tag="li" to="/email/" >Email</router-link>  
                 <router-link tag="li" to="/notes">Notes</router-link>  
                 <router-link tag="li" to="/about">About</router-link>  
             </section>
