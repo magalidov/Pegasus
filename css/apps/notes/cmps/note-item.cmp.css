@@ -7,15 +7,16 @@
     box-shadow: 6px 4px #d4caca;
     border: 2px solid #d4caca;
     font-family: 'Pangolin', cursive;
-    transition: all .1s;
+    transition: all .2s;
     break-inside: avoid-column;
     border-radius: 10px;
 }
 
 .note-item:hover {
     cursor: pointer;
-    outline: 3px solid black;
+    /* outline: 3px solid black; */
     /* border: 4px solid #d4caca; */
+    box-shadow: 8px 8px #d4caca;
 }
 
 .note-item .edited {
