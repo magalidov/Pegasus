@@ -7,6 +7,7 @@
     display:grid;
     grid-gap: 0.5rem;
     grid-template-columns: 2rem 1fr;
+    font-family: 'Passion One', cursive;
     /* transition: 0.5s */
 }
 .link-icon{

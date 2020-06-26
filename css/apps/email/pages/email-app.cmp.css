@@ -6,6 +6,7 @@
     grid-template-areas: "fl fl fl fl " "sd  main main main ";
     justify-content: flex-start;
     height: 85vh;
+    
 }
 
 .email-filter {
