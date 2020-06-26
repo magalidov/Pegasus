@@ -10,7 +10,7 @@ export default {
                 Add New Task
                 </label>
                 <section class="add-task flex space-between" v-if="isAddClicked">
-                  <input ref="todoInput" v-model="newTodo" type="text" placeholder="Enter New Task..">
+                  <input ref="todoInput" v-model="newTodo" @keyup.enter="addTodo" type="text" placeholder="Enter New Task..">
                   <i class="fas fa-plus-circle" @click="addTodo"></i>
                 </section>
                 <li v-for="(todo,idx) in note.info.todos" class="flex space-between" >

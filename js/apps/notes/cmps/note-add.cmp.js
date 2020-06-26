@@ -6,8 +6,8 @@ export default {
   template: `
     <section class="note-add col-layout">
       <section class="flex">
-          <input ref="newNoteInput" type="text" placeholder="Take a note..." />
-          <button @click="onAddNote">Add</button>
+          <input ref="newNoteInput" @keyup.enter="onAddNote" type="text" placeholder="Take a note..." />
+          <!-- <button @click="onAddNote">Add</button> -->
       </section>
           <ul class="cmp-options clean-list flex">
             <li ref="noteText" @click="setNoteType('noteText')"><i class="fas fa-font"></i></li>
