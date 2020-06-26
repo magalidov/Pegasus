@@ -1,5 +1,5 @@
 .list-tools{
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 5px 10px;
     border-top: 1px solid rgb(180, 180, 180);
     border-left: 1px solid rgb(180, 180, 180);
@@ -12,7 +12,8 @@
 .list-tools:hover{
     background-color: #fa9a004f;
     border-color: #fa9c00;
+    
 }
-.list-tools i:hover{
-
+.list-tools >* :hover{
+    transform: scale(1.15,1.15);
 }
