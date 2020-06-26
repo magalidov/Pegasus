@@ -7,7 +7,7 @@
 }
 
 .app-home .apps {
-    margin-top: 3.125rem
+    padding-top: 3.125rem;
 }
 
 .app-home h1 {
@@ -29,7 +29,7 @@
 .app-home .apps .product {
     width: 300px;
     height: 300px;
-    margin: 100px;
+    margin-right: 100px;
     border-radius: 50%;
     border: 2px solid white;
     font-family: 'Passion One', cursive;
