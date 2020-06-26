@@ -6,21 +6,22 @@
     border-left: 1px solid rgb(180, 180, 180);
     border-right: 1px solid rgb(180, 180, 180);
     padding: 5px 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: auto 1fr 5fr auto;
     grid-auto-rows: 1fr;
     grid-template-areas:
     "opt from subj body body date";
-    transition: 0.1s
+    transition: 0.1s;
+    font-family: roboto;
 }
 .email-preview:hover{
-    background-color: rgba(255, 182, 37, 0.24);
-    border-color: #faa500;
+    background-color: #fa9a004f;
+    border-color: #fa9c00;
 }
 .email-preview:hover .email-preview>*{
-    border-color: #faa500;
+    border-color: #fa9c00;
 }
 .preview-link{
     text-decoration: none;
@@ -28,6 +29,9 @@
 }
 .preview-opt{
     grid-area: opt;
+}
+.preview-opt >*{
+    margin-right: 10px;
 }
 .from-prev{
     grid-area: from;

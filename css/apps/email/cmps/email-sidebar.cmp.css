@@ -15,5 +15,9 @@
 }
 .side-link:hover{
     font-size: 1.35rem;
-    color: #faa500;
+    color: #fa9c00;
+}
+.side-link.router-link-exact-active{
+    font-size: 1.35rem;
+    color: #fa9c00;
 }
