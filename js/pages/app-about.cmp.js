@@ -1,9 +1,9 @@
 export default {
     template: `
-    <section class="app-about">
+    <div class="app-about">
         <h1>About</h1>
         <h1> -Idov And Asaf- </h1>
-    </section>
+    </div>
     `,
     computed: {
 
