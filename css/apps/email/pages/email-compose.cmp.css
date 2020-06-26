@@ -6,3 +6,9 @@
     text-align: right;
     font-weight: bold;
 }
+.
+input, textarea{
+    border: none;
+    border: 1px solid rgb(180, 180, 180);
+    outline: none;
+}

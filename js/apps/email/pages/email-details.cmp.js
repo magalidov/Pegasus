@@ -4,8 +4,8 @@ import { eventBus } from '../../../services/event-bus.service.js';
 export default {
 	name: 'email-details',
 	template: `
-    <section v-if="emailToShow" class="email-details">
-        <div class="flex space-between">
+    <section v-if="emailToShow" class="email-details flex col">
+        <div class="details-btns flex space-between">
             <div class="details-tools">
                 <i class="fas fa-arrow-left" @click="backTolist"></i>
                 <i class="fas fa-trash" @click="deleteEmail" title="Delete"></i>
@@ -18,16 +18,18 @@ export default {
                 <i class="fas fa-chevron-right"></i>
             </div>
         </div>
-            <hr>
-        <div class="email-subject">{{emailToShow.subject}}</div>
-        <div class="sent-from-details flex space-between">
-            <div>
-                <span class="from-name">{{fromName}} -</span><span class="from-adress">{{emailToShow.from}}</span>
-            </div>
-            <span>{{fullDate}}</span>
-        </div>
-        <hr>
-        <div class="email-body" v-html="emailToShow.body">
+		<div class="info-box">	
+			<div class="email-subject">
+				{{emailToShow.subject}}
+			</div>
+			<div class="sent-from-details flex space-between">
+				<div>
+					<span class="from-name">{{fromName}} -</span><span class="from-adress">{{emailToShow.from}}</span>
+				</div>
+				<span>{{fullDate}}</span>
+			</div>
+		</div>
+        <div class="email-body grow" v-html="emailToShow.body">
         </div>
     </section>
     `,
