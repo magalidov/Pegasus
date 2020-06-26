@@ -41,14 +41,12 @@ export default {
     sendAsEmail() {
       let messegeContent;
       if (this.note.type === "noteText") messegeContent = this.note.info.txt;
-      if (this.note.type === "noteTodo") {
+      else if (this.note.type === "noteTodo") {
         messegeContent = this.note.info.todos.map((todo,idx)=>{
-          return`${idx}. ${todo.txt}`
+          return`${idx}. ${todo.txt}\n`
         }).join(',');
       } else messegeContent = this.note.info.url;
-      this.$router.push(
-        `/email/compose/new/Sent from Notes :${messegeContent}`
-      );
+      this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}`);
     },
   },
   components: {
