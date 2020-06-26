@@ -1,14 +1,24 @@
-.new-email-body{
-    resize: none;
+.email-compose{
+    font-family: roboto;
 }
+
 .form-informer{
     color: red;
     text-align: right;
     font-weight: bold;
 }
-.
-input, textarea{
+.email-compose input , .new-email-body{
+    cursor: text;
     border: none;
-    border: 1px solid rgb(180, 180, 180);
+    border: 0;
     outline: none;
+}
+.email-compose input{
+    padding: 5px;
+}
+.new-email-body{
+border: 1px solid rgb(180, 180, 180);
+}
+.general-details{
+    background-color: #fa9c00 ;
 }
