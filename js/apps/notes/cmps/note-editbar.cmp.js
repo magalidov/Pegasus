@@ -39,15 +39,16 @@ export default {
       this.showColorPicker = !this.showColorPicker;
     },
     sendAsEmail() {
-      let newEmail = {
-        subject: "TEST NOTES",
-        from: "ASAF",
-        body: "HEYYY THIS IS WORKING????",
-        tags: { isRead: false, isStared: false, isSent: true },
-        sentAt: "",
-        id: null,
-      };
-      eventBus.$emit("sendFromNote", newEmail);
+      let messegeContent;
+      if (this.note.type === "noteText") messegeContent = this.note.info.txt;
+      if (this.note.type === "noteTodo") {
+        messegeContent = this.note.info.todos.map((todo,idx)=>{
+          return`${idx}. ${todo.txt}`
+        }).join(',');
+      } else messegeContent = this.note.info.url;
+      this.$router.push(
+        `/email/compose/new/Sent from Notes :${messegeContent}`
+      );
     },
   },
   components: {

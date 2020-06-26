@@ -34,7 +34,8 @@ export default {
 		eventBus.$on('sent', () => this.loadEmails());
 		eventBus.$on('sentFromNote',(emailToEdit)=>{
 			this.emailToEdit= emailToEdit
-			this.$route.push('/email/compose/new')
+			debugger
+			this.$router.push('/email/compose/new')
 		})
 	},
 	computed: {
