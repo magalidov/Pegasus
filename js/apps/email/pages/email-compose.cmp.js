@@ -6,10 +6,11 @@ export default {
 	prop: ['emailsToShow'],
 	template: `
     <section class="email-compose flex col">
-        <input type="text" disabled v-model="to"/>
-        <input type="text" v-model="newEmail.from" placeholder="From: Your Adress"/>
-        <input type="text" v-model="newEmail.subject" placeholder="Subject"/>
-        <textarea class="new-email-body grow" contenteditable="true" v-model="newEmail.body"/></div>
+        <input type="text" class='general-details' disabled v-model="to"/>
+        <input type="text" class='general-details' ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
+        <input type="text" class='general-details' v-model="newEmail.subject" placeholder="Subject:"/>
+		<textarea class="new-email-body grow" v-model="newEmail.body"/></div>
+		<!-- <div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div> -->
         <div class="form-informer" v-if="informer">{{informer}}</div>
         <div class="compose-opt flex space-between">
             <button>Attach Img</button>
@@ -31,6 +32,15 @@ export default {
 			informer: '',
 		};
 	},
+	mounted(){
+		this.$refs.elInputFrom.focus()
+		// console.log('this.$refs.elBody.innerHTML:', this.$refs.elBody.innerHTML)
+	},
+	computed:{
+		// body(){
+		// 	return this.$refs{elBody.innerHTML
+		// }
+	},
 	methods: {
 		sendEmail() {
 			emailService
@@ -41,13 +51,13 @@ export default {
 		checkThenSend() {
 			let send = true;
 			let email = this.newEmail;
-			let informer = 'Attention: ';
+			let informer = 'Missing Fields: ';
 			if (!email.from) {
-				informer += 'Fill \'From\' Field. ';
+				informer += '\'From\'. ';
 				send = false;
 			} else if (email.from.indexOf('@') === -1) email.from += '@pegasus.com';
 			if (!email.subject) {
-				informer += 'Fill \'Subject\' Field. ';
+				informer += '\'Subject\'. ';
 				send = false;
 			}
 			if (send) this.sendEmail();
@@ -56,6 +66,7 @@ export default {
 		showInformer(msg) {
 			this.informer = msg;
 		},
+		
 	},
 	watch: {
 		newEmail: {
@@ -64,6 +75,9 @@ export default {
 				this.informer = '';
 			},
 		},
+		// body(change){
+		// console.log('change:', change)
+
+		// }
 	},
-	components: {},
 };
