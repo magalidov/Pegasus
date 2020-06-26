@@ -3,6 +3,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 85vh;
+    flex-grow: 1;
 }
 
 .app-home .apps {

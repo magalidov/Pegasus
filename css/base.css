@@ -16,13 +16,13 @@ body {
     width: 100vh;
     position: relative;;
 }
-
+/* 
 .page-container{
-    position: absolute;
+    d
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% auto 5%;
     grid-auto-rows: auto;
-}
+} */

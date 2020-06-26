@@ -12,6 +12,7 @@
     background-color: antiquewhite;
     padding: 10px;
     height: max-content;
+    flex-grow: 1;
 }
 
 .notes-app .cmp-container h1 {

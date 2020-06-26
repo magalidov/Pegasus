@@ -8,7 +8,7 @@ new Vue({
     el: '#App',
     router: myRouter,
     template: `
-        <main class="page-container">
+        <main class="page-container flex col">
             <app-header/> 
             <router-view class="grow"/>
             <app-footer/>
