@@ -3,7 +3,6 @@ import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
 	name:'email-compose',
-	props: ['emailsToShow','emailToEdit'],
 	template: `
     <section class="email-compose flex col">
         <input type="text" class='general-details' disabled v-model="to"/>
@@ -33,8 +32,19 @@ export default {
 		};
 	},
 	created(){
-		if (emailToEdit){
-			this.newEmail= emailToEdit
+		if (this.$route.query){
+			const body = this.$route.query.body
+			const type = this.$route.query.type
+			let emailBody = this.newEmail.body
+			if(type==='noteText'|| type==='noteTodo') emailBody = body
+			else if(type==='noteImage') emailBody = `<img src="${body}">`
+			else if(type==='noteVideo') emailBody = `<iframe src="${body}"></iframe>`
+			else if(type==='noteAudio'){
+				emailBody = `<audio controls src="${body}">
+				Your browser does not support the
+				<code>audio</code> element.
+			 	</audio>`
+			} 
 		}
 	},
 	mounted(){

@@ -7,11 +7,12 @@
     text-align: right;
     font-weight: bold;
 }
-.email-compose input , .new-email-body{
+.email-compose input ,textarea, .new-email-body{
     cursor: text;
     border: none;
     border: 0;
     outline: none;
+    resize: none;
 }
 .email-compose input{
     padding: 5px;
