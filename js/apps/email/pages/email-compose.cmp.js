@@ -35,12 +35,11 @@ export default {
 		if (this.$route.query){
 			const body = this.$route.query.body
 			const type = this.$route.query.type
-			let emailBody = this.newEmail.body
-			if(type==='noteText'|| type==='noteTodo') emailBody = body
-			else if(type==='noteImage') emailBody = `<img src="${body}">`
-			else if(type==='noteVideo') emailBody = `<iframe src="${body}"></iframe>`
+			if(type==='noteText'|| type==='noteTodo')this.newEmail.body = body
+			else if(type==='noteImage') this.newEmail.body = `<img src="${body}">`
+			else if(type==='noteVideo') this.newEmail.body = `<iframe src="${body}"></iframe>`
 			else if(type==='noteAudio'){
-				emailBody = `<audio controls src="${body}">
+				this.newEmail.body = `<audio controls src="${body}">
 				Your browser does not support the
 				<code>audio</code> element.
 			 	</audio>`
