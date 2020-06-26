@@ -1,4 +1,19 @@
 .app-about{
     flex-grow: 1;
     height: 85vh;
+    font-family: 'Bungee Inline', cursive;
+
+}
+.app-about h1{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color:orange;
+}
+
+.app-about .about-card{
+    width: 300px;
+    height: 400px;
+    border:2px solid black;
+    border-radius: 10px;
+    margin:50px;
 }
