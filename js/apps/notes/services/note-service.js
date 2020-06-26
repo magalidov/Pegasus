@@ -44,7 +44,7 @@ function _createNotes() {
           ],
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -59,7 +59,7 @@ function _createNotes() {
             "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -73,7 +73,7 @@ function _createNotes() {
           txt: "First Note",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -87,7 +87,7 @@ function _createNotes() {
           txt: "Second Note",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -101,7 +101,7 @@ function _createNotes() {
           txt: "Yesssss",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -115,7 +115,7 @@ function _createNotes() {
           txt: "Asaf and Idov!!!!",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -130,7 +130,7 @@ function _createNotes() {
             "https://media.tenor.com/images/6afb17492c5b0a711b51afe70e24d3c4/tenor.gif",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
       {
@@ -144,7 +144,7 @@ function _createNotes() {
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
         },
         style: {
-          backgroundColor: "orange",
+          backgroundColor: "#fa9c00",
         },
       },
     ];

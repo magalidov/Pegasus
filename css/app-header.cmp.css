@@ -28,7 +28,7 @@
 }
 
 .app-header nav .routes>*:hover {
-    background-color: #faa500;
+    background-color: #fa9c00;
     box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px white;
 }
 

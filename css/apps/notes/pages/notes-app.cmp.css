@@ -15,14 +15,14 @@
 }
 
 .notes-app .cmp-container h1 {
-    margin: -5px 0;
+    margin: 10px 0;
     position: absolute;
     top: -60px;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 2.2rem;
+    font-family: 'Passion One', cursive;
+    font-size: 1.7rem;
     padding: 15px;
     letter-spacing: 3px;
-    color: chocolate;
+    color: #fa9c00;
 }
 
 .notes-app .cmp-container h2 {
