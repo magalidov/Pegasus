@@ -31,12 +31,7 @@ export default {
 		eventBus.$on('delete', (checkedEmails) =>
 			emailService.deleteEmails(checkedEmails)
 		);
-		eventBus.$on('sent', () => this.loadEmails());
-		eventBus.$on('sentFromNote',(emailToEdit)=>{
-			this.emailToEdit= emailToEdit
-			debugger
-			this.$router.push('/email/compose/new')
-		})
+		eventBus.$on('sent', () => this.loadEmails())
 	},
 	computed: {
 		list() {

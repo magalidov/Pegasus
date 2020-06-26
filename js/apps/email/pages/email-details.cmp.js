@@ -11,6 +11,7 @@ export default {
                 <i class="fas fa-trash" @click="deleteEmail" title="Delete"></i>
                 <i :class="envelopeIcon" @click="toggleTag('isRead')" @mouseover="closedEnvelope" @mouseout="openEnvelope" title="Mark as Unred"></i>
                 <i :class="starType" @click="toggleTag('isStared')" :title="starTitle"></i>
+                <i class="fas fa-edit" @click="saveAsNote"></i>
                 <i class="fas fa-tag"></i>
             </div>
             <div class="">
@@ -86,6 +87,9 @@ export default {
 		deleteEmail() {
 			eventBus.$emit('delete', [this.emailToShow]);
 			this.$router.go(-1);
-        },
+		},
+		saveAsNote(){
+			this.$router.push(`/notes?text=${this.emailToShow.body}`)
+		}
 	},
 };
