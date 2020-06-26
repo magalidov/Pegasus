@@ -1,4 +1,4 @@
-import {eventBus} from '../../../services/event-bus.service.js'
+import { eventBus } from "../../../services/event-bus.service.js";
 import colorPicker from "../cmps/note-colorpick.cmp.js";
 
 export default {
@@ -9,7 +9,7 @@ export default {
                 <i class="fas fa-palette" @click="openColor" @blur="openColor"></i>
                 <color-picker v-show="showColorPicker" @setColor="onSetColor" />
                 <i class="fas fa-edit" @click="onEdit"></i>
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" @click="sendAsEmail"></i>
         </section>
     `,
   data() {
@@ -18,7 +18,6 @@ export default {
       showColorPicker: false,
     };
   },
-  computed: {},
   methods: {
     onUpdateNote() {
       this.note.style.backgroundColor = this.noteColor;
@@ -38,6 +37,16 @@ export default {
     },
     openColor() {
       this.showColorPicker = !this.showColorPicker;
+    },
+    sendAsEmail() {
+      let messegeContent;
+      if (this.note.type === "noteText") messegeContent = this.note.info.txt;
+      else if (this.note.type === "noteTodo") {
+        messegeContent = this.note.info.todos.map((todo,idx)=>{
+          return`${idx}. ${todo.txt}\n`
+        }).join(',');
+      } else messegeContent = this.note.info.url;
+      this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}`);
     },
   },
   components: {
