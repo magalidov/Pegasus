@@ -1,3 +1,8 @@
 .app-home{
     height: 85vh;
+    background-image: url(/img/bgi3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
