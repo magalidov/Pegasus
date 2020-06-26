@@ -2,11 +2,12 @@
     position: relative;
 }
 .color-picker .color{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     border: 1px solid white;
     transition: all .3s;
+    margin-inline-start: 2px;
 }
 
 .color-picker .color:hover{
@@ -17,5 +18,5 @@
     position: absolute;
     z-index: 5;
     top: 27px;
-    left: -100px;
+    left: -140px;
 }

@@ -14,7 +14,7 @@ export default {
         "blue",
         "yellow",
         "orange",
-        "black",
+        "brown",
         "pink",
         "green",
         "grey",

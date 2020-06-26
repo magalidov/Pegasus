@@ -12,9 +12,12 @@ export default {
               <note-add/>
               <div class="cmp-container">
                   <section class="pinned-notes">
+                  <h1>PINNED:</h1>
                   <note-item v-for="note in pinnedNotes" :note="note" ></note-item>
+                  <h2 v-if="checkPinned">No Pinned Notes</h2>
                   </section>
                   <section class="notes">
+                    <h1>OTHERS:</h1>
                     <note-item v-for="note in notesToShow" :note="note" ></note-item>
                   </section>
               </div>
@@ -24,19 +27,26 @@ export default {
     `,
   data() {
     return {
-      notes: null,
-      pinnedNotes: null,
+      notes: [],
+      pinnedNotes: [],
       filterBy: null,
     };
   },
+
   created() {
     this.getNotes();
     eventBus.$on("delete", (noteId) => {
       noteService.deleteNote(noteId);
       this.getNotes();
     });
-    eventBus.$on("add", (type, info) => noteService.addNewNote(type, info));
-    eventBus.$on("update", (note) => noteService.updateNote(note));
+    eventBus.$on("add", (type, info) => {
+      noteService.addNewNote(type, info);
+      this.getNotes();
+    });
+    eventBus.$on("update", (note) => {
+      noteService.updateNote(note);
+      this.getNotes();
+    });
     eventBus.$on("pinStat", (noteId) => {
       noteService.updateNoteStatus(noteId);
       this.getNotes();
@@ -61,6 +71,9 @@ export default {
         else return note.info.txt.toLowerCase().includes(filterBy.txt);
       });
       return filteredNotes;
+    },
+    checkPinned() {
+      return this.pinnedNotes.length === 0;
     },
   },
   methods: {

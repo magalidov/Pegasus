@@ -8,32 +8,49 @@
 @import '../cmps/note-add.cmp.css';
 @import '../cmps/note-colorpicker.cmp.css';
 @import '../cmps/note-audio.cmp.css';
-
-
-.notes-app{
+.notes-app {
     background-color: whitesmoke;
     padding: 10px;
     height: max-content;
-    
 }
+
+.notes-app .cmp-container h1 {
+    margin: -5px 0;
+    position: absolute;
+    top: -60px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.2rem;
+    padding: 15px;
+    letter-spacing: 3px;
+    color: chocolate;
+}
+
+.notes-app .cmp-container h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    column-span: all;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
 .notes-app .cmp-container .notes {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 10px auto;
     column-count: 3;
     column-width: 260px;
-    padding:10px 0 10px 0;
-    border:1px solid black;
+    padding: 10px 0 10px 0;
+    border: 1px solid black;
     border-radius: 10px;
-   
+    position: relative;
 }
 
 .notes-app .cmp-container .pinned-notes {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 20px auto 50px auto;
     column-count: 3;
     column-width: 260px;
-    padding:10px 5px 10px 5px;
-    border:1px solid black;
+    padding: 10px 5px 10px 5px;
+    border: 1px solid black;
     border-radius: 10px;
-   
+    position: relative;
 }
