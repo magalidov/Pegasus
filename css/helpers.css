@@ -65,7 +65,9 @@
 .width-all {
     width: 100%;
 }
-
+.grow{
+    flex-grow: 1;
+}
 .height-all {
     height: 100%;
 }

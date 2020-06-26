@@ -1,6 +1,10 @@
 .email-details{
     font-size: 1.1rem;
     font-family: roboto;
+    
+}
+.details-tools{
+    
 }
 .details-tools >*{
     cursor: pointer;
@@ -8,9 +12,28 @@
 .details-tools >*:hover{
     transform: scale(1.15,1.15);
 }
-
+.details-btns{
+    padding: 10px;
+    border-top: 1px solid rgb(180, 180, 180);
+    border-left: 1px solid rgb(180, 180, 180);
+    border-right: 1px solid rgb(180, 180, 180);
+}
+.info-box{
+    border-top: 1px solid rgb(180, 180, 180);
+    border-left: 1px solid rgb(180, 180, 180);
+    border-right: 1px solid rgb(180, 180, 180);
+}
+.email-body{
+    border: 1px solid rgb(180, 180, 180);
+    height: ;
+}
 .email-subject{
     font-size: 2rem;
+}
+.info-box{
+    background-color: #fa9c00;
+    color: white;
+    padding: 10px;
 }
 .from-name{
     font-weight: bold;
