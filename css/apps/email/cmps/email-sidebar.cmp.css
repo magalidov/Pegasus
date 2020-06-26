@@ -8,16 +8,14 @@
     grid-gap: 0.5rem;
     grid-template-columns: 2rem 1fr;
     font-family: 'Passion One', cursive;
-    /* transition: 0.5s */
+    transition: 0.1s
 }
 .link-icon{
     text-align: center;
 }
 .side-link:hover{
-    font-size: 1.35rem;
     color: #fa9c00;
 }
 .side-link.router-link-exact-active{
-    font-size: 1.35rem;
     color: #fa9c00;
 }

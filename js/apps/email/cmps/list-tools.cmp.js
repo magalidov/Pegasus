@@ -7,9 +7,9 @@ export default {
     <section class="list-tools flex space-between">
         <div>
             <input v-model="checkAll" v-show="emailsAmount>0" ref="checkBox" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
-            <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
             <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')" :title="envelopeTitle"></i>
             <i :class="starType" v-if="showTools" @click.stop="toggleAllTags('isStared')" :title="starTitle"></i>
+            <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
             <i class="fas fa-tag" v-if="showTools"></i>
         </div>
         <span>{{emailsAmount}} in this list</span>

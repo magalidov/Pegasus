@@ -9,7 +9,7 @@ export default {
     <section class="email-list" v-if="emailsToShow">
         <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emailsAmount="emailsToShow.length"/>
         <email-preview v-for="(email,idx) in emailsToShow" :email="email" :idx="idx" @checkBox="emailInCheckedList" :key="idx"/>
-        <h1 v-if="emailsToShow.length===0">No Emails</h1>
+        <h1 v-if="emailsToShow.length===0" class="email-preview no-emails">No Emails To Show</h1>
     </section>
     `,
 	data() {

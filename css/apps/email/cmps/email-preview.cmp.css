@@ -14,7 +14,7 @@
     grid-template-areas:
     "opt from subj body body date";
     transition: 0.1s;
-    font-family: roboto;
+    
 }
 .email-preview:hover{
     background-color: #fa9a004f;
@@ -33,6 +33,9 @@
 .preview-opt >*{
     margin-right: 10px;
 }
+.preview-opt  >*:hover{
+    transform: scale(1.15,1.15);
+}
 .from-prev{
     grid-area: from;
 }
@@ -48,4 +51,8 @@
 }
 .bold{
     font-weight: bold;
+}
+.no-emails{
+    margin: 0 ;
+    text-align: center;
 }

@@ -5,6 +5,10 @@
 .details-tools >*{
     cursor: pointer;
 }
+.details-tools >*:hover{
+    transform: scale(1.15,1.15);
+}
+
 .email-subject{
     font-size: 2rem;
 }
