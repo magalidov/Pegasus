@@ -9,7 +9,7 @@ export default {
     <section class="email-app">
         <email-filter @filter="setFilter" @refreshList="refreshList"/>
         <email-sidebar :allEmails="allEmails"/>
-		<router-view class="email-main" :emailsToShow="emailsToShow" @refreshList="refreshList"/>
+		<router-view class="email-main" :emailsToShow="emailsToShow" :emailToEdit="emailToEdit" @refreshList="refreshList"/>
     </section>
     `,
 	data() {
@@ -19,6 +19,7 @@ export default {
 				type: 'all',
 			},
 			allEmails: null,
+			emailToEdit: null,
 		};
 	},
 	created() {
@@ -31,6 +32,10 @@ export default {
 			emailService.deleteEmails(checkedEmails)
 		);
 		eventBus.$on('sent', () => this.loadEmails());
+		eventBus.$on('sentFromNote',(emailToEdit)=>{
+			this.emailToEdit= emailToEdit
+			this.$route.push('/email/compose/new')
+		})
 	},
 	computed: {
 		list() {

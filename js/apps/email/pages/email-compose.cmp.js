@@ -3,7 +3,7 @@ import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
 	name:'email-compose',
-	prop: ['emailsToShow'],
+	props: ['emailsToShow','emailToEdit'],
 	template: `
     <section class="email-compose flex col">
         <input type="text" class='general-details' disabled v-model="to"/>
@@ -21,6 +21,7 @@ export default {
 	data() {
 		return {
 			to: 'To: me@myself.com',
+			informer: '',
 			newEmail: {
 				subject: '',
 				from: '',
@@ -29,8 +30,12 @@ export default {
 				sentAt: '',
 				id: null,
 			},
-			informer: '',
 		};
+	},
+	created(){
+		if (emailToEdit){
+			this.newEmail= emailToEdit
+		}
 	},
 	mounted(){
 		this.$refs.elInputFrom.focus()
