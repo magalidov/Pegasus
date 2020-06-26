@@ -6,8 +6,13 @@
     padding: 5px 0;
     display:grid;
     grid-gap: 0.5rem;
-    grid-template-columns: 2rem 1fr
+    grid-template-columns: 2rem 1fr;
+    /* transition: 0.5s */
 }
 .link-icon{
     text-align: center;
+}
+.side-link:hover{
+    font-size: 1.35rem;
+    color: #faa500;
 }
