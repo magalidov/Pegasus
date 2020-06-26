@@ -1,0 +1,14 @@
+
+.note-item textarea {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin: 10px;
+    resize: none;
+    background-color: transparent;
+    font-family: 'Pangolin', cursive;
+    font-size: 1rem;
+    width: 90%;
+    padding: 2px;
+}
+

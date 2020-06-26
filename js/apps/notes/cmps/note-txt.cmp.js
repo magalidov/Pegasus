@@ -4,7 +4,7 @@ export default {
   props: ["note"],
   template: `
        <section class="text-area">
-             <textarea ref="textarea" v-model="note.info.txt" @blur="onEdit" @click="onFocus"></textarea>
+             <textarea ref="textarea" @keyup="resizeArea" v-model="note.info.txt" @blur="onEdit" @click="onFocus"></textarea>
         </section>
             
     `,
@@ -17,6 +17,11 @@ export default {
     },
     onFocus() {
       this.$refs["textarea"].select();
+    },
+    resizeArea() {
+      const elTextArea = this.$refs["textarea"];
+      elTextArea.style.height = "1px";
+      elTextArea.style.height = 25 + elTextArea.scrollHeight + "px";
     },
   },
 };

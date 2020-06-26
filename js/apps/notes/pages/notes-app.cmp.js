@@ -31,7 +31,10 @@ export default {
   },
   created() {
     this.getNotes();
-    eventBus.$on("delete", (noteId) => noteService.deleteNote(noteId));
+    eventBus.$on("delete", (noteId) => {
+      noteService.deleteNote(noteId);
+      this.getNotes();
+    });
     eventBus.$on("add", (type, info) => noteService.addNewNote(type, info));
     eventBus.$on("update", (note) => noteService.updateNote(note));
     eventBus.$on("pinStat", (noteId) => {

@@ -1,17 +1,12 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
 
-.button,input,select{
+.button, input, select {
     cursor: pointer;
-}
-
-#app{
-   display: flex;
-   flex-direction: column;
-   justify-items: space-between;
 }

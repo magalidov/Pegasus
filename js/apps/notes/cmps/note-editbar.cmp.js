@@ -6,8 +6,8 @@ export default {
   template: `
         <section class="edit-bar flex space-between ">
                 <i class="fas fa-trash" @click="onDeleteNote"></i>
-                <i class="fas fa-palette" @click="openColor"></i>
-                <color-picker v-show="showColorPicker" @setColor="onSetColor"/>
+                <i class="fas fa-palette" @click="openColor" @blur="openColor"></i>
+                <color-picker v-show="showColorPicker" @setColor="onSetColor" />
                 <i class="fas fa-edit" @click="onEdit"></i>
                 <i class="fas fa-envelope"></i>
         </section>

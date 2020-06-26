@@ -1,4 +1,5 @@
 @import '../cmps/note-item.cmp.css';
+@import '../cmps/note-txt.cmp.css';
 @import '../cmps/note-video.cmp.css';
 @import '../cmps/note-img.cmp.css';
 @import '../cmps/note-editbar.cmp.css';
@@ -12,7 +13,7 @@
 .notes-app{
     background-color: whitesmoke;
     padding: 10px;
-    height: 90%;
+    height: max-content;
     
 }
 .notes-app .cmp-container .notes {

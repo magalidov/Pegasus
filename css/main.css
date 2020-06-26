@@ -1,5 +1,7 @@
 @import  './helpers.css';
 @import  './base.css';
+@import  './app-home.cmp.css';
+@import  './app-about.cmp.css';
 @import  './app-header.cmp.css';
 @import  './app-footer.cmp.css';
 @import  './apps/notes/pages/notes-app.cmp.css';

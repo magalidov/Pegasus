@@ -1,25 +1,27 @@
-.email-app{
+.email-app {
     display: grid;
     margin: 0 20px;
-    grid-template-columns: 10% 90%;
-    grid-template-rows: 10% 90%;
-    grid-template-areas:
-    "fl fl fl fl "
-    "sd  main main main ";
-    height: 90vh;
+    grid-template-columns: 0.1fr 0.9fr;
+    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-areas: "fl fl fl fl " "sd  main main main ";
     justify-content: flex-start;
+    height: 85vh;
 }
-.email-filter{
+
+.email-filter {
     grid-area: fl;
 }
-.email-sidebar{
+
+.email-sidebar {
     grid-area: sd;
     font-size: 1.3rem;
 }
-.email-main{
+
+.email-main {
     grid-area: main;
 }
-.side-link{
+
+.side-link {
     color: black;
     cursor: pointer;
     text-decoration: none;
