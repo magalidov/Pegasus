@@ -10,3 +10,18 @@ body {
 .button, input, select {
     cursor: pointer;
 }
+
+#app{
+    height: 100vh;
+    width: 100vh;
+    position: relative;;
+}
+
+.page-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 85% 5%;
+}
