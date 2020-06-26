@@ -1,4 +1,4 @@
-import {eventBus} from '../../../services/event-bus.service.js'
+import { eventBus } from "../../../services/event-bus.service.js";
 import colorPicker from "../cmps/note-colorpick.cmp.js";
 
 export default {
@@ -9,7 +9,7 @@ export default {
                 <i class="fas fa-palette" @click="openColor" @blur="openColor"></i>
                 <color-picker v-show="showColorPicker" @setColor="onSetColor" />
                 <i class="fas fa-edit" @click="onEdit"></i>
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" @click="sendAsEmail"></i>
         </section>
     `,
   data() {
@@ -18,7 +18,6 @@ export default {
       showColorPicker: false,
     };
   },
-  computed: {},
   methods: {
     onUpdateNote() {
       this.note.style.backgroundColor = this.noteColor;
@@ -38,6 +37,17 @@ export default {
     },
     openColor() {
       this.showColorPicker = !this.showColorPicker;
+    },
+    sendAsEmail() {
+      let newEmail = {
+        subject: "TEST NOTES",
+        from: "ASAF",
+        body: "HEYYY THIS IS WORKING????",
+        tags: { isRead: false, isStared: false, isSent: true },
+        sentAt: "",
+        id: null,
+      };
+      eventBus.$emit("sendFromNote", newEmail);
     },
   },
   components: {
