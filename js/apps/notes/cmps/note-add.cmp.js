@@ -4,10 +4,12 @@ import { Utils } from "../../../services/utils.service.js";
 export default {
   template: `
     <section class="note-add col-layout">
-      <section class="flex">
-          <input ref="newNoteInput" @keyup.enter="onAddNote" type="text"
-                 placeholder="Take a note..." @focus="isFocused = true" />
-      </section>
+        <form class="col-layout" >
+          <input class="note-title" ref="newNoteTitle" type="text"  placeholder="Title" v-if="isFocused"
+                 v-model="noteTitle" @keyup.enter.prevent="focusInput" maxlength="25" >
+          <input ref="newNoteInput" @keyup.enter.prevent="onAddNote" type="text"
+                 placeholder="Take a note..." @focus="isFocused = true" /> 
+          <section class="flex space-between">
           <ul class="cmp-options clean-list flex" v-if="isFocused">
             <li class="selected" ref="noteText" @click="setNoteType('noteText')"><i class="fas fa-font"></i></li>
             <li ref="noteImage" @click="setNoteType('noteImage')"><i class="fas fa-camera-retro" ></i></li>
@@ -15,6 +17,9 @@ export default {
             <li ref="noteTodo" @click="setNoteType('noteTodo')"><i class="fas fa-list"></i></li>
             <li ref="noteVideo" @click="setNoteType('noteVideo')"><i class="fab fa-youtube" ></i></li>
           </ul>
+          <button class="close-btn" type="button" v-if="isFocused" @click="isFocused=false">Close</button>
+          </section>
+          </form>
     </section>
     `,
   data() {
@@ -45,6 +50,7 @@ export default {
       selNote: { type: "noteText" },
       info: null,
       isFocused: false,
+      noteTitle:''
     };
   },
   methods: {
@@ -58,16 +64,16 @@ export default {
       const selected = this.selNote.type;
       const userContent = this.$refs["newNoteInput"].value;
       if (!userContent) return;
-      if (selected === "noteText") this.info = { txt: userContent };
+      if (selected === "noteText") this.info = {title:this.noteTitle, txt: userContent };
       if (
         selected === "noteImage" ||
         selected === "noteVideo" ||
         selected === "noteAudio"
       )
-        this.info = { url: userContent };
+        this.info = { title:this.noteTitle,url: userContent };
 
       if (selected === "noteTodo") {
-        this.info = { todos: getTodos(userContent) };
+        this.info = {title:this.noteTitle, todos: getTodos(userContent) };
       }
 
       function getTodos(todos) {
@@ -83,6 +89,7 @@ export default {
         return todos;
       }
       this.$refs["newNoteInput"].value = "";
+      this.noteTitle=''
       eventBus.$emit("add", selected, this.info);
     },
     setSelectedButton(type) {
@@ -92,5 +99,8 @@ export default {
       }
       this.$refs[type].classList.toggle("selected");
     },
+    focusInput(){
+      this.$refs["newNoteInput"].focus()
+    }
   },
 };

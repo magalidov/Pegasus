@@ -5,27 +5,48 @@
     font-family: 'Pangolin', cursive;
 }
 
+.note-add form {
+    border-radius: 20px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px white
+}
+
 .note-add input {
-    width: 450px;
-    max-width: 420px;
+    width: 500px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-inline-end: 5px;
     padding: 5px;
     font-size: 1rem;
-    border: 2px solid black;
     font-family: 'Pangolin', cursive;
+    border: none;
+    background-color: transparent;
+    outline: none;
 }
 
-.note-add button {
+.note-add form .note-title {
+    font-size: 1.125rem;
+}
+
+.note-add .close-btn {
     width: 80px;
     min-width: 40px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
     font-size: 1rem;
-    border: 2px solid black;
+    border: none;
+    background-color: transparent;
     font-family: 'Pangolin', cursive;
+    margin-top: 12px;
+    transition: all .3s;
+}
+
+.note-add .close-btn:hover {
+    cursor: pointer;
+    background-color: darkgrey;
 }
 
 .note-add .cmp-options>* {
@@ -34,7 +55,7 @@
 }
 
 .note-add .cmp-options li>* {
-    font-size: 1.5rem;
+    font-size: 1rem;
     transition: all .3s;
     cursor: pointer;
     position: relative;
@@ -46,6 +67,8 @@
 
 .note-add .cmp-options {
     padding: 10px;
+    align-self: flex-start;
+    margin-right: 25px;
 }
 
 .selected {
@@ -108,28 +131,40 @@
     background-color: rgb(238, 238, 77);
 }
 
-
 .selected .fas.fa-camera-retro::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-font::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-volume-up::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-list::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fab.fa-youtube::before {
     background-color: rgb(231, 150, 28);
+}
 
+@media (max-width:480px) {
+    .note-add input {
+        width: 325px;
+    }
+    .note-add form {
+        max-width: 335px;
+    }
+    .note-add .cmp-options>* {
+        margin: 5px;
+        font-size: 1rem;
+    }
+    .note-add .close-btn {
+        padding-top: 10px;
+        margin-top: 0;
+        padding-right: 45px;
+    }
 }

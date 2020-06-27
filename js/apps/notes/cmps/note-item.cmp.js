@@ -1,4 +1,4 @@
-import {eventBus} from '../../../services/event-bus.service.js'
+import { eventBus } from "../../../services/event-bus.service.js";
 import editBar from "./note-editbar.cmp.js";
 import noteText from "./note-txt.cmp.js";
 import noteImage from "./note-img.cmp.js";
@@ -11,6 +11,8 @@ export default {
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
             <i class="fas fa-thumbtack align-self-end" @click="changeNoteStatus" :class="pinnedClass"></i>
+            <textarea class="title"  ref="title-area"  v-model="note.info.title"
+                       @blur="onEdit" @click="onFocus" rows="1"></textarea>
              <component :is="note.type" :note="note" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
@@ -24,9 +26,9 @@ export default {
     };
   },
   computed: {
-    pinnedClass(){
-        if(this.note.isPinned) return 'pinned'
-        else return 'pin-icon' 
+    pinnedClass() {
+      if (this.note.isPinned) return "pinned";
+      else return "pin-icon";
     },
     getNoteChangedTime() {
       if (!this.note.editedAt) return "Created: " + this.note.createdAt;
@@ -44,6 +46,13 @@ export default {
     changeNoteStatus() {
       eventBus.$emit("pinStat", this.note.id);
     },
+    onFocus(){
+      this.$refs["title-area"].focus()
+      this.$refs["title-area"].select()
+    },
+    onEdit(){
+      eventBus.$emit("update", this.note);
+    }
   },
   components: {
     editBar,

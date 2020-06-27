@@ -11,7 +11,7 @@ new Vue({
     template: `
         <main class="page-container flex col">
             <app-header/> 
-            <router-view class="grow"/>
+            <router-view class="main-page"/>
             <app-footer/>
             <general-msg/>
             

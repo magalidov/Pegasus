@@ -12,6 +12,19 @@
     border-radius: 10px;
 }
 
+.note-item .note-title {
+    font-size: 1rem;
+    text-decoration: underline;
+    margin:0 0 10px 10px;
+
+}
+
+.note-item .title{
+    margin:5px;
+    text-decoration: underline;
+    padding:0 0 0 5px;
+}
+
 .note-item:hover {
     cursor: pointer;
     /* outline: 3px solid black; */
@@ -20,7 +33,7 @@
 }
 
 .note-item .edited {
-    padding:10px;
+    padding: 10px;
     font-size: 0.7rem;
 }
 
@@ -30,31 +43,35 @@
     transition: all .3s;
 }
 
-.fa-thumbtack::before{
+.fa-thumbtack::before {
     font-size: 1.7rem;
 }
-.note-item .pinned{
+
+.note-item .pinned {
     transition: all .3s;
     transform: rotate(30deg);
     margin: 3px 8px 3px 0;
 }
-.pinned.fa-thumbtack::before{
+
+.pinned.fa-thumbtack::before {
     transition: all .3s;
-    color:red;
+    color: red;
 }
-.pinned.fa-thumbtack:hover::before{
+
+.pinned.fa-thumbtack:hover::before {
     transition: all .3s;
-    color:black;
+    color: black;
 }
+
 .note-item .pin-icon:hover {
     transform: scale(1.1);
     transform: rotate(30deg);
 }
-.pin-icon.fa-thumbtack:hover::before{
-    color:red;
+
+.pin-icon.fa-thumbtack:hover::before {
+    color: red;
 }
+
 .note-item .pinned:hover {
     transform: rotate(0deg);
 }
-
-

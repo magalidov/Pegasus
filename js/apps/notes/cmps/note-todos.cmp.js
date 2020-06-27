@@ -6,7 +6,7 @@ export default {
   template: `
        <section class="todos-area">
             <ul class="clean-list">
-                <label  class="flex space-between" @click="openCloseAdd">
+                <label class=" label flex space-between" @click="openCloseAdd">
                 Add New Task
                 </label>
                 <section class="add-task flex space-between" v-if="isAddClicked">
