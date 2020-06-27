@@ -5,11 +5,11 @@
     font-family: 'Pangolin', cursive;
 }
 
-.note-add form{
+.note-add form {
     border-radius: 20px;
-    border:1px solid white;
-    margin-bottom:10px;
-    padding:10px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    padding: 10px;
     box-shadow: 1px 1px white
 }
 
@@ -25,7 +25,8 @@
     background-color: transparent;
     outline: none;
 }
-.note-add form .note-title{
+
+.note-add form .note-title {
     font-size: 1.125rem;
 }
 
@@ -42,10 +43,10 @@
     margin-top: 12px;
     transition: all .3s;
 }
-.note-add .close-btn:hover{
+
+.note-add .close-btn:hover {
     cursor: pointer;
     background-color: darkgrey;
-
 }
 
 .note-add .cmp-options>* {
@@ -130,34 +131,40 @@
     background-color: rgb(238, 238, 77);
 }
 
-
 .selected .fas.fa-camera-retro::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-font::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-volume-up::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fas.fa-list::before {
     background-color: rgb(231, 150, 28);
-
 }
 
 .selected .fab.fa-youtube::before {
     background-color: rgb(231, 150, 28);
-
 }
 
-@media (max-width:480px){
-    .note-add input{
+@media (max-width:480px) {
+    .note-add input {
         width: 325px;
+    }
+    .note-add form {
+        max-width: 335px;
+    }
+    .note-add .cmp-options>* {
+        margin: 5px;
+        font-size: 1rem;
+    }
+    .note-add .close-btn {
+        padding-top: 10px;
+        margin-top: 0;
+        padding-right: 45px;
     }
 }
