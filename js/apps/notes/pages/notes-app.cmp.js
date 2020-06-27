@@ -93,8 +93,9 @@ export default {
     checkForQuaries() {
       if (this.$route.query.body) {
         const body = this.$route.query.body;
+        const subject=this.$route.query.subject
         noteService.addNewNote("noteText", {
-          title: "Note from mail",
+          title: subject,
           txt: body,
         });
         setTimeout(() => {
