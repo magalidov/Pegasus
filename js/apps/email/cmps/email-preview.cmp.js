@@ -46,7 +46,7 @@ export default {
         },
         body(){
             const body = this.email.body
-            return (body.length>70)? body.substring(0,70)+'...': body
+            return (body&&body.length>70)? body.substring(0,70)+'...': body
         },
         starType(){
             return (this.tags.isStared)? 'fas fa-star': 'far fa-star'

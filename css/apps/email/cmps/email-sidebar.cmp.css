@@ -19,3 +19,13 @@
 .side-link.router-link-exact-active{
     color: #fa9c00;
 }
+
+@media (max-width:480px){
+    .sidebar-links{
+        display:flex;
+    }
+    .side-link span{
+        display: none;
+         
+    }
+}

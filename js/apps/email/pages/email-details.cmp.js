@@ -79,7 +79,7 @@ export default {
 			this.envelopeIcon = 'fas fa-envelope-open-text';
 		},
 		updateEmail() {
-			eventBus.$emit('update', this.emailToShow);
+			eventBus.$emit('update', this.emailToShow.id,this.emailToShow.tags);
 		},
 		backTolist() {
 			this.$router.go(-1);

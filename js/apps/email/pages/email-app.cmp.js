@@ -54,7 +54,7 @@ export default {
 			if (this.list === 'inbox' && this.allEmails) {
 				return this.filterEmails(this.allEmails);
 			} else if ((this.list === 'isSent' || this.list === 'isStared') && this.allEmails) {
-				return this.allEmails.filter((email) => email.tags[this.list] === true);
+				return this.filterEmails(this.allEmails.filter((email) => email.tags[this.list] === true));
 			} else {
 				return null;
 			}

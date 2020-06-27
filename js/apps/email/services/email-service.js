@@ -261,7 +261,6 @@ function updateEmail(emailId,tags) {
 }
 
 function updateEmails(tag, state, checkedEmailsIds) {
-	console.log('state:', state)
 	checkedEmailsIds.forEach((checkedEmailId) => {
 		const idx = findIndexById(checkedEmailId)
 		gEmails[idx].tags[tag] = state;
