@@ -1,5 +1,5 @@
 import { noteService } from "../services/note-service.js";
-import {eventBus} from '../../../services/event-bus.service.js';
+import { eventBus } from "../../../services/event-bus.service.js";
 import noteItem from "../cmps/note-item.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
 import noteAdd from "../cmps/note-add.cmp.js";
@@ -38,13 +38,13 @@ export default {
     eventBus.$on("delete", (noteId) => {
       noteService.deleteNote(noteId);
       this.getNotes();
-      eventBus.$emit('message','Note Deleted.','bad-msg')
+      eventBus.$emit("message", "Note Deleted.", "bad-msg");
     });
     eventBus.$on("add", (type, info) => {
       noteService.addNewNote(type, info);
       this.getNotes();
-      eventBus.$emit('message','Success, Note added !','good-msg')
-      this.$refs['notes'].scrollIntoView()
+      eventBus.$emit("message", "Success, Note added !", "good-msg");
+      this.$refs["notes"].scrollIntoView();
     });
     eventBus.$on("update", (note) => {
       noteService.updateNote(note);
@@ -53,7 +53,8 @@ export default {
     eventBus.$on("pinStat", (noteId) => {
       noteService.updateNoteStatus(noteId);
       this.getNotes();
-    });    
+    });
+    this.checkForQuaries();
   },
   computed: {
     notesToShow() {
@@ -88,6 +89,18 @@ export default {
         this.notes = notes.filter((note) => !note.isPinned);
         this.pinnedNotes = notes.filter((note) => note.isPinned);
       });
+    },
+    checkForQuaries() {
+      if (this.$route.query.body) {
+        const body = this.$route.query.body;
+        noteService.addNewNote("noteText", {
+          title: "Note from mail",
+          txt: body,
+        });
+        setTimeout(() => {
+          eventBus.$emit("message", "Added note From Email!", "good-msg");
+        }, 1000);
+      }
     },
   },
   components: {
