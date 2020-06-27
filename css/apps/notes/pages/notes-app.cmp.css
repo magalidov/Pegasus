@@ -44,6 +44,7 @@
     border: 2px solid #352828;
     border-radius: 10px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .notes-app .cmp-container .pinned-notes {
