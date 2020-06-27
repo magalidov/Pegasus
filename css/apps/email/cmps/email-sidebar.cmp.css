@@ -20,12 +20,15 @@
     color: #fa9c00;
 }
 
-@media (max-width:480px){
+@media (max-width:570px){
     .sidebar-links{
         display:flex;
+        justify-content: center;
     }
     .side-link span{
         display: none;
-         
+    }
+    .side-link{
+        padding: 5px;
     }
 }

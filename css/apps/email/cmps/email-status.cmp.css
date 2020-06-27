@@ -1,9 +1,9 @@
 .email-status{
     font-family: roboto;
+    font-size: 0.85rem;
 }
-
-@media (max-width:480px){
-    .email-status span{
-        display: inline;
+@media (max-width:570px){
+    .email-status{
+        font-size: 0.75rem;
     }
 }

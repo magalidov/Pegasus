@@ -4,13 +4,12 @@
 }
 
 .form-informer{
-    color: red;
     text-align: right;
     font-weight: bold;
 }
 .email-compose input ,textarea, .new-email-body{
     font-family: roboto;
-    color: black;
+    font-size: 1rem;
     cursor: text;
     border: none;
     border: 0;
@@ -19,12 +18,17 @@
 }
 .email-compose input{
     padding: 5px;
+    color: white;
 }
 .new-email-body{
-border: 1px solid rgb(180, 180, 180);
+    border: 1px solid rgb(180, 180, 180);
+    padding: 5px;
+    height: 400px
 }
 .general-details{
-    border: 1px solid rgb(180, 180, 180);
+    border-top: 1px solid rgb(180, 180, 180);
+    border-left: 1px solid rgb(180, 180, 180);
+    border-right: 1px solid rgb(180, 180, 180);
     background-color: #fa9c00 ;
 }
 .general-details >*{
@@ -34,10 +38,18 @@ border: 1px solid rgb(180, 180, 180);
 .compose-btn{
     font-family: Passion One , cursive;
     font-size: 1.2rem;
-    background-color: #fa9c00;
     outline: none;
     border:  none;
+    cursor: pointer;
+    transition: 0.1s
+}
+.compose-btn:hover{
+    transform: scale(1.10,1.10);
 }
 .compose-opt{
+    border-top: 1px solid rgb(180, 180, 180);
+    border-left: 1px solid rgb(180, 180, 180);
+    border-right: 1px solid rgb(180, 180, 180);
     background-color: #fff;
+    padding: 5px;
 }

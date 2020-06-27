@@ -6,7 +6,7 @@
     grid-template-rows: 0.1fr 0.9fr;
     grid-template-areas: "fl fl fl fl" "sd  main main main ";
     justify-content: flex-start;
-    height: max-content;
+    min-height: 85vh;
     flex-grow: 1;
     
 }
@@ -30,7 +30,7 @@
     text-decoration: none;
 }
 
-@media (max-width:480px){
+@media (max-width:570px){
     .email-app {
         background-color: antiquewhite;
         display: flex;    

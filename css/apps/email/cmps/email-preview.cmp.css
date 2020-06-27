@@ -13,9 +13,10 @@
     grid-template-areas:
     "opt from subj body body date";
     transition: 0.1s;
-    max-height: 31px;
     min-height: 0;
     min-width: 0;
+    max-height: 30px;
+
     
 }
 .email-preview:hover{
@@ -31,6 +32,8 @@
 }
 .preview-opt{
     grid-area: opt;
+    white-space: nowrap;
+}
 }
 .preview-opt >*{
     margin-right: 10px;
@@ -42,18 +45,23 @@
     grid-area: from;
 }
 .subject-prev{
-    grid-area: subj;
+   
 }
 .subject-body-preview{
+    grid-area: subj;
     overflow: hidden;
-    min-width: 0
+    text-overflow: ellipsis;
+    max-height: 20px;
 }
 .body-prev{
     grid-area: body;
     color: rgb(54, 54, 54);
+    
 }
 .date-prev{
     grid-area: date;
+    overflow: hidden;
+    max-height: 20px;
 }
 .bold{
     font-weight: bold;

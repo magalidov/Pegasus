@@ -5,10 +5,10 @@ export default {
 	name:'email-compose',
 	template: `
     <section class="email-compose flex col">
-		<div class="form-informer" v-if="informer">{{informer}}</div>
 		<div class="compose-opt flex space-between">
-			<button class="compose-btn">Attach Img <i class="far fa-image"></i></button>
-			<button @click="checkThenSend" class="compose-btn">Send <i class="far fa-paper-plane"></i></button>
+			<!-- <button class="compose-btn">Attach Img <i class="far fa-image"></i></button> -->
+			<div class="form-informer"><span v-if="informer">{{informer}}</span></div>
+			<span @click="checkThenSend" class="compose-btn">Send <i class="far fa-paper-plane"></i></span>
 		</div>
 		<div class="compose-inputs"></div>
 		<div class='general-details flex col'>
@@ -70,11 +70,11 @@ export default {
 			let email = this.newEmail;
 			let informer = 'Missing Fields: ';
 			if (!email.from) {
-				informer += '\'From\'. ';
+				informer += '\'From\' ';
 				send = false;
 			} else if (email.from.indexOf('@') === -1) email.from += '@pegasus.com';
 			if (!email.subject) {
-				informer += '\'Subject\'. ';
+				informer += '\'Subject\' ';
 				send = false;
 			}
 			if (send) this.sendEmail();
