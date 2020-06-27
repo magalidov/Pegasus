@@ -53,8 +53,7 @@ export default {
     eventBus.$on("pinStat", (noteId) => {
       noteService.updateNoteStatus(noteId);
       this.getNotes();
-    });
-    
+    });    
   },
   computed: {
     notesToShow() {

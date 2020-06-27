@@ -17,7 +17,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteTodo",
-        isPinned: false,
+        isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
@@ -31,88 +31,17 @@ function _createNotes() {
             },
             {
               id: Utils.getRandomId(),
-              txt: "Learn Javascript",
+              txt: "Finish This Sprint!!!!",
               isDone: false,
               doneAt: null,
             },
             {
               id: Utils.getRandomId(),
-              txt: "Learn Python",
+              txt: "Make Shaksuka",
               isDone: false,
               doneAt: null,
             },
           ],
-        },
-        style: {
-          backgroundColor: "#fa9c00",
-        },
-      },
-      {
-        id: Utils.getRandomId(),
-        type: "noteAudio",
-        isPinned: true,
-        createdAt: new Date().toLocaleString(),
-        editedAt: "",
-        isOnEdit: false,
-        info: {
-          url:
-            "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
-        },
-        style: {
-          backgroundColor: "#fa9c00",
-        },
-      },
-      {
-        id: Utils.getRandomId(),
-        type: "noteText",
-        isPinned: false,
-        createdAt: new Date().toLocaleString(),
-        editedAt: "",
-        isOnEdit: false,
-        info: {
-          txt: "First Note",
-        },
-        style: {
-          backgroundColor: "#fa9c00",
-        },
-      },
-      {
-        id: Utils.getRandomId(),
-        type: "noteText",
-        isPinned: true,
-        createdAt: new Date().toLocaleString(),
-        editedAt: "",
-        isOnEdit: false,
-        info: {
-          txt: "Second Note",
-        },
-        style: {
-          backgroundColor: "#fa9c00",
-        },
-      },
-      {
-        id: Utils.getRandomId(),
-        type: "noteText",
-        isPinned: true,
-        createdAt: new Date().toLocaleString(),
-        editedAt: "",
-        isOnEdit: false,
-        info: {
-          txt: "Yesssss",
-        },
-        style: {
-          backgroundColor: "#fa9c00",
-        },
-      },
-      {
-        id: Utils.getRandomId(),
-        type: "noteText",
-        isPinned: true,
-        createdAt: new Date().toLocaleString(),
-        editedAt: "",
-        isOnEdit: false,
-        info: {
-          txt: "Asaf and Idov!!!!",
         },
         style: {
           backgroundColor: "#fa9c00",
@@ -135,8 +64,79 @@ function _createNotes() {
       },
       {
         id: Utils.getRandomId(),
-        type: "noteVideo",
+        type: "noteText",
         isPinned: true,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          txt: "Asaf and Idov!!!!",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteAudio",
+        isPinned: false,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          url:
+            "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: false,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          txt: "Kololoooo This Worksss",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: false,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          txt: "Edit meeee",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteText",
+        isPinned: false,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          txt: "Idov was Here.",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
+      {
+        id: Utils.getRandomId(),
+        type: "noteVideo",
+        isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,

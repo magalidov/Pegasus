@@ -2,12 +2,12 @@ export default {
   template: `
     <section class="app-home ">
             <h1>Welcome To Pegasus</h1>
-            <h3>Where Design and Productivity Combined</h3>
+            <h3>Where Design and Productivity Combine</h3>
             <div class="apps flex space-around wrap">
                 <section class="product col-layout" @click="goto('books')">
                     <h3 class="app-title">Books</h3>
                     <i class="far fa-book fa-4x"></i></i>
-                    <p>Search,view and buy Your favorite books</p>
+                    <p>Search,view and buy your favorite books</p>
                 </section>
                 <section class="product col-layout" @click="goto('email')">
                     <h3 class="app-title">Email</h3>
