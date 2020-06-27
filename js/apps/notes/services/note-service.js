@@ -17,12 +17,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteTodo",
-        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Todooammmm',
           todos: [
             {
               id: Utils.getRandomId(),
@@ -51,12 +51,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteImage",
-        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Check out my belly',
           url:
             "https://media.tenor.com/images/6afb17492c5b0a711b51afe70e24d3c4/tenor.gif",
         },
@@ -67,12 +67,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Best Team!',
           txt: "Asaf and Idov!!!!",
         },
         style: {
@@ -82,12 +82,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteAudio",
-        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Simply Audio',
           url:
             "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
         },
@@ -98,12 +98,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Check Our App',
           txt: "Kololoooo This Worksss",
         },
         style: {
@@ -113,12 +113,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Edit This',
           txt: "Edit meeee",
         },
         style: {
@@ -128,12 +128,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
-        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Idovvv',
           txt: "Idov was Here.",
         },
         style: {
@@ -143,12 +143,12 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteVideo",
-        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
         isOnEdit: false,
         info: {
+          title:'Listen To ME',
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
         },
         style: {

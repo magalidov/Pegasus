@@ -3,7 +3,7 @@
     background-image: url('../img/about.jpg');
     background-size: cover;
     flex-grow: 1;
-    height: 85vh;
+    min-height: 85vh;
     font-family: 'Bungee Inline', cursive;
 }
 
@@ -21,13 +21,17 @@
     border-radius: 10px;
     margin: 50px;
 }
-.app-about .about-card h3{
-    margin-top:80px;
+
+.app-about .about-card img {
+    height: 100px;
+}
+
+.app-about .about-card h3 {
+    margin-top: 50px;
 }
 
 .app-about .social-nav {
     margin-top: 50px;
-
 }
 
 .app-about .social-nav>* {
@@ -46,6 +50,7 @@
     padding-left: 11px;
     padding-top: 10px;
 }
+
 .social-nav .facebook {
     margin-right: 10px
 }
@@ -66,4 +71,12 @@
     color: black;
     background-color: #6cc644;
     transform: scale(1.1);
+}
+
+@media (max-width:480px){
+    .app-about h1{
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 }

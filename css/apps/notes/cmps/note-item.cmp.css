@@ -19,6 +19,12 @@
 
 }
 
+.note-item .title{
+    margin:5px;
+    text-decoration: underline;
+    padding:0 0 0 5px;
+}
+
 .note-item:hover {
     cursor: pointer;
     /* outline: 3px solid black; */

@@ -11,7 +11,8 @@ export default {
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
             <i class="fas fa-thumbtack align-self-end" @click="changeNoteStatus" :class="pinnedClass"></i>
-            <h4 class="note-title">{{note.title}}</h4>
+            <textarea class="title"  ref="title-area"  v-model="note.info.title"
+                       @blur="onEdit" @click="onFocus" rows="1"></textarea>
              <component :is="note.type" :note="note" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
@@ -45,6 +46,13 @@ export default {
     changeNoteStatus() {
       eventBus.$emit("pinStat", this.note.id);
     },
+    onFocus(){
+      this.$refs["title-area"].focus()
+      this.$refs["title-area"].select()
+    },
+    onEdit(){
+      eventBus.$emit("update", this.note);
+    }
   },
   components: {
     editBar,
