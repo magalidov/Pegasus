@@ -17,6 +17,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteTodo",
+        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -50,6 +51,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteImage",
+        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -65,6 +67,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
+        title:'Note Title',
         isPinned: true,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -79,6 +82,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteAudio",
+        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -94,6 +98,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
+        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -108,6 +113,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
+        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -122,6 +128,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteText",
+        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -136,6 +143,7 @@ function _createNotes() {
       {
         id: Utils.getRandomId(),
         type: "noteVideo",
+        title:'Note Title',
         isPinned: false,
         createdAt: new Date().toLocaleString(),
         editedAt: "",
@@ -163,6 +171,7 @@ function addNewNote(type, info) {
   var newNote = {
     id: Utils.getRandomId(),
     type,
+    title:'Note Title',
     isPinned: false,
     createdAt: new Date().toLocaleString(),
     editedAt: "",

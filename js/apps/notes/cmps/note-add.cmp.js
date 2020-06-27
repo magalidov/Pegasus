@@ -5,7 +5,7 @@ export default {
   template: `
     <section class="note-add col-layout">
       <section class="flex">
-          <input ref="newNoteInput" @keyup.enter="onAddNote" type="text"
+          <input ref="newNoteInput" @keyup.enter.prevent="onAddNote" type="text"
                  placeholder="Take a note..." @focus="isFocused = true" />
       </section>
           <ul class="cmp-options clean-list flex" v-if="isFocused">

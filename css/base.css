@@ -21,3 +21,7 @@ a{
     position: relative;;
 }
 
+main .main-page{
+    min-height:88vh ;
+}
+

@@ -12,6 +12,7 @@
 .notes-app {
     background-color: antiquewhite;
     padding: 10px;
+    height: 88vh;
     height: max-content;
     flex-grow: 1;
 }
@@ -56,6 +57,7 @@
     border: 2px solid #352828;
     border-radius: 10px;
     position: relative;
+
 }
 
 

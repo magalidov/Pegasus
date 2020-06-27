@@ -1,4 +1,4 @@
-import {eventBus} from '../../../services/event-bus.service.js'
+import { eventBus } from "../../../services/event-bus.service.js";
 import editBar from "./note-editbar.cmp.js";
 import noteText from "./note-txt.cmp.js";
 import noteImage from "./note-img.cmp.js";
@@ -11,6 +11,7 @@ export default {
   template: `
         <section class="note-item flex col space-around" :note="note" :style="getStyle"> 
             <i class="fas fa-thumbtack align-self-end" @click="changeNoteStatus" :class="pinnedClass"></i>
+            <h4 class="note-title">{{note.title}}</h4>
              <component :is="note.type" :note="note" @edit="saveChanges"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
@@ -24,9 +25,9 @@ export default {
     };
   },
   computed: {
-    pinnedClass(){
-        if(this.note.isPinned) return 'pinned'
-        else return 'pin-icon' 
+    pinnedClass() {
+      if (this.note.isPinned) return "pinned";
+      else return "pin-icon";
     },
     getNoteChangedTime() {
       if (!this.note.editedAt) return "Created: " + this.note.createdAt;

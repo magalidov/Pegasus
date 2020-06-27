@@ -29,6 +29,10 @@
     outline: none;
 }
 
+.todos-area .clean-list .label{
+    margin-left:10px;
+}
+
 .fas.fa-plus-circle{
     font-size: 1.5rem;
 }
