@@ -10,6 +10,10 @@
     font-size: 1rem;
     border:1.5px solid black;
     font-family: roboto, cursive;
+    border:none;
+    box-shadow: 1px 1px white;
+    background-color: ghostwhite;
+
 }
 .email-filter select{
     max-width: 100px;
@@ -18,7 +22,9 @@
     padding: 5px;
     font-size: 1rem;
     border:1.5px solid black;
+    border:none;
+    box-shadow: 1px 1px white;
+    background-color: ghostwhite;
+
 }
-@media (max-width:480px){
-    
-}
+

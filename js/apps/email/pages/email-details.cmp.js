@@ -89,7 +89,7 @@ export default {
 			this.$router.go(-1);
 		},
 		saveAsNote(){
-			this.$router.push(`/notes?text=${this.emailToShow.body}`)
+			this.$router.push(`/notes?body=${this.emailToShow.body}&subject=${this.emailToShow.subject}`)
 		}
 	},
 };

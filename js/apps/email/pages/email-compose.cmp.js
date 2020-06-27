@@ -39,6 +39,7 @@ export default {
 		if (this.$route.query.body){
 			const body = this.$route.query.body
 			const type = this.$route.query.type
+			this.newEmail.subject = this.$route.query.title
 			if(type==='noteText'|| type==='noteTodo')this.newEmail.body = body
 			else if(type==='noteImage') this.newEmail.body = `<img src="${body}">`
 			else if(type==='noteVideo') this.newEmail.body = `<iframe src="${body}"></iframe>`
@@ -52,10 +53,6 @@ export default {
 	},
 	mounted(){
 		this.$refs.elInputFrom.focus()
-		
-	},
-	computed:{
-
 	},
 	methods: {
 		sendEmail() {
