@@ -7,8 +7,9 @@ export default {
     <section v-if="emailToShow" class="email-details flex col">
         <div class="details-btns flex space-between">
             <div class="details-tools">
-                <i class="fas fa-arrow-left" @click="backTolist"></i>
+				<i class="fas fa-arrow-left" @click="backTolist"></i>
                 <i class="fas fa-trash" @click="deleteEmail" title="Delete"></i>
+				<i class="fas fa-reply" @click="reply"></i>
                 <i :class="envelopeIcon" @click="toggleTag('isRead')" @mouseover="closedEnvelope" @mouseout="openEnvelope" title="Mark as Unred"></i>
                 <i :class="starType" @click="toggleTag('isStared')" :title="starTitle"></i>
                 <i class="fas fa-edit" @click="saveAsNote"></i>
@@ -90,6 +91,10 @@ export default {
 		},
 		saveAsNote(){
 			this.$router.push(`/notes?body=${this.emailToShow.body}&subject=${this.emailToShow.subject}`)
+		},
+		reply(){
+			const subject = 'Re: ' + this.emailToShow.subject 
+			this.$router.push(`/email/compose/new?type=reply&subject=${subject}`)
 		}
 	},
 };
