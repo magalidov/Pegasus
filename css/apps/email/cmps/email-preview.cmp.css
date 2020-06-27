@@ -34,7 +34,7 @@
     grid-area: opt;
     white-space: nowrap;
 }
-}
+
 .preview-opt >*{
     margin-right: 10px;
 }
@@ -43,6 +43,7 @@
 }
 .from-prev{
     grid-area: from;
+    
 }
 .subject-prev{
    
