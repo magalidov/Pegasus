@@ -10,5 +10,6 @@
     font-size: 1rem;
     width: 90%;
     padding: 2px;
+    overflow: hidden;
 }
 
