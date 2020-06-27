@@ -5,16 +5,19 @@ export default {
 	name:'email-compose',
 	template: `
     <section class="email-compose flex col">
-        <input type="text" class='general-details' disabled v-model="to"/>
-        <input type="text" class='general-details' ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
-        <input type="text" class='general-details' v-model="newEmail.subject" placeholder="Subject:"/>
-		<!-- <textarea class="new-email-body grow" v-model="newEmail.body"/></div> -->
-		<div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div>
-        <div class="form-informer" v-if="informer">{{informer}}</div>
-        <div class="compose-opt flex space-between">
-            <button>Attach Img</button>
-            <button @click="checkThenSend">Send</button>
-        </div>
+		<div class="form-informer" v-if="informer">{{informer}}</div>
+		<div class="compose-opt flex space-between">
+			<button class="compose-btn">Attach Img <i class="far fa-image"></i></button>
+			<button @click="checkThenSend" class="compose-btn">Send <i class="far fa-paper-plane"></i></button>
+		</div>
+		<div class="compose-inputs"></div>
+		<div class='general-details flex col'>
+			<input type="text" disabled v-model="to"/>
+			<input type="text" ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
+			<input type="text" v-model="newEmail.subject" placeholder="Subject:"/>
+		</div>
+		<textarea class="new-email-body grow" v-model="newEmail.body"/></div>
+		<!-- <div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div> -->
     </section>
     `,
 	data() {
@@ -29,10 +32,11 @@ export default {
 				sentAt: '',
 				id: null,
 			},
+			contentEditable: ''
 		};
 	},
 	created(){
-		if (this.$route.query){
+		if (this.$route.query.body){
 			const body = this.$route.query.body
 			const type = this.$route.query.type
 			if(type==='noteText'|| type==='noteTodo')this.newEmail.body = body
@@ -48,12 +52,10 @@ export default {
 	},
 	mounted(){
 		this.$refs.elInputFrom.focus()
-		// console.log('this.$refs.elBody.innerHTML:', this.$refs.elBody.innerHTML)
+		
 	},
 	computed:{
-		// body(){
-		// 	return this.$refs{elBody.innerHTML
-		// }
+
 	},
 	methods: {
 		sendEmail() {
@@ -90,9 +92,5 @@ export default {
 				this.informer = '';
 			},
 		},
-		// body(change){
-		// console.log('change:', change)
-
-		// }
 	},
 };

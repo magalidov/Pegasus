@@ -1,10 +1,10 @@
 .email-details{
     font-size: 1.1rem;
     font-family: roboto;
-    
+    height: max-content;
 }
-.details-tools{
-    
+.details-btns{
+    background-color: #fff;
 }
 .details-tools >*{
     cursor: pointer;
@@ -25,7 +25,7 @@
 }
 .email-body{
     border: 1px solid rgb(180, 180, 180);
-    height: ;
+    background-color: #fff;
 }
 .email-subject{
     font-size: 2rem;

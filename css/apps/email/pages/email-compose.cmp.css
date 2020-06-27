@@ -1,5 +1,6 @@
 .email-compose{
     font-family: roboto;
+    height: max-content;
 }
 
 .form-informer{
@@ -9,6 +10,7 @@
 }
 .email-compose input ,textarea, .new-email-body{
     font-family: roboto;
+    color: black;
     cursor: text;
     border: none;
     border: 0;
@@ -22,5 +24,20 @@
 border: 1px solid rgb(180, 180, 180);
 }
 .general-details{
+    border: 1px solid rgb(180, 180, 180);
     background-color: #fa9c00 ;
+}
+.general-details >*{
+    background-color: #fa9c00 ;
+}
+
+.compose-btn{
+    font-family: Passion One , cursive;
+    font-size: 1.2rem;
+    background-color: #fa9c00;
+    outline: none;
+    border:  none;
+}
+.compose-opt{
+    background-color: #fff;
 }
