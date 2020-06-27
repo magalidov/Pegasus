@@ -42,9 +42,6 @@ export default {
         </section>
     </div>
     `,
-  computed: {},
-  methods: {},
-  components: {},
 };
 
 
