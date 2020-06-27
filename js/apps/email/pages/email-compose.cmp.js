@@ -36,10 +36,14 @@ export default {
 		};
 	},
 	created(){
-		if (this.$route.query.body){
-			const body = this.$route.query.body
+		if (this.$route.query.type){
 			const type = this.$route.query.type
-			this.newEmail.subject = this.$route.query.title
+			if (type==='reply'){
+				this.newEmail.subject = this.$route.query.subject
+				return
+			} 
+			const body = this.$route.query.body
+			this.newEmail.subject = this.$route.query.subject
 			if(type==='noteText'|| type==='noteTodo')this.newEmail.body = body
 			else if(type==='noteImage') this.newEmail.body = `<img src="${body}">`
 			else if(type==='noteVideo') this.newEmail.body = `<iframe src="${body}"></iframe>`
