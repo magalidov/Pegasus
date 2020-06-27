@@ -8,6 +8,7 @@
     font-weight: bold;
 }
 .email-compose input ,textarea, .new-email-body{
+    font-family: roboto;
     cursor: text;
     border: none;
     border: 0;

@@ -1,4 +1,5 @@
 .app-about{
+    background-color: antiquewhite;
     flex-grow: 1;
     height: 85vh;
     font-family: 'Bungee Inline', cursive;

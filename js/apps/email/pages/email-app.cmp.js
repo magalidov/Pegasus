@@ -24,12 +24,18 @@ export default {
 	},
 	created() {
 		this.loadEmails();
-		eventBus.$on('changeTags', (tag, state, checkedEmails) =>
-			emailService.updateEmails(tag, state, checkedEmails)
-		);
-		eventBus.$on('update', (email) => emailService.updateEmail(email));
-		eventBus.$on('delete', (checkedEmails) =>
+		eventBus.$on('changeTags', (tag, state, checkedEmailsIds) =>{
+			emailService.updateEmails(tag, state, checkedEmailsIds)
+			this.loadEmails()
+		});
+		eventBus.$on('update', (emailId,tags) =>{
+			emailService.updateEmail(emailId,tags);
+			this.loadEmails()
+		});
+		eventBus.$on('delete', (checkedEmails) =>{
 			emailService.deleteEmails(checkedEmails)
+			this.loadEmails()
+		}
 		);
 		eventBus.$on('sent', () => this.loadEmails())
 	},

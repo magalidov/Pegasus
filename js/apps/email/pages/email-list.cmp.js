@@ -7,7 +7,7 @@ export default {
 	props: ['emailsToShow'],
 	template: `
     <section class="email-list" v-if="emailsToShow">
-        <list-tools @clear="clearChecks" :checkedEmails="checkedEmails" :emailsAmount="emailsToShow.length"/>
+        <list-tools @clear="clearChecks" @updateCheckedEmails="updateCheckedEmails" :checkedEmails="checkedEmails" :emailsAmount="emailsToShow.length"/>
         <email-preview v-for="(email,idx) in emailsToShow" :email="email" :idx="idx" @checkBox="emailInCheckedList" :key="idx"/>
         <h1 v-if="emailsToShow.length===0" class="email-preview no-emails">No Emails To Show</h1>
     </section>
@@ -20,7 +20,7 @@ export default {
 	created(){
 		eventBus.$on('getCurrList',()=>{
 			eventBus.$emit('currListSent',this.emailsToShow)
-		})
+		});
 	},
 	methods: {
 		emailInCheckedList(action, email) {
@@ -34,6 +34,11 @@ export default {
 		clearChecks() {
 			this.checkedEmails = [];
 			eventBus.$emit('clearChecks');
+		},
+		updateCheckedEmails(){
+			this.checkedEmails.forEach(checkedEmail=> {
+				checkedEmail.tags = emailsToShow.find(email=> email)
+			})
 		},
 	},
 	components: {

@@ -8,8 +8,8 @@ export default {
         <input type="text" class='general-details' disabled v-model="to"/>
         <input type="text" class='general-details' ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
         <input type="text" class='general-details' v-model="newEmail.subject" placeholder="Subject:"/>
-		<textarea class="new-email-body grow" v-model="newEmail.body"/></div>
-		<!-- <div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div> -->
+		<!-- <textarea class="new-email-body grow" v-model="newEmail.body"/></div> -->
+		<div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div>
         <div class="form-informer" v-if="informer">{{informer}}</div>
         <div class="compose-opt flex space-between">
             <button>Attach Img</button>

@@ -1,6 +1,7 @@
 .email-app {
+    background-color: antiquewhite;
     display: grid;
-    margin: 0 20px;
+    padding: 0 20px;
     grid-template-columns: 0.1fr 0.9fr;
     grid-template-rows: 0.1fr 0.9fr;
     grid-template-areas: "fl fl fl fl" "sd  main main main ";

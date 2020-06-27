@@ -47,7 +47,8 @@ export default {
         },
         toggleAllTags(tag){
             const state = (this.checkedEmails.every(email => email.tags[tag]))? false: true
-            eventBus.$emit('changeTags',tag,state,this.checkedEmails)
+            this.$emit('updateCheckedEmails')
+            eventBus.$emit('changeTags',tag,state,this.checkedEmails.map(email=> email.id))
         },
         deleteCheckedEmails(){
             eventBus.$emit('delete', this.checkedEmails)

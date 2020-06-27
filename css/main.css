@@ -14,6 +14,7 @@
 @import './apps/email/pages/email-compose.cmp.css';
 @import './apps/email/cmps/email-filter.cmp.css';
 @import './apps/email/cmps/email-sidebar.cmp.css';
+@import './apps/email/cmps/email-status.cmp.css';
 @import './apps/email/cmps/list-tools.cmp.css';
 @import './apps/email/cmps/email-preview.cmp.css';
 @import './apps/email/pages/email-details.cmp.css';

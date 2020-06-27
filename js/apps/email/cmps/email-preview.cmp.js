@@ -22,7 +22,6 @@ export default {
     data(){
         return{
             checked:false,
-            tags: this.email.tags
         }
     },
     created(){
@@ -34,6 +33,9 @@ export default {
         })
     },
     computed:{
+        tags(){
+            return this.email.tags
+        },
         fromName(){
             let from = this.email.from.substring(0,this.email.from.indexOf('@'))
             return (from.length>15)? from.substring(0,15)+'...': from
@@ -47,19 +49,19 @@ export default {
             return (body.length>70)? body.substring(0,70)+'...': body
         },
         starType(){
-            return (this.email.tags.isStared)? 'fas fa-star': 'far fa-star'
+            return (this.tags.isStared)? 'fas fa-star': 'far fa-star'
         },
         starTitle(){
             return (this.starType==='far fa-star')? 'Add To Stared' : 'Remove From Stared'
         },
         envelopeType(){
-            return (this.email.tags.isRead)? 'fas fa-envelope-open-text': 'fas fa-envelope'
+            return (this.tags.isRead)? 'fas fa-envelope-open-text': 'fas fa-envelope'
         },
         envelopeTitle(){
             return (this.envelopeType==='fas fa-envelope')? 'Mark as Read' : 'Mark as Unred'
         },
         textBold(){
-            return (this.email.tags.isRead)? '': 'bold'
+            return (this.tags.isRead)? '': 'bold'
         },
         fullDate(){
             return new Date(this.email.sentAt).toLocaleString()
@@ -71,14 +73,11 @@ export default {
     methods:{
         toggleTag(tag){
             this.tags[tag] = !this.tags[tag]
-            this.updateEmail()
+            eventBus.$emit('update',this.email.id,this.tags)
         },
         toggleInCheckedList(email){
             if (this.checked) this.$emit('checkBox','add',email)
             else this.$emit('checkBox','remove',email)
-        },
-        updateEmail(){
-            eventBus.$emit('update',this.email)
         },
         showEmailDetails(){
             this.$router.push('/email/details/' + this.email.id)
