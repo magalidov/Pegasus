@@ -46,7 +46,7 @@ export default {
           return`${idx}. ${todo.txt}\n`
         }).join(',');
       } else messegeContent = this.note.info.url;
-      this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}`);
+      this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}&title=${this.note.info.title}`);
     },
   },
   components: {

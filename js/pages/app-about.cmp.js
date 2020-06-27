@@ -5,7 +5,7 @@ export default {
         <section class="flex justify-center wrap">
         <section class="about-card col-layout">
             <h2>Asaf Cohen</h2>
-            <img src="../img/man-icon.jpg">
+            <img src="img/man-icon.jpg">
             <h3>Fullstack Developer</h3>
             <ul class="social-nav clean-list flex ">
                 <li class="facebook">  
@@ -23,7 +23,7 @@ export default {
         </section>
         <section  class="about-card col-layout ">
            <h2>Idov Magal</h2>
-           <img src="../img/man-icon.jpg">
+           <img src="img/man-icon.jpg">
            <h3>Fullstack Developer</h3>
            <ul class="social-nav clean-list flex ">
            <li class="facebook">  
