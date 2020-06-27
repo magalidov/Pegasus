@@ -1,14 +1,16 @@
-.video-area iframe{
+.video-area iframe {
     max-width: 325px;
     height: 250px;
     object-fit: fill;
     margin: 5px auto;
-    border:2px solid black;
+    border: 2px solid black;
     display: block;
+    position: sticky;
+ 
 }
 
 .video-area textarea {
-    max-height: 200px;
+     max-height: 200px;
     width: 100%;
     margin: 5px auto;
     outline: none;

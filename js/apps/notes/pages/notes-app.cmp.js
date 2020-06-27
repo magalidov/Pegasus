@@ -13,12 +13,12 @@ export default {
               <div class="cmp-container">
                   <section class="pinned-notes">
                   <h1>PINNED:</h1>
-                  <note-item v-for="note in pinnedNotes" :note="note" ></note-item>
+                  <note-item v-for="note in pinnedNotes" :note="note" :key="note.id"></note-item>
                   <h2 v-if="checkPinned">No Pinned Notes</h2>
                   </section>
                   <section ref="notes" class="notes">
                     <h1>OTHERS:</h1>
-                    <note-item v-for="note in notesToShow" :note="note" ></note-item>
+                    <note-item v-for="note in notesToShow" :note="note" :key="note.id" ></note-item>
                   </section>
               </div>
           </main>

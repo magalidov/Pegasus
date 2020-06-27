@@ -13,7 +13,7 @@ export default {
             <i class="fas fa-thumbtack align-self-end" @click="changeNoteStatus" :class="pinnedClass"></i>
             <textarea class="title"  ref="title-area"  v-model="note.info.title"
                        @blur="onEdit" @click="onFocus" rows="1"></textarea>
-             <component :is="note.type" :note="note" @edit="saveChanges"/></component>
+             <component :is="note.type" :note="note" @edit="saveChanges" :key="note.id"/></component>
              <section class="edited">
                  {{getNoteChangedTime}}
              </section>

@@ -6,7 +6,7 @@ export default {
             Your browser does not support the
             <code>audio</code> element.
          </audio>
-         <textarea ref="textarea" v-model="url" v-if="note.isOnEdit" @blur="setEmbedVid"></textarea>
+         <textarea ref="textarea" v-model="url" v-if="note.isOnEdit" @blur="saveChanges"></textarea>
         </section>
     `,
   data() {

@@ -14,6 +14,7 @@ function _createNotes() {
   const notes = Utils.loadFromStorage("gNotes");
   if (!notes) {
     let defaultNotes = [
+      
       {
         id: Utils.getRandomId(),
         type: "noteTodo",
@@ -79,6 +80,7 @@ function _createNotes() {
           backgroundColor: "#fa9c00",
         },
       },
+     
       {
         id: Utils.getRandomId(),
         type: "noteAudio",
@@ -155,6 +157,21 @@ function _createNotes() {
           backgroundColor: "#fa9c00",
         },
       },
+      {
+        id: Utils.getRandomId(),
+        type: "noteVideo",
+        isPinned: false,
+        createdAt: new Date().toLocaleString(),
+        editedAt: "",
+        isOnEdit: false,
+        info: {
+          title:'Listen To ME',
+          url: "https://www.youtube.com/watch?v=Lq8bpo9KWa8",
+        },
+        style: {
+          backgroundColor: "#fa9c00",
+        },
+      },
     ];
     return defaultNotes;
   } else return notes;
@@ -181,7 +198,7 @@ function addNewNote(type, info) {
       backgroundColor: "#ffcc13",
     },
   };
-  gNotes.unshift(newNote);
+  gNotes.push(newNote);
   Utils.storeToStorage("gNotes", gNotes);
 }
 
