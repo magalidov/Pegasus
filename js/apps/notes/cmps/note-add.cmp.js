@@ -40,7 +40,7 @@ export default {
         {
           type: "noteTodo",
           inputText:
-            "Make a list so you won't forget (Syntax='todo,todo,todo...)",
+            "Make a list so you won't forget (Syntax='todo,todo,todo...')",
         },
         {
           type: "noteAudio",

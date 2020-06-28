@@ -177,7 +177,7 @@ function _createNotes() {
   } else return notes;
 }
 function _getNoteIdx(noteId) {
-  return gNotes.findIndex((note) => note.id === noteId);
+  return gNotes.findIndex((note) => note.id === noteId); //! add if not what happend
 }
 
 function getNotes() {
