@@ -7,12 +7,12 @@ export default {
     <section v-if="emailToShow" class="email-details flex col">
         <div class="details-btns flex space-between">
             <div class="details-tools">
-				<i class="fas fa-arrow-left" @click="backTolist"></i>
+				<i class="fas fa-arrow-left" @click="backTolist" title="Back to List"></i>
                 <i class="fas fa-trash" @click="deleteEmail" title="Delete"></i>
-				<i class="fas fa-reply" @click="reply"></i>
+				<i class="fas fa-reply" @click="reply" title="Reply"></i>
                 <i :class="envelopeIcon" @click="toggleTag('isRead')" @mouseover="closedEnvelope" @mouseout="openEnvelope" title="Mark as Unred"></i>
                 <i :class="starType" @click="toggleTag('isStared')" :title="starTitle"></i>
-                <i class="fas fa-edit" @click="saveAsNote"></i>
+                <i class="fas fa-edit" @click="saveAsNote" title="Save as Note"></i>
                 <i class="fas fa-tag"></i>
             </div>
             <div class="">
@@ -80,13 +80,13 @@ export default {
 			this.envelopeIcon = 'fas fa-envelope-open-text';
 		},
 		updateEmail() {
-			eventBus.$emit('update', this.emailToShow.id,this.emailToShow.tags);
+			eventBus.$emit('updateEmail', this.emailToShow.id,this.emailToShow.tags);
 		},
 		backTolist() {
 			this.$router.go(-1);
 		},
 		deleteEmail() {
-			eventBus.$emit('delete', [this.emailToShow]);
+			eventBus.$emit('deleteEmail', [this.emailToShow]);
 			this.$router.go(-1);
 		},
 		saveAsNote(){

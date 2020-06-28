@@ -51,7 +51,7 @@ export default {
             this.clearChecked()
         },
         deleteCheckedEmails(){
-            eventBus.$emit('delete', this.checkedEmails)
+            eventBus.$emit('deleteEmail', this.checkedEmails)
             this.clearChecked()
         },
     },

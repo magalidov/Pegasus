@@ -62,7 +62,7 @@ export default {
 		sendEmail() {
 			emailService
 				.sendEmail(this.to, this.newEmail)
-				.then(eventBus.$emit('sent'))
+				.then(eventBus.$emit('emailSent'))
 				.then(this.$router.push('/email'))
 				.then(eventBus.$emit('message','Your Email Has Been Sent!','good-msg'))
 		},
