@@ -21,16 +21,12 @@
     width: 100%;
     height: 30px;
     margin: 5px 0;
-    font-family: 'Pangolin', cursive;
+    font-family: lato,Arial,sans-serif;
     font-size: 1rem;
     border: none;
     border-bottom: 2px solid black;
     background: transparent;
     outline: none;
-}
-
-.todos-area .clean-list .label{
-    margin-left:10px;
 }
 
 .fas.fa-plus-circle{

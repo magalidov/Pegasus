@@ -4,32 +4,24 @@
     font-size: 1rem;
     margin: 0 10px 10px 0;
     padding: 5px;
-    /* box-shadow: 6px 4px #d4caca; */
     border: 1px solid #e0e0e0;
-    /* font-family: 'Pangolin', cursive; */
+    font-family: lato,Arial,sans-serif;
     transition: all .2s;
     break-inside: avoid-column;
     border-radius: 10px;
 }
 
-.note-item .note-title {
-    font-size: 1rem;
-    text-decoration: underline;
-    margin:0 0 10px 10px;
-
-}
-
 .note-item .title{
-    margin:5px;
-    text-decoration: underline;
-    padding:0 0 0 5px;
+    margin-bottom:8px;
+    padding:0 0 0 0px;
+    font-family: lato,Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.025rem;
 }
 
 .note-item:hover {
     cursor: pointer;
-    /* outline: 3px solid black; */
-    /* border: 4px solid #d4caca; */
-    box-shadow: 1px 2px #e0e0e0;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
 }
 
 .note-item .edited {

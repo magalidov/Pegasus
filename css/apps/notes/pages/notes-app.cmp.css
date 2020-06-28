@@ -10,7 +10,7 @@
 @import '../cmps/note-audio.cmp.css';
 
 .notes-app {
-    background-color: antiquewhite;
+    background-color: #ffffff;
     padding: 10px;
     height: 88vh;
     height: max-content;
@@ -29,7 +29,7 @@
 }
 
 .notes-app .cmp-container h2 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Passion One', cursive;
     font-size: 2rem;
     column-span: all;
     letter-spacing: 3px;
@@ -42,7 +42,7 @@
     column-count: 3;
     column-width: 250px;
     padding: 10px;
-    border: 1px solid #352828;
+    /* border: 1px solid #352828; */
     border-radius: 10px;
     position: relative;
     margin-bottom: 50px;
@@ -54,7 +54,7 @@
     column-count: 3;
     column-width: 260px;
     padding: 10px;
-    border: 1px solid #352828;
+    /* border: 1px solid #352828; */
     border-radius: 10px;
     position: relative;
 

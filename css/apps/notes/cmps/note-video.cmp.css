@@ -17,7 +17,7 @@
     border: none;
     resize: none;
     background-color: transparent;
-    font-family: 'Pangolin', cursive;
+    font-family: lato,Arial,sans-serif;
     font-size: 1rem;
     text-decoration: underline;
 }
