@@ -2,15 +2,15 @@
     max-width: 980px;
     margin: 10px auto;
     position: relative;
-    font-family: 'Pangolin', cursive;
+    font-family: roboto,Arial,sans-serif;
 }
 
 .note-add form {
     border-radius: 20px;
-    border: 1px solid white;
+    border: 1px solid #e0e0e0;
     margin-bottom: 20px;
     padding: 10px;
-    box-shadow: 1px 1px white
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
 }
 
 .note-add input {
@@ -20,7 +20,8 @@
     margin-inline-end: 5px;
     padding: 5px;
     font-size: 1rem;
-    font-family: 'Pangolin', cursive;
+    /* font-family: 'Pangolin', cursive; */
+    font-family: roboto,Arial,sans-serif;
     border: none;
     background-color: transparent;
     outline: none;
@@ -39,7 +40,7 @@
     font-size: 1rem;
     border: none;
     background-color: transparent;
-    font-family: 'Pangolin', cursive;
+    font-family: roboto,Arial,sans-serif;
     margin-top: 12px;
     transition: all .3s;
 }
