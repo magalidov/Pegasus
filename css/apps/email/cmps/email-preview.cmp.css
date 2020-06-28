@@ -9,13 +9,11 @@
     grid-gap: 10px;
     grid-template-columns: auto 1fr 5fr auto;
     grid-template-areas:
-    "opt from subj body body date";
+    "opt from subj date";
     transition: 0.1s;
     min-height: 0;
     min-width: 0;
     max-height: 30px;
-
-    
 }
 .email-preview:hover{
     background-color: #fa9a004f;
@@ -46,19 +44,22 @@
 }
 .from-prev{
     grid-area: from;
-    padding-right: 5px;
+    /* padding-right: 5px; */
 }
-
+.subject-prev{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .subject-body-preview{
     grid-area: subj;
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 20px;
+    vertical-align: center;
 }
 .body-prev{
     grid-area: body;
     color: rgb(54, 54, 54);
-    
 }
 .date-prev{
     grid-area: date;
@@ -71,4 +72,31 @@
 .no-emails{
     margin: 0 ;
     text-align: center;
+}
+
+@media (max-width:940px){
+    .date-prev{
+        font-size: 0.8rem;
+    }
+    .subject-body-preview{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width:660px){
+    .subject-body-preview{
+        font-size: 0.8rem;
+        max-height: 15px;
+    }
+    .from-prev{
+        font-size: 0.9rem;
+        max-height: 15px;
+    }
+}
+@media (max-width:500px){
+    .from-prev{
+        font-size: 0.8rem;
+    }
+    .date-prev{
+        font-size: 0.7rem;
+    }
 }
