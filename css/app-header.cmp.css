@@ -1,62 +1,98 @@
 .app-header {
-    background-color: #1d1d1d;
-    opacity: 0.9;
-    /* min-width: 480px; */
+    background-color: #202020;
 }
-
 .app-header nav {
-    margin: 0 auto;
-    border: 2px solid black;
     font-family: 'Passion One', cursive;
-    box-shadow: inset 0 -6px 0 #1e1e1e;
     color: white;
+    margin: 0 auto;
+    border: 1.5px solid black;
+    box-shadow: inset 0 -4px 0 #2b2b2b;
     width:100%;
 }
-
-.app-header nav .routes>* {
+.app-nav{
+    position: relative;
+}
+.nav-links>* {
+    font-size: 2.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 30px;
-    border-left: 2px solid black;
+    border-left: 1.5px solid black;
     cursor: pointer;
-    text-transform: capitalize;
-    font-size: 2rem;
-    width: 150px;
+    text-transform: uppercase;
+    width: 11vw;
     transition: all .3s;
 }
-
-@media (max-width:480px){
-    .app-header nav .routes>*{
-        font-size: 1rem;
-        width: 50px;
-    } 
+.open-menue{
+    display: none;
+    color: white;
+    border: none;
+    background-color: inherit;
+    outline: none;
+}
+.nav-links .router-link-active:not(:first-child) {
+    background-color: #fa9c00;
+    box-shadow: -1px 0 0 #1d1d1d, inset 0 -4px white;
 }
 
-
-.app-header nav .routes .router-link-exact-active {
+.nav-links>*:hover {
     background-color: #fa9c00;
 }
-
-.app-header nav .routes .router-link-exact-active:hover {
-    box-shadow: none;
+.logo{
+    padding-top: 10px;
+    margin: 0 10px;
 }
-
-.app-header nav .routes>*:hover {
-    background-color: #fa9c00;
-    box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px white;
-}
-
-.app-header .logo h1 {
+.logo h1{
     font-family: 'Passion One', cursive;
-    text-transform: capitalize;
-    letter-spacing: 2.5px;
-    /* font-size: 1.8rem; */
-    max-width: 100px;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    margin: 0;
+    font-weight: unset;
+}
+.logo i {
+    font-size: 2.5rem;
+    margin-inline-end: 10px;
+}
+.logo:hover >*{
+    color: #fa9c00;
 }
 
-.app-header .logo i {
-    font-size: 3.5rem;
-    margin-inline-start: 10px;
-    margin-inline-end: 20px;
+@media (max-width:940px){
+    .nav-links>* {
+        font-size: 3vw;
+        width: 12.5vw;
+    }
+}
+@media (max-width:660px){
+    .nav-links.hidden{
+        height: 500px;
+        position: absolute;
+        flex-direction: column;
+        top: 67px;
+        right: -5px;
+    }
+    .nav-links{
+        height: 500px;
+        position: absolute;
+        flex-direction: column;
+        top: 67px;
+        right: -5px;
+    }
+    .nav-links>* {
+        background-color: #2b2b2b;
+        border-left: 1.5px solid black;
+        border-right: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+        font-size: 2rem;
+        width: 100px;
+        
+    }
+    .open-menue{
+        display: block;
+    }
+    .nav-links .router-link-active:not(:first-child) {
+        box-shadow: none;    
+    }
+    
 }

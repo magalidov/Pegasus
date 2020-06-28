@@ -14,7 +14,6 @@ new Vue({
             <router-view class="main-page"/>
             <app-footer/>
             <general-msg/>
-            
         </main>
     `,
     components: {
