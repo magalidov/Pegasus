@@ -3,9 +3,7 @@
     padding: 5px;
 }
 
-.edit-bar>* {
-    margin-inline-start: 10px;
-}
+
 
 .edit-bar input {
     -webkit-appearance: none;
