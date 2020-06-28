@@ -1,25 +1,25 @@
 .book-preview {
-    width: 310px;
+    width: 290px;
     height: 350px;
     margin: 5px;
-    border: 2px solid black;
     text-align: center;
     transition: all .3s;
+    background-color: #ffffff;
     text-transform: uppercase;
-    background-color: white;
-    font-family: 'Passion One', cursive;
     letter-spacing: 1px;
+    border: 1px solid #e0e0e0;
+    font-family: lato, Arial, sans-serif;
+    border-radius: 10px;
 }
 
 .book-preview img {
-    width: 270px;
+    width: 260px;
     height: 250px;
 }
 
 .book-preview:hover {
     cursor: pointer;
-    box-shadow: 8px 5px black;
-    outline: yellow 3px solid;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
 .book-preview h6 {

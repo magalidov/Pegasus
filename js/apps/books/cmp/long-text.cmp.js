@@ -1,7 +1,7 @@
 export default{
     props: ['text'],
     template: `
-    <section class="long-text flex col-layout">
+    <section class="long-text flex">
         <h3>Description:</h3>
         <p>{{getFirstWords}}
             <span v-show="readMore">{{getRestOfWords}}</span>

@@ -1,7 +1,7 @@
 .note-item {
     height: max-content;
     font-size: 1rem;
-    margin: 0 10px 10px 0;
+    margin: 0 5px 10px 0;
     padding: 5px;
     border: 1px solid #e0e0e0;
     font-family: lato, Arial, sans-serif;
@@ -35,7 +35,7 @@
 
 .note-item .title {
     margin-bottom: 8px;
-    padding: 0 0 0 0px;
+    padding: 0 0 0 5px;
     font-family: lato, Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.025rem;
@@ -47,7 +47,7 @@
 }
 
 .note-item .edited {
-    padding: 10px;
+    padding: 10px 0 10px 5px;
     font-size: 0.7rem;
 }
 

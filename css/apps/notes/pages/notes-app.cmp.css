@@ -12,7 +12,6 @@
 .notes-app {
     background-color: #ffffff;
     padding: 10px;
-    height: 88vh;
     height: max-content;
     flex-grow: 1;
 }

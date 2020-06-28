@@ -8,27 +8,25 @@ export default {
   props: ["book"],
   template: `
       <div class="book-review ">
-            <div class="reviews">
+        <h2>Reviews:</h2>
+           <form @submit.prevent="onAddReview" class="flex">
+           <section class="flex">
+                <input type="text" id="reviewer-name" placeholder="Your Name" v-model:value="newReview.name"/>
+                <label for="rate">Rate:</label>
+                  <select id="rate" v-model:value="newReview.rate">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                  </select>
+               </section>
+               <textarea id="review-area" rows="3" cols="65" placeholder="Write Your Review" v-model:value="newReview.reviewText" />
+               <button type="submit" class="btn-submit-review">Send</button>
+           </form>
+           <div class="reviews">
               <reviews-list  :reviews="book.reviews" @delete="onDeleteReview" />
             </div>
-           <form @submit.prevent="onAddReview" class="col-layout">
-           <section class="flex">
-                <label for="reviewer-name">Name:</label>
-                <input type="text"  id="reviewer-name" placeholder="Your Name" v-model:value="newReview.name"/>
-                <label for="rate">Your Rate:</label>
-                <select id="rate" v-model:value="newReview.rate">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                </select>
-               </section>
-               <label for="review-area">Your Review: </label>
-               <textarea id="review-area" rows="3" cols="65" placeholder="Write Your Review" v-model:value="newReview.reviewText" />
-               <button type="submit" class="btn-submit-review">Send Review</button>
-              
-           </form>
           
       </div>
       `,

@@ -8,22 +8,23 @@ export default {
       <button @click="closeDetails" class="btn-close-details">
           -Close-
       </button>
-      <div class="all-details col-layout">
-            <div class="basic-book-detais flex">
-              <section class="summary col-layout">
+      <div class="all-details">
+            <div class="basic-book-details flex space-between">
+              <section class="summary flex col">
                   <h3 class="book-title">{{book.title}}</h3>
                   <h4 class="book-subt">{{book.subtitle}}</h4>
-                  <h5>Authors: {{getAuthors}}</h5>     
-                  <h5>Categories: {{getCategories}}</h5>
-                  <h5>First Published: {{book.publishedDate}} {{getBookAge}}</h5>
-                  <h5>Pages: {{book.pageCount}} {{getBookLength}}</h5>
-                  <h5>Book Language: '{{book.language}}'</h5>
+                  <h5><span>Authors: </span>{{getAuthors}}</h5>     
+                  <h5><span>Categories: </span>{{getCategories}}</h5>
+                  <h5><span>First Published: </span>{{book.publishedDate}} {{getBookAge}}</h5>
+                  <h5><span>Pages: </span>{{book.pageCount}} {{getBookLength}}</h5>
+                  <h5><span>Book Language: </span>'{{book.language}}'</h5>
               </section>
-              <img  class="book-thumbnail" :src="book.thumbnail"/>
+              <section class="img-and-price flex col-layout">
+                  <img  class="book-thumbnail" :src="book.thumbnail"/>
+                  <h5 class="book-price" :class="priceClass">Price: {{getPrice}}</h5>
+              </section>
               </div>
-              <h5 class="book-price" :class="priceClass">Book Price: {{getPrice}}</h5>
               <img class="sale" src="../../../../img/sale.png" v-show="book.listPrice.isOnSale">
-            
           <long-text :text="book.description" />
       </div>
       <book-review :book="book"/>
