@@ -2,9 +2,9 @@
 export default {
     props: ['foundBooks'],
     template: `
-        <ul class="found-books-list">
+        <ul class="found-books-list flex col">
             <li class="found-book flex space-between" v-for="book in foundBooks">
-                {{book.volumeInfo.title}} - {{book.saleInfo.saleability}}
+                {{book.volumeInfo.title}}
                 <button class="btn-add-book" @click="add(book)">+</button>
             </li>
         </ul>

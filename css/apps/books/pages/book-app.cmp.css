@@ -4,9 +4,10 @@
 @import '../cmps/book-preview.cmp.css';
 @import '../cmps/book-review-list.cmp.css';
 @import '../cmps/book-review.cmp.css';
+@import '../cmps/long-text.cmp.css';
 
 .books-app{
-    background-color: antiquewhite;
+    background-color: #ffffff;
     padding-top:20px;
 
 }

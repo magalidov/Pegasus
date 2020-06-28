@@ -1,14 +1,12 @@
 .book-details {
-    max-width: 780px;
+    max-width: 700px;
     margin: 10px auto;
-    background-color: #ffffffdb;
-    border-radius: 20px;
-    font-family: lato, Arial, sans-serif;
-    text-transform: capitalize;
-    border: 7px solid black;
-    letter-spacing: 1px;
-    font-size: 1rem;
     position: relative;
+    background-color: #ffffff;
+    text-transform: capitalize;
+    border: 2px solid #e0e0e0;
+    font-family: lato, Arial, sans-serif;
+    border-radius: 10px;
 }
 
 /* .ALL-DETAILS */
@@ -17,14 +15,28 @@
     flex-basis: 50%;
 }
 
-.book-details .basic-book-details .summary h5, h4, h3 {
-    padding: 10px;
+.basic-book-details .summary h5, h4, h3 {
+    margin: 0;
+    padding: 0px 0 25px 10px;
+    align-self: flex-start;
+    font-weight: normal;
+}
+
+.basic-book-details .summary span {
+    font-family: lato, Arial, sans-serif;
+    font-weight: normal;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 5px;
 }
 
 .book-details .book-thumbnail {
-    width: 200px;
-    height: 100%;
-    margin-left: 20px;
+    width: 220px;
+    border: 1px solid #e0e0e0;
+}
+
+.book-details .img-and-price {
+    padding: 5px;
 }
 
 .btn-close-details {
@@ -48,24 +60,25 @@
 }
 
 .book-details .book-title {
-    width: 100%;
-    text-align: center;
     font-size: 2rem;
     margin: 0;
-    padding: 0;
+    padding: 0 0 10px 10px;
 }
 
 .book-details .book-subt {
     width: 100%;
     text-align: center;
     font-size: 0.7rem;
-    padding: 0;
+    padding: 10px;
 }
 
 .book-details .book-price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    margin: 10px auto;
+    margin: 4px 40px;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
 }
 
 .book-details .sale {
@@ -74,14 +87,14 @@
     left: 0%;
     transform: rotate(-20deg);
     position: absolute;
-    top: 1%;
+    top: 0;
 }
 
 .book-details .btn-more-less {
     background-color: #333333;
     border-radius: 5px;
     color: white;
-    font-family: 'Notable', sans-serif;
+    font-family: lato, Arial, Helvetica, sans-serif;
     outline: none;
     cursor: pointer;
 }
@@ -89,9 +102,9 @@
 /* BASIC-DETAILS */
 
 .book-details .basic-book-details {
+    height: 350px;
     width: 100%;
-    border-top: 2px solid black;
-    text-align: center;
+    border-top: 1px solid #e0e0e0;
     padding: 5px;
 }
 
@@ -100,8 +113,3 @@
 }
 
 /* .long-text  cmp*/
-.long-text {
-    border: 2px solid black;
-    padding: 10px;
-}
-

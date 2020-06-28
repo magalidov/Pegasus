@@ -1,7 +1,7 @@
 export default {
   template: `
     <section class="note-filter flex justify-center">
-        <input type="text" placeholder="Search your notes" v-model="filterBy.txt" @input="onFilter"/>
+        <input type="search" placeholder="Search your notes" v-model="filterBy.txt" @input="onFilter"/>
         <select class="filter-opt" v-model="filterBy.type" @change="onFilter">
             <option value="all">All</option>
             <option value="noteText">Text</option>
