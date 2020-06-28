@@ -3,4 +3,5 @@
     object-fit: fill;
     margin: 10px auto;
     display: block;
+    outline: none;
 }

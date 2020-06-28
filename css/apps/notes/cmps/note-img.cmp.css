@@ -1,9 +1,9 @@
 .image-area img {
-    max-width: 325px;
-    height: 250px;
-    object-fit: fill;
+    width: 355px;
+    max-height: 300px;
+    object-fit: cover;
     margin: 5px auto;
-    border:2px solid black;
+    border: 1px solid #e0e1e1;
     display: block;
 }
 
@@ -18,4 +18,10 @@
     font-family: roboto,Arial,sans-serif;
     font-size: 1rem;
     text-decoration: underline;
+}
+
+@media (max-width:480px){
+    .image-area img{
+        width: 315px;
+    }
 }

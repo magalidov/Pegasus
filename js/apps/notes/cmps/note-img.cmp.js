@@ -1,7 +1,7 @@
 export default {
   props: ["note"],
   template: `
-         <section class="image-area align-self-center">
+         <section class="image-area">
              <img :src="url"/>
              <textarea v-model="url" v-if="isOnEdit" @blur="onEdit"></textarea>
           </section>
