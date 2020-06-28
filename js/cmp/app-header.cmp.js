@@ -6,19 +6,26 @@ export default {
                 <i class="far fa-pegasus fa-2x"></i>
                 <h1>Pegasus</h1>
             </div>
-            <button class="open-menue" @click="showSideMenue"><i class="fa fa-bars"></i></button>
-            <section class="nav-links flex">
-                <router-link tag="li" to="/">Home</router-link>  
-                <router-link tag="li" to="/books/" >Books</router-link>  
-                <router-link tag="li" to="/email/" >Email</router-link>  
-                <router-link tag="li" to="/notes">Notes</router-link>  
-                <router-link tag="li" to="/about">About</router-link>  
+            <button class="open-menue" @click="toggleMenue"><i class="fa fa-bars"></i></button>
+            <section :class="{hidden}" class="nav-links flex" ref="navLink">
+                <router-link tag="li" @click.native="toggleMenue" to="/">Home</router-link>  
+                <router-link tag="li" @click.native="toggleMenue" to="/books/" >Books</router-link>  
+                <router-link tag="li" @click.native="toggleMenue" to="/email/" >Email</router-link>  
+                <router-link tag="li" @click.native="toggleMenue" to="/notes">Notes</router-link>  
+                <router-link tag="li" @click.native="toggleMenue" to="/about">About</router-link>  
             </section>
         </nav>
     </header>
     `,
+    data(){
+        return{
+            hidden:false
+        }
+    },
     methods:{
-        // showSideMenue
+        toggleMenue(){
+            this.hidden = !this.hidden
+        }
     }
 }
 

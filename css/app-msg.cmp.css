@@ -10,10 +10,9 @@
     font-family: 'Passion One', cursive;
     font-size: 1.5rem;
     border: 1px solid white;
-    background-color: #ccff8e;
     color: black;
     -webkit-animation: scale-up-center 0.4s ease-in both;
-	        animation: scale-up-center 0.4s ease-in both;
+    animation: scale-up-center 0.4s ease-in both;
 }
 
 .app-message h3 {
@@ -25,21 +24,21 @@
     content: '';
     width: 20px;
     height: 20px;
-    background-color: #ccff8e;
+    background-color: #ffb134;
     position: absolute;
     top: 80%;
     transform: rotate(45deg);
     right: 20%;
 }
 .app-message.bad-msg::after{
-    background-color:#f28b82;
+    background-color:#c5c5c5;
 }
 .good-msg{
-  background-color: #ccff8e;
+  background-color: #ffb134;
 }
 
 .bad-msg{
-    background-color:#f28b82;
+    background-color:#c5c5c5;
 }
 
 /* msg animation */
