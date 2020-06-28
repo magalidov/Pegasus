@@ -5,9 +5,13 @@ import bookReview from "../cmp/book-review.cmp.js";
 export default {
   template: `
     <div  class="book-details col-layout" v-if="book">
-      <button @click="closeDetails" class="btn-close-details">
-          -Close-
-      </button>
+      <section class="book-nav flex">
+        <!-- <i class="fas fa-arrow-left fa-3x" @click="nextBook(-1)"></i> -->
+        <button @click="closeDetails" class="btn-close-details">
+            -Close-
+        </button>
+        <!-- <i class="fas fa-arrow-right fa-3x" @click="nextBook(1)" ></i> -->
+      </section>
       <div class="all-details">
             <div class="basic-book-details flex space-between">
               <section class="summary flex col">
@@ -33,8 +37,8 @@ export default {
     `,
   data() {
     return {
-      book: null, //!fix bug when loading
-    }
+      book: null, 
+    };
   },
   computed: {
     getBookLength() {
@@ -57,7 +61,7 @@ export default {
     },
     getPrice() {
       var price = this.book.listPrice.amount;
-      if (price === 0) return 'Not For Sale'
+      if (price === 0) return "Not For Sale";
       var currency = this.book.listPrice.currencyCode;
       if (currency === "USD") return "$" + price;
       if (currency === "ILS") return "₪" + price;
@@ -76,13 +80,19 @@ export default {
     closeDetails() {
       this.$router.push("/books");
     },
+    nextBook(diff) {
+      bookService.getNextBook(this.book.id,diff)
+      .then((bookId) =>{
+        this.$router.go(`/books/${bookId}`);
+    });
+    },
   },
   created() {
     const { bookId } = this.$route.params;
-    console.log(bookId)
+    console.log(bookId);
     bookService.getBookById(bookId).then((book) => {
       this.book = book;
-      console.log(this.book)
+      console.log(this.book);
     });
   },
   components: {

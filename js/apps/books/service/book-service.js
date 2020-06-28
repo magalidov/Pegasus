@@ -1,4 +1,4 @@
-import {Utils} from '../../../services/utils.service.js';
+import { Utils } from "../../../services/utils.service.js";
 
 export const bookService = {
   getBooks,
@@ -6,6 +6,7 @@ export const bookService = {
   addReview,
   deleteReview,
   createNewBook,
+  getNextBook,
 };
 
 var gBooks = [
@@ -377,12 +378,11 @@ var gBooks = [
   },
 ];
 
-loadBooks()
+loadBooks();
 function loadBooks() {
   var books = Utils.loadFromStorage("gBooks");
   if (books) gBooks = books;
   else Utils.storeToStorage("gBooks", gBooks); //for the first time
-
 }
 
 function getBooks() {
@@ -403,16 +403,15 @@ function addReview(bookId, review) {
 
 function deleteReview(bookId, reviewIdx) {
   var book = gBooks.find((book) => book.id == bookId);
-  book.reviews.splice(reviewIdx, 1)
+  book.reviews.splice(reviewIdx, 1);
   Utils.storeToStorage("gBooks", gBooks);
-
 }
 
 function createNewBook(book) {
   var newBook = {
     id: Utils.getRandomId(),
     title: book.volumeInfo.title,
-    subtitle: '',
+    subtitle: "",
     authors: book.volumeInfo.authors,
     publishedDate: new Date(book.volumeInfo.publishedDate).getFullYear(),
     description: book.volumeInfo.description,
@@ -421,12 +420,26 @@ function createNewBook(book) {
     thumbnail: book.volumeInfo.imageLinks.thumbnail,
     language: book.volumeInfo.language,
     listPrice: {
-      amount: book.saleInfo.saleability === 'NOT_FOR_SALE' ? 0 : book.saleInfo.listPrice.amount,
-      currencyCode: book.saleInfo.saleability === 'NOT_FOR_SALE' ? '0' : book.saleInfo.listPrice.currencyCode,
-      isOnSale: book.saleInfo.saleability
+      amount:
+        book.saleInfo.saleability === "NOT_FOR_SALE"
+          ? 0
+          : book.saleInfo.listPrice.amount,
+      currencyCode:
+        book.saleInfo.saleability === "NOT_FOR_SALE"
+          ? "0"
+          : book.saleInfo.listPrice.currencyCode,
+      isOnSale: book.saleInfo.saleability,
     },
     reviews: [],
-  }
-  gBooks.unshift(newBook)
-  Utils.storeToStorage('gBooks', gBooks)
+  };
+  gBooks.unshift(newBook);
+  Utils.storeToStorage("gBooks", gBooks);
+}
+
+function getNextBook(currBookId, diff) {
+  const currIdx = gBooks.findIndex((book) => book.id === currBookId);
+  let nextIdx = currIdx + diff;
+  if (nextIdx === gBooks.length - 1) nextIdx = 0;
+  if (nextIdx === -1) nextIdx = gBooks.length - 1;
+  return Promise.resolve(gBooks[nextIdx].id);
 }

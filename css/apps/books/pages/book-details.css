@@ -48,7 +48,7 @@
     font-family: 'Passion One', cursive;
     font-size: 1rem;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 50px;
     background-color: #fa9c00;
     transition: all .3s;
 }
@@ -110,6 +110,10 @@
 
 .book-details section h5 {
     font-size: 1rem;
+}
+
+.fas.fa-arrow-left, .fas.fa-arrow-right {
+    padding: 5px;
 }
 
 @media(max-width:480px) {
