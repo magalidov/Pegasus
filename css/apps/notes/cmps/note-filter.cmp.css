@@ -4,29 +4,28 @@
 }
 
 .note-filter input{
-    width: 500px;
     height: 40px;
-    border-radius: 15px;
-    margin-inline-end: 5px;
+    width: 500px;
     padding: 5px;
-    padding-left:10px ;
+    margin-inline-end: 5px;
     font-size: 1rem;
-    font-family: lato,Arial,sans-serif;
-    background-color: ghostwhite;
+    font-family: roboto, cursive;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
     outline: none;
-    border:none;
-    box-shadow: 1px 1px white
 
 }
 
 .note-filter select{
-    max-width: 80px;
-    height: 40px;
-    border-radius: 20px;
     padding: 5px;
+    max-width: 100px;
+    height: 40px;
     font-size: 1rem;
-    border: 1px solid ghostwhite;
-    background-color: ghostwhite;
+    font-family: roboto, cursive;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
     outline: none;
 
 }
