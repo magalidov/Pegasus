@@ -28,16 +28,17 @@ export default {
 			emailService.updateEmails(tag, state, checkedEmailsIds)
 			this.loadEmails()
 		});
-		eventBus.$on('update', (emailId,tags) =>{
+		eventBus.$on('updateEmail', (emailId,tags) =>{
 			emailService.updateEmail(emailId,tags);
 			this.loadEmails()
 		});
-		eventBus.$on('delete', (checkedEmails) =>{
+		eventBus.$on('deleteEmail', (checkedEmails) =>{
 			emailService.deleteEmails(checkedEmails)
+			eventBus.$emit('message','Emails Deleted!','bad-msg')
 			this.loadEmails()
 		}
 		);
-		eventBus.$on('sent', () => this.loadEmails())
+		eventBus.$on('emailSent', () => this.loadEmails())
 	},
 	computed: {
 		list() {

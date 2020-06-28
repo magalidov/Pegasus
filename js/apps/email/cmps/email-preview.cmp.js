@@ -73,7 +73,7 @@ export default {
     methods:{
         toggleTag(tag){
             this.tags[tag] = !this.tags[tag]
-            eventBus.$emit('update',this.email.id,this.tags)
+            eventBus.$emit('updateEmail',this.email.id,this.tags)
         },
         toggleInCheckedList(email){
             if (this.checked) this.$emit('checkBox','add',email)
