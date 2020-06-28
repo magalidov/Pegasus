@@ -4,7 +4,7 @@
     padding: 0 30px;
     grid-template-columns: 0.1fr 1.9fr;
     grid-template-rows: 0.1fr 0.9fr;
-    grid-template-areas: "fl fl fl fl" "sd  main main main ";
+    grid-template-areas: "fl fl fl fl" "sd  main main main" "stat stat stat stat";
     justify-content: flex-start;
     min-height: 85vh;
     flex-grow: 1;
@@ -28,6 +28,9 @@
     color: black;
     cursor: pointer;
     text-decoration: none;
+}
+.email-status{
+    grid-area: stat;
 }
 
 @media (max-width:570px){

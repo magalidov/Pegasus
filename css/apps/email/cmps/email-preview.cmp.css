@@ -46,11 +46,9 @@
 }
 .from-prev{
     grid-area: from;
-    
+    padding-right: 5px;
 }
-.subject-prev{
-   
-}
+
 .subject-body-preview{
     grid-area: subj;
     overflow: hidden;

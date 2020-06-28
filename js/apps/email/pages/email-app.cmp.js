@@ -2,6 +2,7 @@ import { emailService } from '../services/email-service.js';
 import { eventBus } from '../../../services/event-bus.service.js';
 import emailSidebar from '../cmps/email-sidebar.cmp.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
+import emailStatus from '../cmps/email-status.cmp.js';
 
 export default {
 	name: 'email-app',
@@ -9,8 +10,9 @@ export default {
     <section class="email-app">
         <email-filter @filter="setFilter" @refreshList="refreshList"/>
         <email-sidebar :allEmails="allEmails"/>
-		<router-view class="email-main" :emailsToShow="emailsToShow" :emailToEdit="emailToEdit" @refreshList="refreshList"/>
-    </section>
+		<router-view class="email-main grow" :emailsToShow="emailsToShow" :emailToEdit="emailToEdit" @refreshList="refreshList"/>
+		<email-status :allEmails="allEmails"/>
+	</section>
     `,
 	data() {
 		return {
@@ -94,5 +96,6 @@ export default {
 	components: {
 		emailFilter,
 		emailSidebar,
+		emailStatus,
 	},
 };

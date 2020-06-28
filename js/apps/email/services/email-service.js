@@ -140,7 +140,7 @@ const gFakeEmails = [
 		•	Pin files to channels
 		•	Invite your team to channels
 		<br>
-		<img src="https://ci6.googleusercontent.com/proxy/PGVz3NOHq9uf6fdvKBIw5oOJ5N9cpiOE8g2bQTHde0r-bNyXmKAkVfS-0p0vwrZzzLcMPW7RTgBX0iEwa8c9VYYdaeiRk5diVT8D5Wfx2sSbsqf_fIo_E4fN-t96RsZIA5jXMyKwcJqmyCuaJPGf3grRQjbqxTQ=s0-d-e1-ft#http://image.email.slackhq.com/lib/fe5515707c610d7b7312/m/1/53fd294c-f4d3-46b9-a2b5-5b9400c6bd87.png"/>
+		<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.techlegends.in%2Fwp-content%2Fuploads%2F2019%2F09%2Fslack-icon.png&f=1&nofb=1"/>
 		`,
 		tags: { isRead: true, isStared: false , isSent: false},
 		sentAt: 1506133930594,
