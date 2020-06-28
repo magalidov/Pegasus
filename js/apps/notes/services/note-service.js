@@ -46,7 +46,7 @@ function _createNotes() {
           ],
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -62,7 +62,7 @@ function _createNotes() {
             "https://media.tenor.com/images/6afb17492c5b0a711b51afe70e24d3c4/tenor.gif",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -77,7 +77,7 @@ function _createNotes() {
           txt: "Asaf and Idov!!!!",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
      
@@ -94,7 +94,7 @@ function _createNotes() {
             "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -109,7 +109,7 @@ function _createNotes() {
           txt: "Kololoooo This Worksss",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -124,7 +124,7 @@ function _createNotes() {
           txt: "Edit meeee",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -139,7 +139,7 @@ function _createNotes() {
           txt: "Idov was Here.",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -154,7 +154,7 @@ function _createNotes() {
           url: "https://www.youtube.com/embed/tgbNymZ7vqY",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
       {
@@ -169,7 +169,7 @@ function _createNotes() {
           url: "https://www.youtube.com/watch?v=Lq8bpo9KWa8",
         },
         style: {
-          backgroundColor: "#fa9c00",
+          backgroundColor: "#ffffff",
         },
       },
     ];
@@ -195,7 +195,7 @@ function addNewNote(type, info) {
     isOnEdit: false,
     info,
     style: {
-      backgroundColor: "#ffcc13",
+      backgroundColor: "#ffffff",
     },
   };
   gNotes.push(newNote);

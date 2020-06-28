@@ -2,7 +2,7 @@
     max-width: 980px;
     margin: 10px auto;
     position: relative;
-    font-family: roboto,Arial,sans-serif;
+    font-family: lato,Arial,sans-serif;
 }
 
 .note-add form {
@@ -21,7 +21,7 @@
     padding: 5px;
     font-size: 1rem;
     /* font-family: 'Pangolin', cursive; */
-    font-family: roboto,Arial,sans-serif;
+    font-family: lato,Arial,sans-serif;
     border: none;
     background-color: transparent;
     outline: none;
@@ -40,7 +40,7 @@
     font-size: 1rem;
     border: none;
     background-color: transparent;
-    font-family: roboto,Arial,sans-serif;
+    font-family: lato,Arial,sans-serif;
     margin-top: 12px;
     transition: all .3s;
 }
