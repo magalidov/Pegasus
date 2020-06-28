@@ -22,7 +22,7 @@
     border:1px solid #fa9c00;
     border-bottom-color: grey;
     transform: scale(1.0085,1.0085);
-    
+    transform: translateY(1px)
 }
 .email-preview:hover .email-preview>*{
     border-color: #fa9c00;
@@ -37,6 +37,7 @@
 }
 
 .preview-opt >*{
+    vertical-align: top;
     margin-right: 10px;
 }
 .preview-opt  >*:hover{

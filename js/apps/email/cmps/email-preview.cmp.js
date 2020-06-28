@@ -6,7 +6,11 @@ export default {
     template:`
     <div class="email-preview">
         <div class="preview-opt">
-            <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox" title="Tick">
+            <label class="check-container">
+                <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox" title="Tick">
+                <span class="checkmark"></span>
+            </label>
+            <!-- <input v-model="checked" @change.stop="toggleInCheckedList(email)" type="checkbox" title="Tick"> -->
             <i :class="envelopeType" @click.stop="toggleTag('isRead')" :title="envelopeTitle"></i>
             <i :class="starType" @click.stop="toggleTag('isStared')" :title="starTitle"></i>
         </div>
