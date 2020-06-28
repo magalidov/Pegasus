@@ -2,9 +2,7 @@
 }
 .email-preview{
     cursor: pointer;
-    border-top: 1px solid rgb(180, 180, 180);
-    border-left: 1px solid rgb(180, 180, 180);
-    border-right: 1px solid rgb(180, 180, 180);
+    border-top: 0.5px solid rgb(180, 180, 180);
     padding: 5px 10px;
     font-size: 1rem;
     display: grid;
@@ -21,7 +19,10 @@
 }
 .email-preview:hover{
     background-color: #fa9a004f;
-    border-color: #fa9c00;
+    border:1px solid #fa9c00;
+    border-bottom-color: grey;
+    transform: scale(1.0085,1.0085);
+    transform: translateY(1px)
 }
 .email-preview:hover .email-preview>*{
     border-color: #fa9c00;
@@ -36,10 +37,12 @@
 }
 
 .preview-opt >*{
+    vertical-align: top;
     margin-right: 10px;
 }
 .preview-opt  >*:hover{
     transform: scale(1.15,1.15);
+    
 }
 .from-prev{
     grid-area: from;

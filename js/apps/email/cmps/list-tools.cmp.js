@@ -4,9 +4,12 @@ export default {
     name:'list-tools',
     props: ['checkedEmails','emailsAmount'],
     template:`
-    <section class="list-tools flex space-between">
-        <div>
-            <input v-model="checkAll" v-show="emailsAmount>0" ref="checkBox" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
+    <section class="list-tools flex space-between align-start">
+        <div class="flex align-start">
+        <label class="check-container" v-show="emailsAmount>0">
+                <input v-model="checkAll"  ref="checkBox" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
+                <span class="checkmark"></span>
+            </label>
             <i :class="envelopeType" v-if="showTools" @click.stop="toggleAllTags('isRead')" :title="envelopeTitle"></i>
             <i :class="starType" v-if="showTools" @click.stop="toggleAllTags('isStared')" :title="starTitle"></i>
             <i class="fas fa-trash" v-if="showTools" @click.stop="deleteCheckedEmails" title="Delete"></i>
