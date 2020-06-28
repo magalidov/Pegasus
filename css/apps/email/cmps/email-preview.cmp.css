@@ -3,7 +3,7 @@
 .email-preview{
     cursor: pointer;
     border-top: 0.5px solid rgb(180, 180, 180);
-    padding: 5px 10px;
+    padding: 5px 10px 10px 10px;
     font-size: 1rem;
     display: grid;
     grid-gap: 10px;
@@ -22,7 +22,7 @@
     border:1px solid #fa9c00;
     border-bottom-color: grey;
     transform: scale(1.0085,1.0085);
-    transform: translateY(1px)
+    transform: translateY(1px);
 }
 .email-preview:hover .email-preview>*{
     border-color: #fa9c00;
@@ -46,11 +46,9 @@
 }
 .from-prev{
     grid-area: from;
-    
+    padding-right: 5px;
 }
-.subject-prev{
-   
-}
+
 .subject-body-preview{
     grid-area: subj;
     overflow: hidden;

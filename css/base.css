@@ -33,11 +33,8 @@ main .main-page{
     position: relative;
     padding-right: 20px;
     cursor: pointer;
-    font-size: 22px;
     user-select: none;
-
 }
-  
   /* Hide the browser's default checkbox */
 .check-container input {
     position: absolute;
@@ -46,7 +43,6 @@ main .main-page{
     height: 0;
     width: 0;
 }
-  
   /* Create a custom checkbox */
 .checkmark {
     border: 1.5px solid rgb(0, 0, 0);
@@ -57,7 +53,6 @@ main .main-page{
     height: 17px;
     width: 17px;
 }
-  
   /* On mouse-over, add a grey background color */
 .check-container:hover input ~ .checkmark {
     background-color: #fa9c00;
@@ -67,19 +62,16 @@ main .main-page{
 .check-container input:checked ~ .checkmark {
     background-color: #fa9c00;
 }
-  
   /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
-  
   /* Show the checkmark when checked */
 .check-container input:checked ~ .checkmark:after {
     display: block;
 }
-  
   /* Style the checkmark/indicator */
 .check-container .checkmark:after {
     left: 4px;

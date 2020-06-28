@@ -5,18 +5,19 @@ export default {
 	name:'email-compose',
 	template: `
     <section class="email-compose flex col">
+		<div class="compose-inputs flex col">
+			<div class='general-details flex col'>
+				<input type="text" disabled v-model="to"/>
+				<input type="text" ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
+				<input type="text" v-model="newEmail.subject" placeholder="Subject:"/>
+			</div>
+			<textarea class="new-email-body grow" v-model="newEmail.body"/></div>
+		</div>
 		<div class="compose-opt flex space-between">
 			<!-- <button class="compose-btn">Attach Img <i class="far fa-image"></i></button> -->
 			<div class="form-informer"><span v-if="informer">{{informer}}</span></div>
 			<span @click="checkThenSend" class="compose-btn">Send <i class="far fa-paper-plane"></i></span>
 		</div>
-		<div class="compose-inputs"></div>
-		<div class='general-details flex col'>
-			<input type="text" disabled v-model="to"/>
-			<input type="text" ref="elInputFrom" v-model="newEmail.from" placeholder="From:"/>
-			<input type="text" v-model="newEmail.subject" placeholder="Subject:"/>
-		</div>
-		<textarea class="new-email-body grow" v-model="newEmail.body"/></div>
 		<!-- <div class="new-email-body grow" contenteditable="true" ref="elBody" v-html="newEmail.body"></div> -->
     </section>
     `,

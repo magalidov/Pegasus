@@ -28,7 +28,7 @@ export default {
 				<div>
 					<span class="from-name">{{fromName}} -</span><span class="from-adress">{{emailToShow.from}}</span>
 				</div>
-				<span>{{fullDate}}</span>
+				<span class="full-date">{{fullDate}}</span>
 			</div>
 		</div>
         <div class="email-body grow" v-html="emailToShow.body">
