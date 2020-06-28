@@ -4,7 +4,7 @@ import colorPicker from "../cmps/note-colorpick.cmp.js";
 export default {
   props: ["note"],
   template: `
-        <section class="edit-bar flex space-between ">
+        <section class="edit-bar flex space-around ">
                 <i class="fas fa-trash" @click="onDeleteNote"></i>
                 <i class="fas fa-palette" @click="openColor" @blur="openColor"></i>
                 <color-picker v-show="showColorPicker" @setColor="onSetColor" />

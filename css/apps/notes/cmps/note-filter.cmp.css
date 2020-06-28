@@ -22,10 +22,11 @@
 .note-filter select{
     max-width: 80px;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 5px;
     font-size: 1rem;
     border: 1px solid ghostwhite;
     background-color: ghostwhite;
+    outline: none;
 
 }
