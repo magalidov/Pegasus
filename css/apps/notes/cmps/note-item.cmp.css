@@ -4,9 +4,9 @@
     font-size: 1rem;
     margin: 0 10px 10px 0;
     padding: 5px;
-    box-shadow: 6px 4px #d4caca;
-    border: 2px solid #d4caca;
-    font-family: 'Pangolin', cursive;
+    /* box-shadow: 6px 4px #d4caca; */
+    border: 1px solid #e0e0e0;
+    /* font-family: 'Pangolin', cursive; */
     transition: all .2s;
     break-inside: avoid-column;
     border-radius: 10px;
@@ -29,7 +29,7 @@
     cursor: pointer;
     /* outline: 3px solid black; */
     /* border: 4px solid #d4caca; */
-    box-shadow: 8px 8px #d4caca;
+    box-shadow: 1px 2px #e0e0e0;
 }
 
 .note-item .edited {
@@ -44,7 +44,7 @@
 }
 
 .fa-thumbtack::before {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 
 .note-item .pinned {
@@ -53,10 +53,7 @@
     margin: 3px 8px 3px 0;
 }
 
-.pinned.fa-thumbtack::before {
-    transition: all .3s;
-    color: red;
-}
+
 
 .pinned.fa-thumbtack:hover::before {
     transition: all .3s;
@@ -68,9 +65,6 @@
     transform: rotate(30deg);
 }
 
-.pin-icon.fa-thumbtack:hover::before {
-    color: red;
-}
 
 .note-item .pinned:hover {
     transform: rotate(0deg);
