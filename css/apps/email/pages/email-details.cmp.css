@@ -3,9 +3,6 @@
     font-family: roboto;
     height: max-content;
 }
-.details-btns{
-    background-color: #fff;
-}
 .details-tools >*{
     cursor: pointer;
 }
@@ -14,17 +11,8 @@
 }
 .details-btns{
     padding: 5px;
-    border-top: 1px solid rgb(180, 180, 180);
-    border-left: 1px solid rgb(180, 180, 180);
-    border-right: 1px solid rgb(180, 180, 180);
-}
-.info-box{
-    border-top: 1px solid rgb(180, 180, 180);
-    border-left: 1px solid rgb(180, 180, 180);
-    border-right: 1px solid rgb(180, 180, 180);
 }
 .email-body{
-    border: 1px solid rgb(180, 180, 180);
     background-color: #fff;
     padding: 10px;
 }
@@ -38,6 +26,10 @@
 }
 .from-name{
     font-weight: bold;
+    
+}
+.full-date{
+    padding-left: 10px;
 }
 .details-tools >*{
         margin: 0 5px;

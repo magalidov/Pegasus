@@ -10,13 +10,13 @@
     cursor: pointer;
     margin-right: 10px;
 }
-.list-tools:hover{
+.list-tools:hover {
     background-color: #fa9a004f;
     border-top: 1px solid #fa9c00;
     border-left: 1px solid #fa9c00;
     border-right: 1px solid #fa9c00;
     
 }
-.list-tools >* :hover{
+.list-tools i:hover{
     transform: scale(1.15,1.15);
 }

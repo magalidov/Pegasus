@@ -6,7 +6,7 @@ export default {
     template:`
     <section class="list-tools flex space-between align-start">
         <div class="flex align-start">
-        <label class="check-container" v-show="emailsAmount>0">
+            <label class="check-container" v-show="emailsAmount>0">
                 <input v-model="checkAll"  ref="checkBox" @change.stop="toggleCheckAll" type="checkbox" title="Check All">
                 <span class="checkmark"></span>
             </label>

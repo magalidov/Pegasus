@@ -27,6 +27,7 @@ const gFakeEmails = [
 			They become our role models, our go to person and best friend. With years and years I have discovered that my hero does not wear a fancy cape but carries a heart of gold that I hold so dearly. Even though at times he may seem like you are the biggest pain in his life, you are his biggest joy. 
 			<br>
 			Time after time you have done countless things to annoy him, things that drive him off the wall, but he fights daily to protect and love you. Other than a parents love, I feel that there is no greater bond in love than there is between siblings. A lot of the things my brother has done for me goes unnoticed and at times i'm sure he has felt unappreciated by his gestures because my lack of gratitude. We all tend to take the smallest things for granite, especially those we love. Because I know I haven't told him lately, here is the thank you letter that all older brothers deserve every once in a blue moon. 
+			<br>
 			<audio controls src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3">
 				Your browser does not support the
 				<code>audio</code> element.
@@ -54,7 +55,7 @@ const gFakeEmails = [
 		body: `
 		New Friend Request
 
-		Dorothi💫Bareket added you as a friend
+		Dorothi Bareket added you as a friend
 		Hello Stray Fox,
 
 		This is a notification to let you know that Dorothi💫Bareket has just added you as a friend. Login to accept or reject this friend request.
