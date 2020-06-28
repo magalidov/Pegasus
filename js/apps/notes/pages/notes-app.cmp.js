@@ -13,7 +13,7 @@ export default {
               <div class="cmp-container">
                   <section class="pinned-notes">
                   <h1>PINNED:</h1>
-                  <note-item v-for="note in pinnedNotes" :note="note" :key="note.id"></note-item>
+                  <note-item v-for="note in pinnedToShow" :note="note" :key="note.id"></note-item>
                   <h2 v-if="checkPinned">No Pinned Notes</h2>
                   </section>
                   <section ref="notes" class="notes">
@@ -61,6 +61,25 @@ export default {
       const filterBy = this.filterBy;
       if (!filterBy) return this.notes;
       let filteredNotes = this.notes.filter((note) => {
+        if (filterBy.type === "all") return true;
+        else return note.type === filterBy.type;
+      });
+      filteredNotes = filteredNotes.filter((note) => {
+        if (filterBy.txt === "") return true;
+        if (note.type === "noteTodo") {
+          return note.info.todos.some((todo) =>
+            todo.txt.toLowerCase().includes(filterBy.txt)
+          );
+        }
+        if (note.type !== "noteText") return false;
+        else return note.info.txt.toLowerCase().includes(filterBy.txt);
+      });
+      return filteredNotes;
+    },
+    pinnedToShow(){
+      const filterBy = this.filterBy;
+      if (!filterBy) return this.pinnedNotes;
+      let filteredNotes = this.pinnedNotes.filter((note) => {
         if (filterBy.type === "all") return true;
         else return note.type === filterBy.type;
       });
