@@ -11,8 +11,8 @@
     border-bottom: 2px solid black;
 }
 
-.fas,.far {
-    padding: 5px;
+.book-review .fas,.far {
+    /* padding: 5px; */
 }
 
 .reviews-list .btn-del-review {
