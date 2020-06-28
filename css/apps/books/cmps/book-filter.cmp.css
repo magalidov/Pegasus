@@ -1,0 +1,19 @@
+.book-filter {
+  max-width: 750px;
+  margin: 0 auto;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.book-filter > * {
+  padding: 5px;
+  margin: 2px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  align-self: center;
+  outline: none;
+  font-family: 'Pangolin', cursive;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

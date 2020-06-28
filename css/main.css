@@ -18,3 +18,7 @@
 @import './apps/email/cmps/list-tools.cmp.css';
 @import './apps/email/cmps/email-preview.cmp.css';
 @import './apps/email/pages/email-details.cmp.css';
+
+
+/* BOOKS */
+@import './apps/books/pages/book-app.cmp.css'

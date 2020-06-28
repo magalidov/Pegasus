@@ -1,0 +1,54 @@
+/* BOOKS-FOUND-LIST */
+
+.add-new-book .found-books-list>* {
+    max-width: 900px;
+    padding: 3px;
+    margin-bottom: 2px;
+    font-size: 1.3rem;
+    font-family: 'Passion One', cursive;
+}
+
+.add-new-book .found-books-list>* button {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid white;
+    font-family: "Notable", sans-serif;
+    background-color: #fa9c00;
+}
+
+.add-new-book .btn-search-book {
+    margin-left: 10px;
+    max-width: 200px;
+    padding:0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid white;
+    font-family: 'Pangolin', cursive;
+    background-color: transparent;
+    transition: all .3s;
+}
+.add-new-book .btn-search-book:hover{
+    background-color: #fa9c00;
+
+}
+
+
+/* INPUT */
+
+.add-new-book {
+    margin-bottom: 30px auto;
+}
+
+.add-new-book input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+    font-family: 'Pangolin', cursive;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}

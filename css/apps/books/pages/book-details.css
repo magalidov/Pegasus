@@ -1,0 +1,107 @@
+.book-details {
+    max-width: 780px;
+    margin: 10px auto;
+    background-color: #ffffffdb;
+    border-radius: 20px;
+    font-family: 'Passion One', cursive;
+    text-transform: capitalize;
+    border: 7px solid black;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    position: relative;
+}
+
+/* .ALL-DETAILS */
+
+.all-details {
+    flex-basis: 50%;
+}
+
+.book-details .basic-book-details .summary h5, h4, h3 {
+    padding: 10px;
+}
+
+.book-details .book-thumbnail {
+    width: 200px;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.btn-close-details {
+    flex-basis: 100%;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Passion One', cursive;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fa9c00;
+    transition: all .3s;
+}
+
+.btn-close-details:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: white;
+}
+
+.book-details .book-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.book-details .book-subt {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0;
+}
+
+.book-details .book-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 10px auto;
+}
+
+.book-details .sale {
+    width: 150px;
+    height: 80px;
+    left: 0%;
+    transform: rotate(-20deg);
+    position: absolute;
+    top: 1%;
+}
+
+.book-details .btn-more-less {
+    background-color: #333333;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Notable', sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+
+/* BASIC-DETAILS */
+
+.book-details .basic-book-details {
+    width: 100%;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+.book-details section h5 {
+    font-size: 1rem;
+}
+
+/* .long-text  cmp*/
+.long-text {
+    border: 2px solid black;
+    padding: 10px;
+}
+
