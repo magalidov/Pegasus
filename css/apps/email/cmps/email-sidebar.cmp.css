@@ -1,12 +1,15 @@
 .side-link{
+    cursor: pointer;
+    color: black;
     font-size: 1.3rem;
+    text-decoration: none;
     padding-bottom: 10px;
     padding-right: 20px;
     display:grid;
     grid-gap: 0.5rem;
     grid-template-columns: 2rem 1fr;
     font-family: 'Passion One', cursive;
-    transition: 0.1s
+    transition: 0.1s;
 }
 .link-icon{
     text-align: center;

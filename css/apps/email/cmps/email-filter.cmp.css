@@ -5,7 +5,7 @@
     margin-inline-end: 5px;
     font-size: 1rem;
     font-family: roboto, cursive;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #e0e0e0;
     background-color: white;
     outline: none;
@@ -16,7 +16,7 @@
     height: 40px;
     font-size: 1rem;
     font-family: roboto, cursive;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #e0e0e0;
     background-color: white;
     outline: none;
@@ -39,7 +39,6 @@
         height: 30px;
         padding: 5px;
         font-size: 0.9rem;
-        border-radius: 5px;
         width: 200px;
 
     }

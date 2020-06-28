@@ -1,4 +1,3 @@
-import emailStatus from './email-status.cmp.js'
 
 export default {
     name:'email-sidebar',
@@ -12,7 +11,6 @@ export default {
             <router-link class="side-link" to="/email/stared"><i class="link-icon fas fa-star"></i><span>Stared</span></router-link>
             <router-link class="side-link" to="/email/drafts"><i class="link-icon fab fa-firstdraft"></i><span>Drafts</span></router-link>
             <router-link class="side-link" to="/email/deleted"><i class="link-icon fas fa-trash"></i><span>Deleted</span></router-link>
-        		<!-- <email-status :allEmails="allEmails"/> -->
         </div>
     </section>
     `,
