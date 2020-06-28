@@ -28,7 +28,6 @@ export default {
   data() {
     return {
       notes: [],
-      pinnedNotes: [],
       filterBy: null,
     };
   },
@@ -76,27 +75,11 @@ export default {
       });
       return filteredNotes;
     },
-    pinnedToShow(){
-      const filterBy = this.filterBy;
-      if (!filterBy) return this.pinnedNotes;
-      let filteredNotes = this.pinnedNotes.filter((note) => {
-        if (filterBy.type === "all") return true;
-        else return note.type === filterBy.type;
-      });
-      filteredNotes = filteredNotes.filter((note) => {
-        if (filterBy.txt === "") return true;
-        if (note.type === "noteTodo") {
-          return note.info.todos.some((todo) =>
-            todo.txt.toLowerCase().includes(filterBy.txt)
-          );
-        }
-        if (note.type !== "noteText") return false;
-        else return note.info.txt.toLowerCase().includes(filterBy.txt);
-      });
-      return filteredNotes;
+    pinnedToShow() {
+      return this.notesToShow.filter((note) => note.isPinned);
     },
     checkPinned() {
-      return this.pinnedNotes.length === 0;
+      return this.pinnedToShow.length === 0;
     },
   },
   methods: {
@@ -104,15 +87,13 @@ export default {
       this.filterBy = filterBy;
     },
     getNotes() {
-      noteService.getNotes().then((notes) => {
-        this.notes = notes.filter((note) => !note.isPinned);
-        this.pinnedNotes = notes.filter((note) => note.isPinned);
-      });
+      noteService.getNotes()
+      .then((notes) => {this.notes = notes})   
     },
     checkForQuaries() {
       if (this.$route.query.body) {
         const body = this.$route.query.body;
-        const subject=this.$route.query.subject
+        const subject = this.$route.query.subject;
         noteService.addNewNote("noteText", {
           title: subject,
           txt: body,

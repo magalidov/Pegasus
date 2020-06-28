@@ -1,6 +1,5 @@
 import {eventBus} from '../../../services/event-bus.service.js'
 
-
 export default {
   props: ["note"],
   template: `
@@ -24,8 +23,7 @@ export default {
                   <i class="fas fa-trash-alt justify-self-end" @click="removeTodo(idx)" ></i>
                 </li>
             </ul>
-        </section>
-            
+        </section> 
     `,
   data() {
     return {
