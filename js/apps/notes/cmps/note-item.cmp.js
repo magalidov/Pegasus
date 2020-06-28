@@ -5,6 +5,7 @@ import noteImage from "./note-img.cmp.js";
 import noteVideo from "./note-video.cmp.js";
 import noteTodo from "./note-todos.cmp.js";
 import noteAudio from "./note-audio.cmp.js";
+import colorPicker from "../cmps/note-colorpick.cmp.js";
 
 export default {
   props: ["note"],
@@ -17,12 +18,14 @@ export default {
              <section class="edited">
                  {{getNoteChangedTime}}
              </section>
-              <edit-bar :note="note"/>
+              <edit-bar :note="note" @hover="hoverState"/>
+              <color-picker v-show="colorHover" @setColor="onSetColor" @close="hoverState" />
         </section>
     `,
   data() {
     return {
       noteColor: this.note.style.backgroundColor,
+      colorHover: false,
     };
   },
   computed: {
@@ -52,7 +55,15 @@ export default {
     },
     onEdit(){
       eventBus.$emit("update", this.note);
-    }
+    },
+    onSetColor(color) {
+      this.note.style.backgroundColor = color;
+      eventBus.$emit("update", this.note);
+    },
+    hoverState() {
+      this.colorHover = !this.colorHover;
+    },
+    
   },
   components: {
     editBar,
@@ -61,5 +72,6 @@ export default {
     noteVideo,
     noteTodo,
     noteAudio,
+    colorPicker,
   },
 };

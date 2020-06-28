@@ -1,8 +1,9 @@
 export default {
   template: `
     <section class="color-picker">
-        <ul class="colors-list clean-list flex">
-            <li v-for="color in colors" class="color" :style="{backgroundColor:color}" @click="setColor(color)">
+        <ul class="colors-list clean-list flex" @mouseleave="closeColors">
+            <li v-for="color in colors" class="color" :style="{backgroundColor:color}" 
+                    @click="setColor(color)" >
             </li>
         </ul>
     </section>
@@ -28,6 +29,9 @@ export default {
   methods:{
     setColor(color){
       this.$emit('setColor',color)
+    },
+    closeColors(){
+      this.$emit('close')
     }
   }
 };

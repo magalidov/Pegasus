@@ -7,7 +7,7 @@ export default {
     template: `
     <div class="add-new-book col-layout">
         <section class="flex">
-            <input type="text" placeholder="Online - enter book name to search" v-model="bookToSearch" />
+            <input type="text" placeholder="Online - Search " v-model="bookToSearch" />
             <button class="btn-search-book" @click="searchBook">
             <i class="fas fa-search"></i> Search Book</button>
         </section>

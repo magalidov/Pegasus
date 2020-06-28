@@ -3,6 +3,20 @@
     border: 2px solid black;
 }
 
+.reviews-list .review-item h5 {
+    margin: 0;
+    padding: 5px;
+}
+
+.reviews-list .review-item h4 {
+    margin-top: 5px;
+    
+}
+.reviews-list .review-item h4 span{
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
 .reviews-list .review-item {
     padding: 5px;
 }
@@ -11,7 +25,7 @@
     border-bottom: 2px solid black;
 }
 
-.book-review .fas,.far {
+.book-review .fas, .far {
     /* padding: 5px; */
 }
 

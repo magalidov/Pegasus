@@ -13,7 +13,7 @@ export default {
               <div class="cmp-container">
                   <section class="pinned-notes">
                   <h1>PINNED:</h1>
-                  <note-item v-for="note in pinnedToShow" :note="note" :key="note.id"></note-item>
+                  <note-item v-for="note in pinnedNotes" :note="note" :key="note.id"></note-item>
                   <h2 v-if="checkPinned">No Pinned Notes</h2>
                   </section>
                   <section ref="notes" class="notes">
@@ -28,7 +28,8 @@ export default {
   data() {
     return {
       notes: [],
-      filterBy: null,
+      pinnedNotes: [],
+      filterBy: {txt:"",type:"all"},
     };
   },
 
@@ -58,7 +59,7 @@ export default {
   computed: {
     notesToShow() {
       const filterBy = this.filterBy;
-      if (!filterBy) return this.notes;
+      // if (!filterBy) return this.notes;
       let filteredNotes = this.notes.filter((note) => {
         if (filterBy.type === "all") return true;
         else return note.type === filterBy.type;
@@ -73,13 +74,11 @@ export default {
         if (note.type !== "noteText") return false;
         else return note.info.txt.toLowerCase().includes(filterBy.txt);
       });
-      return filteredNotes;
-    },
-    pinnedToShow() {
-      return this.notesToShow.filter((note) => note.isPinned);
+      this.pinnedNotes = filteredNotes.filter((note) => note.isPinned);
+      return filteredNotes.filter((note) => !note.isPinned);
     },
     checkPinned() {
-      return this.pinnedToShow.length === 0;
+      return this.pinnedNotes.length === 0;
     },
   },
   methods: {
@@ -87,8 +86,9 @@ export default {
       this.filterBy = filterBy;
     },
     getNotes() {
-      noteService.getNotes()
-      .then((notes) => {this.notes = notes})   
+      noteService.getNotes().then((notes) => {
+        this.notes = notes;
+      });
     },
     checkForQuaries() {
       if (this.$route.query.body) {

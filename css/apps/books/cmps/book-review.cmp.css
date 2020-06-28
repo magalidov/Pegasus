@@ -48,3 +48,15 @@
     text-align: center;
     margin: 10px 0;
 }
+
+@media (max-width:480px){
+    .book-review form{
+        flex-direction: column;
+    }
+    .book-review section input{
+        margin: 5px 20px;
+    }
+    .book-review textarea{
+        padding: 5px 25px;
+    }
+}

@@ -12,3 +12,8 @@
     font-weight: bold;
     text-decoration: underline;
 }
+@media(max-width:480px){
+    .long-text p{
+        font-size: 0.9rem;
+    }
+}

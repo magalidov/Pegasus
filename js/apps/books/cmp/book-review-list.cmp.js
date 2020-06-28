@@ -1,11 +1,10 @@
-
 export default {
-    props: ['reviews'],
-    template: `
+  props: ["reviews"],
+  template: `
     <ul class="reviews-list clean-list">
         <li class="review-item flex col" v-for="(review,index) in reviews">
-        <section class="flex space-between">
-            <h5 class="flex space-between">
+        <section class="flex col">
+            <h5 class="flex">
                 <i class="fas fa-user"></i> 
                 Publisher: {{review.name}}
              </h5>
@@ -18,17 +17,17 @@ export default {
                 Rate: {{review.rate}}/5
             </h5>
         </section>
-            <h4>Review:
-            <br>
-                {{review.reviewText}}
+            <h4>
+            <span>Review:</span>
+            {{review.reviewText}}
             </h4>
             <button class="btn-del-review" @click="deleteReview(index)">X</button>
         </li>
     </ul>
     `,
-    methods: {
-        deleteReview(idx) {
-            this.$emit('delete', idx)
-        }
-    }
-}
+  methods: {
+    deleteReview(idx) {
+      this.$emit("delete", idx);
+    },
+  },
+};

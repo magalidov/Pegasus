@@ -15,8 +15,15 @@
 }
 
 .color-picker .colors-list{
-    position: absolute;
+   position: absolute;
     z-index: 5;
-    top: 27px;
-    left: -140px;
+    top: 10px;
+    left: 45px;
+}
+
+@media (max-width:480px){
+    .color-picker .colors-list{
+        top:0;
+        left:-2%;
+    }
 }
